@@ -119,7 +119,7 @@ Since $ x^n - 1 $ is separable $ \Q (\xi)  / \Q $ is a Galois extension and it's
 
 
 
-\subsection{The circluar units and the class number}
+	\subsection{The circluar units and the class number}
 
 	\begin{deff}
 		If $ \K $ is a number field (as $ \Q (\zeta) $ and $ K $)  we can define the \textbf{ideal class group} as the quotient $ \mathcal{F}_\K / \mathcal{P}_\K $ where:
@@ -165,7 +165,7 @@ Since $ x^n - 1 $ is separable $ \Q (\xi)  / \Q $ is a Galois extension and it's
  
  	Where we will understand later what we mean by \textit{optimal}, but essentially we want the index to be small and with a simple factorization for $ [ E_K : C' ] / h_K $. In particular the costruction of Greither will generalize the work of Ramachandra and Levesque, so we will omit them from now and see them later. 
 	 
-	 \subsection{Dirichlet Characters}
+	\subsection{Dirichlet Characters}
 	 
 	 \begin{deff}
 	 	Given a group \textit{X} and a field $ \F $ a Dirichlet character is a group homomorphism $ \chi :X \to \F ^*  $
@@ -245,8 +245,20 @@ Since $ x^n - 1 $ is separable $ \Q (\xi)  / \Q $ is a Galois extension and it's
 	such that $ \xi_a(\beta) = \prod_{I \in \PS}  x_a(\beta , I)$. 
 	
 	\begin{lem}
-		Consider two functions $ \beta_1 $ and $ \beta_2 $ from $ \PS $ to $ \Z[G_0] $ such that for all $ I \in \PS $ their images of $ \beta_i (I)$ coincedes in $ \Z[\Gal( \Q(\zeta_{n/n_I}) / \Q   ))] $ for $ i= 1,2 $. Then for all $ I \in \PS $ $ x_a(\beta_i, I) $ coincides for $ i=1,2 $
+		Consider two functions $ \beta_1 $ and $ \beta_2 $ from $ \PS $ to $ \Z[G_0] $ such that for all $ I \in \PS $ their images of $ \beta_i (I)$ coincides in $ \Z[\Gal( \Q(\zeta_{n/n_I})^+ / \Q   ))] $ \footnote{Observe that $ \Q(\zeta_{n/n_I})^+ $ is a subfield of $ K $ since $ \zeta_{n/n_I} =  \zeta_n^{n_I}$, and since we see the elements of the group rings as homomorphism of fields make sense to compare two elements for their image on $\Q(\zeta_{n/n_I})^+ $ %TODO make sense??
+		} for $ i= 1,2 $. Then for all $ I \in \PS $ $ x_a(\beta_i, I) $ coincides for $ i=1,2 $
 	\end{lem}
+
+	\begin{proof}
+		Obviously for all $ I \in \PS $ $ 	x_a(\beta_i , I) $ depends only on the image of $ \beta_i $ over $ z_I = 1- \zeta_n ^{n_I} \in \Q(\zeta_{n/n_I}) $ \footnote{ $ \zeta_{n/n_I} =  \zeta_n^{n_I} $}, so it's enougth to show the equivalence over $  \Q(\zeta_{n/n_I}). $ Since the two functions are equal on $ \Q(\zeta_{n/n_I})^+ $ their difference $ \beta_1(I) - \beta_2 (I)  $ is the identity on the reals, so it is a multimple of $ 1 - j $, where $ j $ is the complex conjugation %TODO Non ho ben capito perchè 
+		We can observe now, using morphism properties, that exist a unit $ r $ such that:
+		\begin{equation*}
+			\Q (\zeta_{n/n_I})^+ \ni q = \frac{x_a(\beta_1(I) , I)}{x_a(\beta_2(I) , I)} = {\left( \zeta ^{\frac{(1-a)}{2} n_I } \frac{\sigma_a (	z_I )}{z_I } \right)  }^{\beta_1(I) - \beta_2 (I)} = r ^{1-j}
+		\end{equation*}	
+		So we have that $ \overline{q}=q^j = r^{(1-j)j} = r^{j  - 1 }= q^{-1}$ (since $j^2 = 1 $), that for real numebers happen only for $ \pm 1 $
+	\end{proof}
+
+
 
 
 	\newpage
