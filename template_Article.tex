@@ -1,0 +1,253 @@
+\documentclass[]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{amssymb,amsmath,amsthm,mathtools} 
+\usepackage{tikz-cd,wrapfig}
+\usepackage{tcolorbox}
+
+
+\theoremstyle{plain}
+\newtheorem{teo}{Theorem}[section]
+\newtheorem{lem}[teo]{Lemma}
+\newtheorem{prop}[teo]{Proposition}
+\newtheorem{cor}[teo]{Corollary}
+
+\theoremstyle{remark}
+\newtheorem*{rem}{Remark}
+
+\theoremstyle{definition}
+\newtheorem{deff}[teo]{Definiton}
+\newtheorem{idea}{Idea}
+\newtheorem*{nota}{Notation}
+
+
+\usepackage[style=numeric, maxnames=4,backend=bibtex]{biblatex}
+% other styles: numeric authortitle
+\addbibresource{biblio.bib}
+\usepackage{hyperref}
+
+% Commands 
+\newcommand{\PS}{\mathcal{P}_S}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\F}{\mathbb{F}}
+\newcommand{\K}{\mathbb{K}}
+\newcommand{\ZZ}[1]{\mathbb{Z}_{#1}}
+\newcommand{\Q} {\mathbb{Q}}
+\newcommand{\C} {\mathbb{C}}
+\DeclareMathOperator*{\eqb }{=}
+
+
+
+%opening
+\title{}
+\author{Giacomo Borin}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+	Stuff Stuff Stuff
+\end{abstract}
+
+\section{Introduction to the working set}
+\subsection*{}
+
+Consider the n-th cyclotomic field $ \Q (\zeta_n) $ with $\zeta_n$ a n-th primitive root of unity, with $ n \not \equiv 2 \mod 4 $, and define $ K $ as the maximal real subfield of $ \Q (\zeta) $, also another notation that we will use for the maximal real subfield is $ \Q(\zeta_n)^+$. From now we will refer to $ \zeta_n  $ without the index if not necessary.
+
+\begin{prop}
+	The maximal real subfield is $ K = \Q (\zeta + \zeta ^{-1}) $
+\end{prop}
+
+
+\begin{wrapfigure}{l}{0.5\textwidth}
+	\label{fig:ramification}
+	\begin{tikzcd}[column sep=small]
+	& {\Q (\zeta)}                            &                               \\
+	{K} \arrow[ru, "2"] \arrow[r] & {H} \arrow[u, "2" description] & {K'} \arrow[lu, "2"'] \arrow[l] \\
+	& {\Q} \arrow[lu] \arrow[ru]      &                              
+	\end{tikzcd}
+\end{wrapfigure}
+
+
+\begin{proof}
+	First of all we can easly see that $ K $ is real, infact since for the root of unity $ \overline{\zeta} = \zeta ^{-1} $ (complex conjugation) and so:
+	\begin{equation*}
+	\overline{ \zeta + \zeta^{-1} }= \overline{ \zeta} + \overline{\zeta^{-1} } = \zeta ^{-1}  + \zeta
+	\end{equation*}
+	So $ \zeta + \zeta ^{-1} $ is real and $ K $ too.\\
+	Since $ \Q (\zeta) $ is complex (so strictly greater) the index $ e := [\Q (\zeta)  : K] \geq 2 $. \\
+	Consider now the polynomial of degree 2 in $ K[x] $ : $ f = (x-\zeta)(x- \zeta^{-1}) = x^2 - (\zeta + \zeta ^{-1})x +1  $, since $\zeta$ is a root obviosly $ e \leq 2 $, so the subfield $ K $ has maximal degre since this is the minimal degree for a proper subfield. \\
+	If there was another $ K' = \Q ( \chi ) $ with such property we can consider $ H = \Q (\zeta, \chi) $ that is also real with $ \Q (\zeta) \supsetneq H \supset K $, so $ H=K $ and akin $ H = K' $ so $ K = K' $ and $ K $ is unique.
+\end{proof}
+
+Now we will consider the group of units $ E_K$ that is the group formed by the invertible elements of its ring of integers $ O_K^\ast $. Is it possible to characterize the ring of integers for K \cite[Proposition~2.16]{CF} similiarly to what happens for $ O_{\Q (\zeta)} $ (infact the proof follows without difficulty from this)
+
+
+\begin{prop}
+	$ O_K = Z[\zeta + \zeta ^{-1}] $
+\end{prop}
+
+
+Since $ x^n - 1 $ is separable $ \Q (\xi)  / \Q $ is a Galois extension and it's easy to see that its Galois group $ G_0  $ is isomorphic to $ ( \Z_{n} )^\ast $. Also we can se that:
+
+\begin{prop}
+	$ K / \Q $ is a Galois extension and its Galois group $ G $ is isomorphic to $ \Z_{n}^*/ \{\pm 1\} $
+\end{prop}
+
+\begin{proof}
+	Consider the map $ \sigma : G_0 \to G $ that maps $ \alpha_i $ to $ {\alpha_i }_{|_{G}} $ where $ \alpha_i $ is the automorphism that maps $ \zeta $ to $ \zeta ^i $. Obviously $\sigma$ is a morphism of groups.
+	Also it is easy to describe its kernerl:
+	\begin{align*}
+		\ker (\sigma) =	& \{ \alpha_i \in G_0 \,|\, \forall x \in K \text{ follows } x = \alpha_i(x)  \, \}\\
+						 \eqb ^{(1)}	& \{ \alpha_i \in G_0 \,|\,  \zeta + \zeta^{-1} = \alpha_i (\zeta + \zeta^{-1}) = \zeta^i  + \zeta ^{-i}\} \\
+						 \eqb^{(2)}& \{ \alpha_1 , \alpha_{-1}\}
+	\end{align*}
+	Where $ (1) $ follows from the fact that $ K = \Q (\zeta + \zeta ^{-1}) $ and $ (2) $ from linear algebra. %TODO
+	So from the first theoremo of isomorphism $ \sigma(G_0) \simeq  \Z_{n}^*/ \{\pm 1\}  $ and then 
+	\begin{equation*}
+		\phi(n)/2 = | \Z_{n}^*/ \{\pm 1\}| \leq |G| \leq [K : \Q] = [\Q( \zeta) : \Q ]/ 2 = \phi(n)/2
+	\end{equation*}
+	So $  \sigma(G_0) = G $ and $ |G| = [K : \Q] $ and the thesis follows. 
+\end{proof}
+
+\begin{rem}
+	We excluded the case of $ n \equiv 2 \mod 4 $ because it is a repetition, infact in this situation $ G_0 \simeq \Z_{2 + 4k}^* $ and since $ 2+ 4k = 2 (1+2k) $ with the second term odd for the Chinese reminder theorem $ \Z_{2 + 4k}^* \simeq \Z_2^* \times \Z_{1 + 2k}^* \simeq \{1\} \times \Z_{1 + 2k}^* \simeq \Z_{1 + 2k}^* $ that is isomorphic to the Galois group for the $ n/2 $-th root of unity.  
+\end{rem}
+
+
+
+\subsection{The circluar units and the class number}
+
+	\begin{deff}
+		If $ \K $ is a number field (as $ \Q (\zeta) $ and $ K $)  we can define the \textbf{ideal class group} as the quotient $ \mathcal{F}_\K / \mathcal{P}_\K $ where:
+	\begin{itemize}
+		\item[$ \mathcal{F}_\K $] is the group of the nonzero fractional ideals of the ring of integers  $ O_\K $, that are the $ O_\K  $-submodules $ J $ of $ K $ such that exists $ r \in O_\K  $ such that $ r I \subset O_\K  $
+		\item[$ \mathcal{P}_\K $] is the set of nonzero principal fractionary ideals, so the ideals generated by only one element
+	\end{itemize}
+	\end{deff}
+
+
+	We will indicate the number of classes in $ \mathcal{F}_\K / \mathcal{P}_\K $ as $ h_K $. This number will measure the \textit{"distance"} of $ O_\K $ to became a unique factorization domain. In \cite[Page~141]{RIN} it is proven that actually the ideal class group is finite so $ h_K $ is well defined. 
+
+	
+	\begin{deff}
+		For a field $ \K \subseteq \Q (\zeta_n) $ (with n minimal) we define the group of cyclotomic (or circular) units as the intesection $ C_\K $ of the group generated by:
+		\begin{equation*}
+			\{ -1 ,  \zeta , \, 1 - \zeta ^a \text{ for } a = 1, ... , n-1 \}
+		\end{equation*}
+		and the unit of $ \K $ ( $ E_{\K} $ ). An elements of $ C_\K $ is said to be a \textbf{circular unit} of $ \K $. 
+	\end{deff}
+
+	In general the circular units aren't easy to describe, infact in general $ 1 - \zeta ^a $ is not a unit, but for the particular case in which $ \K $ is the maximal real subfield ( $ K $ ) it has some intresting properties and it's related to the class number.
+	
+	
+	If $ n=p^m $ where \textit{p} is a prime it is possible to describe (\cite[Lemma~8.1, Theorem~8.2]{CF}) explicitly the group of circluar units as the group generated by $ -1 $ and:
+	\[
+		\xi_a = \zeta^{ \frac{1-a}{2}} \frac{1 - \zeta ^a}{1 - \zeta } \text{ for } 1 < a < \frac{p^m}{2}, (a,p)=1
+	\]
+	Also we have the equality for the index:
+	\begin{equation*}
+		[ E_K : C_K ] = h_K
+	\end{equation*}
+	Moreover Sinnot in \cite{SIN} has imporved this showing that $ E_K / C_K $ is finite and the index is:
+	 \begin{equation*}
+		 [ E_K : C_K ] = 2^a h_K
+	 \end{equation*}
+	 where if $ g $ is the number of distinct primes dividing $ n $ we have that $ a=0 $ if $ g=1 $ (as expected) and $ a = 2^{g-2} + 1 - g $ otherwhise. 
+	 Even if the index is simple does not exist a simple costruction of $ C_K $, so we have the problem:
+	 
+	 \begin{tcolorbox}
+	 	Explicitly construct a group $ C' $ with finite index $ [ E_K : C' ] $ that is \textit{optimal}
+	 \end{tcolorbox}
+ 
+ 	Where we will understand later what we mean by \textit{optimal}, but essentially we want the index to be small and with a simple factorization for $ [ E_K : C' ] / h_K $. In particular the costruction of Greither will generalize the work of Ramachandra and Levesque, so we will omit them from now and see them later. 
+	 
+	 \subsection{Dirichlet Characters}
+	 
+	 \begin{deff}
+	 	Given a group \textit{X} and a field $ \F $ a Dirichlet character is a group homomorphism $ \chi :X \to \F ^*  $
+	 \end{deff}
+	 
+	 In our case the field is $ \C $ and \textit{X} is the Galois group $ G_0 \simeq \Z_{n}^*$, so we can see the dirichlet characters as homomorphisms: $ \xi :  \Z_{n}^* \to \C ^* $. Since if $ n | m $ there is a natural homomorphism $ \Z_m^* \to \Z_n^* $ we can induct a new character using the composition from $ \Z_m ^* $. This characters are completely equivalent, so we can choose \textit{n} to be minimal and call it the \textbf{conductor} of $\chi$, denoted by $ f_\chi $. 
+	 
+	 In some cases the character are also extended as ring homomorphisms from $ \Z_n \to \C $, assuming $ \chi $ to be zero on the non invertible elements. In this way the conductor can be seen as a sort of period, infact for all $ n $ we have $ \chi(n)=\chi(n+f_\chi) $. 
+	 
+	 Also we need another object: the group ring $ \Z[G] $, that is a free $ \Z $-module with $ G $ as basis on which we define the addition (using the module addition)  and the moltiplication inducting it from the operation of \textit{G}.
+	 This costruction is also possible for a general ring and a multiplicative group:
+	 
+	 \begin{deff}
+	 	The group ring of \textit{X} over \textit{R}, denoted by $ R[X] $ or $ RX $, is the set of all mapping $ f : X \to R $ with finite support (i.e. with finite $ x \in X $ such that $ f(x) \neq 0 $). The addition and the scalar multiplication are defined as usual. 
+	 \end{deff}
+ 
+ 	We can also have a group structure over $ R[X] $ using the vector addition and the multiplication: were $ fg $ is defined as: $ fg(x) = \sum_{ y \in X } f(y)g(y^{-1}x) = \sum_{uv = x} f(u)g(v)$.\\
+ 	This is only a formal representation of the linear combinations, useful for the definition, but we will obviosly use a simpler notation $ f = \sum_{x \in X} f(x) x $.
+ 	
+ 	Now we would like to generalize again the characters as ring homorphism from $ \Z[G] $ (or another Galois group) to $ \C $. This is very simple since \textit{G} is a basis for the free $ \Z $-module its definition over the group is enougth. 
+	
+	\begin{nota}
+		Given the elements $ z \in \Q (\zeta) $ and $ f \in \Z[G_0]  $ it's well defined the power notation $ x^f $, infact for $ g\in G_0 $ we have $ z^g = g(z) $ , $ z ^{g_1 + g_2}= z^{g_1} z^{g_2} $ and $ z^{-g} = (z^g)^{-1} $. 
+	\end{nota}
+	
+	\subsection{Bho}
+	\begin{deff}
+		Let $ G $ be a group and $ R $ a commutative ring, let's consider the \textit{augmentation map} $\epsilon : R[G] \to R$ that sends every $ g \in G $ to $ 1_R $ and every $ r \in R $ to itself and its an homomorphism of $ R $-modules. We also say that the kernel of $\epsilon$ is the \textit{augmentation ideal}
+	\end{deff}
+
+\section{The Greither Construction}
+
+	\subsection*{}
+	Let's consider an integer n (with $n \not \equiv 2 \mod 4$), with factorization $ n= p_1 ^{e_1} \cdots p_s ^{e_s} $ and let $ S = \{1, ... , n \}$. We will use the power set $ \PS = \{ I \,|\, I \subsetneq S\}$ and the notation $ n_I = \prod_{i \in I} p_i ^{e_i} $ 
+	
+	The Greither's idea is to define a subgroup starting from a function $ \beta : \PS \to \Z[G_0] $, then varing $\beta$ we have different subgroups but with similiar properties. 
+	
+	\begin{deff}
+		A function $\beta$ is called multiplicative if $ \beta (\emptyset) = 1 $ and for all sets $ I,J $ with empty intersection we have $ \beta (I\cup J) = \beta(I) \beta(J)$.
+	\end{deff}
+
+	A multiplicative function is univocally determinated from its value over the singletons: $ \{\{i\} \,|,\, i \in S\} $ (we will use this later for a particular construction)
+
+	Consider a general function $\beta$ and $ I \in \PS $, we define $ z_I  := 1 - \zeta ^{n_I}$ and 
+	$$ z(\beta ):= \prod_{i\in I} z_I ^{\beta(I)} $$ 
+	Using that $ 1 - \zeta ^{-m} = -\zeta^{-m} ( 1 - \zeta ^m ) $ , $ \overline{ \zeta} = \zeta ^{-1}  $ and the properties of complex conjugation we have that 
+	\begin{multline}\label{eq:zbetacon}
+		\overline{z(\beta )} = \prod_{I \in \PS} ({1 - \zeta ^{-n_I}})^{\beta(I)}  = \prod_{I \in \PS} - \zeta ^{-n_I \beta(I)} (1 - \zeta ^{n_I})^{\beta (I)} =\\
+		=(-1)^{|\PS|}\prod_{I \in \PS} \zeta ^{-n_I \beta(I)} z_I^{\beta (I)} \eqb^\ast - \zeta^{-t} z(\beta) \text{ with } t = \sum n_I \beta(I)
+	\end{multline}
+	In $\ast$ we use that $ |\PS| = 2^s -1 $ is odd. 
+	
+	We define now for $ a \in (1 , n/2)$ coprime with $ n $ the real unit:
+
+	\begin{equation}\label{eq:xi}
+		\xi_a (\beta) := \zeta ^{d_a (\beta)} \frac{\sigma_a (z(\beta))}{z(\beta)} \text{ with } d_a(\beta)= (1-a)\frac{t}{2}
+	\end{equation}
+	Where $\sigma_a$ is the automorphism $ \zeta \mapsto \zeta ^a $. This is real because using the equation \ref{eq:zbetacon} and $ \overline{\sigma_a(z)}= \sigma_a(\overline{z}) $ we have:
+	\begin{equation}
+		\overline{\xi_a(\beta)} = \zeta ^{-d_a(\beta)} \frac{\zeta^{-at} \sigma_a (z(\beta))}{\zeta^{-t} z(\beta)} = \xi_a(\beta)
+	\end{equation}
+ 	And its a unit because its the product of circular units. %TODO
+ 	We now use this units to define the goal group of the article:
+ 	\begin{tcolorbox}
+ 		$C_\beta $ is the group generated by \textit{-1} and $ \xi_a (\beta) $ for $ 1< a< n/2 $ and $ (a,n)=1 $
+ 	\end{tcolorbox}
+ 	For its index we will use the notation: $ [E_K : C_\beta] = h_K i_\beta $. 
+
+	\subsection{A little remark}
+	
+	Sometimes it is easier to work with functions $\beta$ to $ \Z [G] $ instead of $ \Z [G_0] $ (as we will do later), but this is not a problem because we can show that with somo hypotesis $ C_\beta $ remain the same. 
+	
+	Initally we can osserve that we can factor the real unit $\xi_a(\beta)$ with simpler real units
+	\begin{equation*}
+		x_a(\beta , I) = \zeta ^{\frac{(1-a)}{2} n_I \beta (I)} \frac{\sigma_a (	z_I ^{\beta(I)})}{z_I ^{\beta(I)}} 
+	\end{equation*}
+	such that $ \xi_a(\beta) = \prod_{I \in \PS}  x_a(\beta , I)$. 
+
+
+
+
+	\newpage
+	\printbibliography
+
+
+\end{document}
