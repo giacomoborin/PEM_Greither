@@ -6,7 +6,14 @@
 \usepackage{tikz-cd,wrapfig}
 \usepackage{tcolorbox}
 
+%Color
+\usepackage{xcolor}
+\pagecolor[rgb]{0,0,0} %black
+\color[rgb]{1,1,1} %grey
 
+
+
+% Theorem definitons 
 \theoremstyle{plain}
 \newtheorem{teo}{Theorem}[section]
 \newtheorem{lem}[teo]{Lemma}
@@ -70,7 +77,7 @@
 		\label{fig:ramification}
 		\begin{tikzcd}[column sep=small]
 		& {\Q (\zeta)}                            &                               \\
-		{K} \arrow[ru, "2"] \arrow[r] & {H} \arrow[u, "2" description] & {K'} \arrow[lu, "2"'] \arrow[l] \\
+		{K} \arrow[ru, "2"] \arrow[r] & {H} \arrow[u, "2" ] & {K'} \arrow[lu, "2"'] \arrow[l] \\
 		& {\Q} \arrow[lu] \arrow[ru]      &                              
 		\end{tikzcd}
 	\end{wrapfigure}
@@ -398,7 +405,7 @@
 	\[ \beta(i) = \begin{cases} 1 \text{ if exists } \chi \neq 1 \text{ even, with } \chi(p_i)=1 \\ 0 \text{ otherwhise } \end{cases}\]
 	And we obtain the Levesque group $ C_\mathcal{D} $ defined in \cite[Page~331]{LEV}
 	
-	\subsection{A new system of unit}
+	\subsection{A new system of units}
 	
 	Following the previous steps we know construct a new multiplicative map $\beta$ with a more optimal index. 
 	\begin{nota}
@@ -411,7 +418,8 @@
 	\[ F_i : G_i \to G_i \text{ with }  \alpha \mapsto \alpha ^ {p_i}\]
 	and its trace element $ N_{F_i} \in \Z [G_i]$. Now we choose for every $ i=1, ... , s $ a lift of $ N_{F_i} $ into $ \Z[G_0] $\footnote{Remind that $ \zeta_{n/p_i^{e_i}} = \zeta_n^{p_i^{e_i}}$} and associate it to $\beta(i)$; then $\beta$ is defined multiplicatively. 
 	
-	Of course $\beta$ is not unique, but for all $ I \in \PS $ they coincide in $ \Z[\Gal( \Q(\zeta_{n/n_I})^+ / \Q   )]  $, so we can use Lemma \ref{lem:gooddef}
+	Of course $\beta$ is not unique, but for all $ I \in \PS $ they coincide in $ \Z[\Gal( \Q(\zeta_{n/n_I})^+ / \Q   )]  $, so we can use Lemma \ref{lem:gooddef} and $ C_\beta $ is well defined. 
+	
 	
 	\newpage
 	\printbibliography
