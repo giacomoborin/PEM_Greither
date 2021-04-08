@@ -17,6 +17,60 @@
 \endgroup
 
 \datalist[entry]{nty/global//global/global}
+  \entry{LEV}{misc}{}
+    \name{author}{1}{}{%
+      {{hash=LC}{%
+         family={{Levesque}},
+         familyi={L\bibinitperiod},
+         given={Claude},
+         giveni={C\bibinitperiod},
+      }}%
+    }
+    \list{language}{1}{%
+      {English}%
+    }
+    \strng{namehash}{LC1}
+    \strng{fullhash}{LC1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{L}
+    \field{sortinithash}{L}
+    \field{howpublished}{{Number theory, Proc. 1st Conf. Can. Number Theory
+  Assoc., Banff/Alberta (Can.) 1988, 325-338 (1990).}}
+    \field{title}{{On improving Ramachandra's unit index}}
+    \field{year}{1990}
+  \endentry
+
+  \entry{RAM}{article}{}
+    \name{author}{1}{}{%
+      {{hash=RK}{%
+         family={{Ramachandra}},
+         familyi={R\bibinitperiod},
+         given={K.},
+         giveni={K\bibinitperiod},
+      }}%
+    }
+    \list{language}{1}{%
+      {English}%
+    }
+    \list{publisher}{1}{%
+      {Polish Academy of Sciences (Polska Akademia Nauk - PAN), Institute of
+  Mathematics (Instytut Matematyczny), Warsaw}%
+    }
+    \strng{namehash}{RK1}
+    \strng{fullhash}{RK1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{R}
+    \field{sortinithash}{R}
+    \field{issn}{0065-1036; 1730-6264/e}
+    \field{pages}{165\bibrangedash 173}
+    \field{title}{{On the units of cyclotomic fields}}
+    \field{volume}{12}
+    \field{journaltitle}{{Acta Arith.}}
+    \field{year}{1966}
+  \endentry
+
   \entry{RIN}{book}{}
     \name{author}{1}{}{%
       {{hash=RP}{%
