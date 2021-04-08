@@ -12,9 +12,11 @@
 \newtheorem{lem}[teo]{Lemma}
 \newtheorem{prop}[teo]{Proposition}
 \newtheorem{cor}[teo]{Corollary}
+\newtheorem*{form}{Formula}
 
 \theoremstyle{remark}
 \newtheorem*{rem}{Remark}
+\newtheorem*{rems}{Remarks}
 
 \theoremstyle{definition}
 \newtheorem{deff}[teo]{Definiton}
@@ -33,8 +35,9 @@
 \newcommand{\F}{\mathbb{F}}
 \newcommand{\K}{\mathbb{K}}
 \newcommand{\ZZ}[1]{\mathbb{Z}_{#1}}
-\newcommand{\Q} {\mathbb{Q}}
-\newcommand{\C} {\mathbb{C}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\R}{\mathbb{R}}
 
 \DeclareMathOperator*{\eqb }{=}
 \DeclareMathOperator{\Gal}{Gal}
@@ -53,69 +56,69 @@
 \end{abstract}
 
 \section{Introduction to the working set}
-\subsection*{}
-
-Consider the n-th cyclotomic field $ \Q (\zeta_n) $ with $\zeta_n$ a n-th primitive root of unity, with $ n \not \equiv 2 \mod 4 $, and define $ K $ as the maximal real subfield of $ \Q (\zeta) $, also another notation that we will use for the maximal real subfield is $ \Q(\zeta_n)^+$. From now we will refer to $ \zeta_n  $ without the index if not necessary.
-
-\begin{prop}
-	The maximal real subfield is $ K = \Q (\zeta + \zeta ^{-1}) $
-\end{prop}
-
-
-\begin{wrapfigure}{l}{0.5\textwidth}
-	\label{fig:ramification}
-	\begin{tikzcd}[column sep=small]
-	& {\Q (\zeta)}                            &                               \\
-	{K} \arrow[ru, "2"] \arrow[r] & {H} \arrow[u, "2" description] & {K'} \arrow[lu, "2"'] \arrow[l] \\
-	& {\Q} \arrow[lu] \arrow[ru]      &                              
-	\end{tikzcd}
-\end{wrapfigure}
-
-
-\begin{proof}
-	First of all we can easly see that $ K $ is real, infact since for the root of unity $ \overline{\zeta} = \zeta ^{-1} $ (complex conjugation) and so:
-	\begin{equation*}
-	\overline{ \zeta + \zeta^{-1} }= \overline{ \zeta} + \overline{\zeta^{-1} } = \zeta ^{-1}  + \zeta
-	\end{equation*}
-	So $ \zeta + \zeta ^{-1} $ is real and $ K $ too.\\
-	Since $ \Q (\zeta) $ is complex (so strictly greater) the index $ e := [\Q (\zeta)  : K] \geq 2 $. \\
-	Consider now the polynomial of degree 2 in $ K[x] $ : $ f = (x-\zeta)(x- \zeta^{-1}) = x^2 - (\zeta + \zeta ^{-1})x +1  $, since $\zeta$ is a root obviosly $ e \leq 2 $, so the subfield $ K $ has maximal degre since this is the minimal degree for a proper subfield. \\
-	If there was another $ K' = \Q ( \chi ) $ with such property we can consider $ H = \Q (\zeta, \chi) $ that is also real with $ \Q (\zeta) \supsetneq H \supset K $, so $ H=K $ and akin $ H = K' $ so $ K = K' $ and $ K $ is unique.
-\end{proof}
-
-Now we will consider the group of units $ E_K$ that is the group formed by the invertible elements of its ring of integers $ O_K^\ast $. Is it possible to characterize the ring of integers for K \cite[Proposition~2.16]{CF} similiarly to what happens for $ O_{\Q (\zeta)} $ (infact the proof follows without difficulty from this)
-
-
-\begin{prop}
-	$ O_K = Z[\zeta + \zeta ^{-1}] $
-\end{prop}
-
-
-Since $ x^n - 1 $ is separable $ \Q (\xi)  / \Q $ is a Galois extension and it's easy to see that its Galois group $ G_0  $ is isomorphic to $ ( \Z_{n} )^\ast $. Also we can se that:
-
-\begin{prop}
-	$ K / \Q $ is a Galois extension and its Galois group $ G $ is isomorphic to $ \Z_{n}^*/ \{\pm 1\} $
-\end{prop}
-
-\begin{proof}
-	Consider the map $ \sigma : G_0 \to G $ that maps $ \alpha_i $ to $ {\alpha_i }_{|_{G}} $ where $ \alpha_i $ is the automorphism that maps $ \zeta $ to $ \zeta ^i $. Obviously $\sigma$ is a morphism of groups.
-	Also it is easy to describe its kernerl:
-	\begin{align*}
-		\ker (\sigma) =	& \{ \alpha_i \in G_0 \,|\, \forall x \in K \text{ follows } x = \alpha_i(x)  \, \}\\
-						 \eqb ^{(1)}	& \{ \alpha_i \in G_0 \,|\,  \zeta + \zeta^{-1} = \alpha_i (\zeta + \zeta^{-1}) = \zeta^i  + \zeta ^{-i}\} \\
-						 \eqb^{(2)}& \{ \alpha_1 , \alpha_{-1}\}
-	\end{align*}
-	Where $ (1) $ follows from the fact that $ K = \Q (\zeta + \zeta ^{-1}) $ and $ (2) $ from linear algebra. %TODO
-	So from the first theoremo of isomorphism $ \sigma(G_0) \simeq  \Z_{n}^*/ \{\pm 1\}  $ and then 
-	\begin{equation*}
-		\phi(n)/2 = | \Z_{n}^*/ \{\pm 1\}| \leq |G| \leq [K : \Q] = [\Q( \zeta) : \Q ]/ 2 = \phi(n)/2
-	\end{equation*}
-	So $  \sigma(G_0) = G $ and $ |G| = [K : \Q] $ and the thesis follows. 
-\end{proof}
-
-\begin{rem}
-	We excluded the case of $ n \equiv 2 \mod 4 $ because it is a repetition, infact in this situation $ G_0 \simeq \Z_{2 + 4k}^* $ and since $ 2+ 4k = 2 (1+2k) $ with the second term odd for the Chinese reminder theorem $ \Z_{2 + 4k}^* \simeq \Z_2^* \times \Z_{1 + 2k}^* \simeq \{1\} \times \Z_{1 + 2k}^* \simeq \Z_{1 + 2k}^* $ that is isomorphic to the Galois group for the $ n/2 $-th root of unity.  
-\end{rem}
+	\subsection*{}
+	
+	Consider the n-th cyclotomic field $ \Q (\zeta_n) $ with $\zeta_n$ a n-th primitive root of unity, with $ n \not \equiv 2 \mod 4 $, and define $ K $ as the maximal real subfield of $ \Q (\zeta) $, also another notation that we will use for the maximal real subfield is $ \Q(\zeta_n)^+$. From now we will refer to $ \zeta_n  $ without the index if not necessary.
+	
+	\begin{prop}
+		The maximal real subfield is $ K = \Q (\zeta + \zeta ^{-1}) $
+	\end{prop}
+	
+	
+	\begin{wrapfigure}{l}{0.5\textwidth}
+		\label{fig:ramification}
+		\begin{tikzcd}[column sep=small]
+		& {\Q (\zeta)}                            &                               \\
+		{K} \arrow[ru, "2"] \arrow[r] & {H} \arrow[u, "2" description] & {K'} \arrow[lu, "2"'] \arrow[l] \\
+		& {\Q} \arrow[lu] \arrow[ru]      &                              
+		\end{tikzcd}
+	\end{wrapfigure}
+	
+	
+	\begin{proof}
+		First of all we can easly see that $ K $ is real, infact since for the root of unity $ \overline{\zeta} = \zeta ^{-1} $ (complex conjugation) and so:
+		\begin{equation*}
+		\overline{ \zeta + \zeta^{-1} }= \overline{ \zeta} + \overline{\zeta^{-1} } = \zeta ^{-1}  + \zeta
+		\end{equation*}
+		So $ \zeta + \zeta ^{-1} $ is real and $ K $ too.\\
+		Since $ \Q (\zeta) $ is complex (so strictly greater) the index $ e := [\Q (\zeta)  : K] \geq 2 $. \\
+		Consider now the polynomial of degree 2 in $ K[x] $ : $ f = (x-\zeta)(x- \zeta^{-1}) = x^2 - (\zeta + \zeta ^{-1})x +1  $, since $\zeta$ is a root obviosly $ e \leq 2 $, so the subfield $ K $ has maximal degre since this is the minimal degree for a proper subfield. \\
+		If there was another $ K' = \Q ( \chi ) $ with such property we can consider $ H = \Q (\zeta, \chi) $ that is also real with $ \Q (\zeta) \supsetneq H \supset K $, so $ H=K $ and akin $ H = K' $ so $ K = K' $ and $ K $ is unique.
+	\end{proof}
+	
+	Now we will consider the group of units $ E_K$ that is the group formed by the invertible elements of its ring of integers $ O_K^\ast $. Is it possible to characterize the ring of integers for K \cite[Proposition~2.16]{CF} similiarly to what happens for $ O_{\Q (\zeta)} $ (infact the proof follows without difficulty from this)
+	
+	
+	\begin{prop}
+		$ O_K = Z[\zeta + \zeta ^{-1}] $
+	\end{prop}
+	
+	
+	Since $ x^n - 1 $ is separable $ \Q (\xi)  / \Q $ is a Galois extension and it's easy to see that its Galois group $ G_0  $ is isomorphic to $ ( \Z_{n} )^\ast $. Also we can se that:
+	
+	\begin{prop}
+		$ K / \Q $ is a Galois extension and its Galois group $ G $ is isomorphic to $ \Z_{n}^*/ \{\pm 1\} $
+	\end{prop}
+	
+	\begin{proof}
+		Consider the map $ \sigma : G_0 \to G $ that maps $ \alpha_i $ to $ {\alpha_i }_{|_{G}} $ where $ \alpha_i $ is the automorphism that maps $ \zeta $ to $ \zeta ^i $. Obviously $\sigma$ is a morphism of groups.
+		Also it is easy to describe its kernerl:
+		\begin{align*}
+			\ker (\sigma) =	& \{ \alpha_i \in G_0 \,|\, \forall x \in K \text{ follows } x = \alpha_i(x)  \, \}\\
+							 \eqb ^{(1)}	& \{ \alpha_i \in G_0 \,|\,  \zeta + \zeta^{-1} = \alpha_i (\zeta + \zeta^{-1}) = \zeta^i  + \zeta ^{-i}\} \\
+							 \eqb^{(2)}& \{ \alpha_1 , \alpha_{-1}\}
+		\end{align*}
+		Where $ (1) $ follows from the fact that $ K = \Q (\zeta + \zeta ^{-1}) $ and $ (2) $ from linear algebra. %TODO
+		So from the first theoremo of isomorphism $ \sigma(G_0) \simeq  \Z_{n}^*/ \{\pm 1\}  $ and then 
+		\begin{equation*}
+			\phi(n)/2 = | \Z_{n}^*/ \{\pm 1\}| \leq |G| \leq [K : \Q] = [\Q( \zeta) : \Q ]/ 2 = \phi(n)/2
+		\end{equation*}
+		So $  \sigma(G_0) = G $ and $ |G| = [K : \Q] $ and the thesis follows. 
+	\end{proof}
+	
+	\begin{rem}
+		We excluded the case of $ n \equiv 2 \mod 4 $ because it is a repetition, infact in this situation $ G_0 \simeq \Z_{2 + 4k}^* $ and since $ 2+ 4k = 2 (1+2k) $ with the second term odd for the Chinese reminder theorem $ \Z_{2 + 4k}^* \simeq \Z_2^* \times \Z_{1 + 2k}^* \simeq \{1\} \times \Z_{1 + 2k}^* \simeq \Z_{1 + 2k}^* $ that is isomorphic to the Galois group for the $ n/2 $-th root of unity.  
+	\end{rem}
 
 
 
@@ -242,7 +245,10 @@ Since $ x^n - 1 $ is separable $ \Q (\xi)  / \Q $ is a Galois extension and it's
 	\begin{equation*}
 		x_a(\beta , I) = \zeta ^{\frac{(1-a)}{2} n_I \beta (I)} \frac{\sigma_a (	z_I ^{\beta(I)})}{z_I ^{\beta(I)}} 
 	\end{equation*}
-	such that $ \xi_a(\beta) = \prod_{I \in \PS}  x_a(\beta , I)$. 
+	such that we have the equality:
+	\begin{equation}\label{eq:fact_xi}
+		 \xi_a(\beta) = \prod_{I \in \PS}  x_a(\beta , I)
+	\end{equation} 
 	
 	\begin{lem}
 		Consider two functions $ \beta_1 $ and $ \beta_2 $ from $ \PS $ to $ \Z[G_0] $ such that for all $ I \in \PS $ their images of $ \beta_i (I)$ coincides in $ \Z[\Gal( \Q(\zeta_{n/n_I})^+ / \Q   ))] $ \footnote{Observe that $ \Q(\zeta_{n/n_I})^+ $ is a subfield of $ K $ since $ \zeta_{n/n_I} =  \zeta_n^{n_I}$, and since we see the elements of the group rings as homomorphism of fields make sense to compare two elements for their image on $\Q(\zeta_{n/n_I})^+ $ %TODO make sense??
@@ -253,14 +259,74 @@ Since $ x^n - 1 $ is separable $ \Q (\xi)  / \Q $ is a Galois extension and it's
 		Obviously for all $ I \in \PS $ $ 	x_a(\beta_i , I) $ depends only on the image of $ \beta_i $ over $ z_I = 1- \zeta_n ^{n_I} \in \Q(\zeta_{n/n_I}) $ \footnote{ $ \zeta_{n/n_I} =  \zeta_n^{n_I} $}, so it's enougth to show the equivalence over $  \Q(\zeta_{n/n_I}). $ Since the two functions are equal on $ \Q(\zeta_{n/n_I})^+ $ their difference $ \beta_1(I) - \beta_2 (I)  $ is the identity on the reals, so it is a multimple of $ 1 - j $, where $ j $ is the complex conjugation %TODO Non ho ben capito perchè 
 		We can observe now, using morphism properties, that exist a unit $ r $ such that:
 		\begin{equation*}
-			\Q (\zeta_{n/n_I})^+ \ni q = \frac{x_a(\beta_1(I) , I)}{x_a(\beta_2(I) , I)} = {\left( \zeta ^{\frac{(1-a)}{2} n_I } \frac{\sigma_a (	z_I )}{z_I } \right)  }^{\beta_1(I) - \beta_2 (I)} = r ^{1-j}
+			\Q (\zeta_{n/n_I})^+ \ni q = \frac{x_a(\beta_1 , I)}{x_a(\beta_2 , I)} = {\left( \zeta ^{\frac{(1-a)}{2} n_I } \frac{\sigma_a (	z_I )}{z_I } \right)  }^{\beta_1(I) - \beta_2 (I)} = r ^{1-j}
 		\end{equation*}	
 		So we have that $ \overline{q}=q^j = r^{(1-j)j} = r^{j  - 1 }= q^{-1}$ (since $j^2 = 1 $), that for real numebers happen only for $ \pm 1 $
 	\end{proof}
 
+	\begin{rem}
+		For what we have seen in the equation \ref{eq:fact_xi} it follows immediatly that also $ \xi_a(\beta) $ is unique up to a sign if $\beta$ is a lifting of a function from $ \PS $ to $ \Z[G] $. Since the group $ C_\beta $ contains $ -1 $ it is enougth to have a function $ \beta : \PS \to \Z[G]$ for its definition.
+	\end{rem}
 
+	\subsection{Index calculation}
+	
+	\begin{teo}
+		\label{teo:idx1}
+		For any function $ \beta : \PS \to \Z [G] $ we have
+		\begin{equation}
+		\label{eq:idx1}
+			i_\beta = \prod_{ \substack{\chi \neq 1 \\ \text{even}}} \left( \sum_{\substack{ I \in \PS \\ (f_\chi , n_I) = 1}} \phi (n_I) \cdot \chi (\beta (I)) \cdot \prod_{i \neq I} (1- \chi^{-1} (p_i)) \right) 
+		\end{equation}
+	\end{teo}
 
+	\begin{rems}[On theorem \ref{teo:idx1}]
+		\begin{itemize}
+			\item $\phi$ is the Euler totient function
+			\item A character $\chi$ is said to be \textbf{even} if $ \chi (-1) = 1 $
+			\item With $ \chi^{-1} $ we mean the character defined as $ 1/\chi $, that is also a morphism because $ 1/(xy) = (1/x)(1/y)$ %TODO e se \chi(p_i)=0??
+			
+			
+		\end{itemize}
+	\end{rems}
 
+	For the proof we need the following Lemmas:
+	
+	\begin{lem} \label{lem:fact}
+		For $ z \in \Q (\zeta )^\ast  $ and $ \gamma \in \Z [G_0] $, then for any character $\chi$ we have:
+		\begin{equation*}
+			\sum_{(a,n)=1} \chi ^{-1} (a) \log | z ^{\sigma_a \gamma }| = \chi (\gamma) \sum_{(a,n)=1} \chi ^{-1}(a) \log | z ^{\sigma_a  }|
+		\end{equation*}
+	\end{lem}
+	\begin{proof}
+		It is easy to prove this for $\gamma = \sigma_g \in G_0$, infact since $ g $ is invertible in $ \Z_{n} $ is possible to change the index from $ (a,n)=1 $ to $ (ag,n)=1 $ and rearrange. Then we can pass to $ \Z[G_0] $ using the additivity of $ \chi $ and the logaritm of exponential (also the modulo is multiplicative).
+	\end{proof}
+
+	For the calculation of the index we need a new object that allows to evaluate a :
+	\begin{deff}
+		The \textbf{regulator} $ R_L $ of a number fields $ L $ is defined as follows:
+		given its rank $ r $, a set of independent units $ \{\epsilon_1 , ... , \epsilon_r\} \subset L$ and $ \{ \sigma_1 , ... , \sigma_{r+1} \} $ its embedding into $ \R $ or $ \C $. Set $ \delta_j $ to be $ 1 $ if $ \sigma_j $ is real, and $ 2 $ otherwhise. \newline
+		Then:
+		\begin{equation}
+			R_L(\epsilon_1 , ... , \epsilon_r) = | \det (\delta_i \log | \epsilon_j ^{\sigma_i}|)_{1\leq i,j\leq r} |
+		\end{equation}
+	\end{deff}
+	
+	\begin{rem}
+		The embedding that we decide to omit is not relevant, infact since they are units their norm is 1, so $ \sum_i  \delta_i \log | \epsilon_j ^{\sigma_i}| =\log | \prod_i \epsilon_j^{\delta_i \sigma_i }|=\log |N(\epsilon_j)| = 0$, so writing this equality as a linear system from Cramer formula follows the uniqueness of the determinant up to a sign. %TODO why the \delta_I ???
+	\end{rem}
+
+	Now we need to recall \cite[Lemma~4.15]{CF}: 
+	
+	\begin{lem} \label{lem:index_reg}
+		Given the groups $ A \subset B $ of finite index, generated by independent units of a number field $ L $, respectively $ \{\epsilon_i\}_{i=1}^r $ and $ \{\mu_i\}_{i=1}^r $:
+		\begin{equation} \label{eq:index_reg}
+			[B:A]= \frac{R_L(\epsilon_1 , ... , \epsilon_r) }{R_L(\mu_1 , ... , \mu_r) }
+		\end{equation}
+	\end{lem}
+	
+	\begin{proof}[of Theorem \ref{teo:idx1} ]
+				
+	\end{proof}
 	\newpage
 	\printbibliography
 
