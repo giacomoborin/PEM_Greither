@@ -6,10 +6,10 @@
 \usepackage{tikz-cd,wrapfig}
 \usepackage{tcolorbox}
 
-%Color
-\usepackage{xcolor}
-\pagecolor[rgb]{0,0,0} %black
-\color[rgb]{1,1,1} %grey
+%%Color
+%\usepackage{xcolor}
+%\pagecolor[rgb]{0,0,0} %black
+%\color[rgb]{1,1,1} %grey
 
 
 
@@ -371,7 +371,7 @@
 		\label{teo:idx_m}
 		If we assume $ \beta : \PS \to \Z[G] $ to be multiplicative then:
 		\begin{equation}\label{eq:idx_m}
-			i_\beta =  \prod_{ \substack{\chi \neq 1 \\ \text{even}}} \left( \prod_{p_i \nmid f_\chi} \left( \phi (p_i^{e_i}) \cdot \chi (\beta (i))  + 1- \chi^{-1} (p_i))\right)  \right) 
+			i_\beta =  \prod_{ \substack{\chi \neq 1 \\ \text{even}}} \left( \prod_{p_i \nmid f_\chi} \left( \phi (p_i^{e_i}) \cdot \chi (\beta (i))  + 1- \chi^{-1} (p_i)\right)  \right) 
 		\end{equation}
 		Where $ \beta(i) $ mean $ \beta (\{i\})$
 	\end{teo}
@@ -419,6 +419,59 @@
 	and its trace element $ N_{F_i} \in \Z [G_i]$. Now we choose for every $ i=1, ... , s $ a lift of $ N_{F_i} $ into $ \Z[G_0] $\footnote{Remind that $ \zeta_{n/p_i^{e_i}} = \zeta_n^{p_i^{e_i}}$} and associate it to $\beta(i)$; then $\beta$ is defined multiplicatively. 
 	
 	Of course $\beta$ is not unique, but for all $ I \in \PS $ they coincide in $ \Z[\Gal( \Q(\zeta_{n/n_I})^+ / \Q   )]  $, so we can use Lemma \ref{lem:gooddef} and $ C_\beta $ is well defined. 
+	
+	\subsection{A factorization for $ i_\beta $}
+	
+	Here we will recall some facts and definitions from \cite[Chapter~11]{RIN}. These are generals for a finite separable extension of a number field, but we will restrict in the case of $ \K / \Q$ number field. 
+	
+	Consider a prime $ p $ in $ \Z $ and its ideal extension in the ring of integers $ pO_\K $. Since $ O_K $ is a Dedekin domain we can factorize it with prime ideals:
+	\begin{equation}\label{eq:fact_p}
+		pO_\K = \prod_{i=1}^g \mathfrak{p}_i^{e_i}
+	\end{equation} 
+	
+	\begin{deff} \label{def:degree}
+		The number $ g $ is said to be the \textit{decomposition degree} (or number) of $ p $ in the extension $ \K / \Q $.
+		
+		For every $ i=1, ..., g $, $ e_i $ is said to be the \textit{ramification degree} (or index) of $ \mathfrak{p}_i $ in $ \K / \Q $.
+		
+		For every $ i=1, ..., g $, $ f_i := [O_\K / \mathfrak{p}_i  : \Z_p ] $ is called the \textit{inertial degree} (or residual). 
+	\end{deff}
+	
+	In particular is possible to prove that if $ n= [\K : \Q] $ so \[n = \sum_{i=1}^g f_i e_i\] Also if $ \K / \Q $ is a Galois extension then also $ e_i, f_i $ does not depend on $ i $ and so \[ n = efg \]
+	
+	We also recall from \cite[Theorem~3.7]{CF} the relation between the characters $ X $ over the galois group of $ \K/\Q $ and decomposition degree of $ p $ in the extension $ \K / \Q $ :
+	\begin{equation}\label{eq:g_char}
+		g = | \{ \chi \in X \,|\, \chi(p)=1 \}
+	\end{equation}
+	
+	
+	We have now the ingredients for evaluating in a optimal way $ i_\beta $. 
+	
+	For $ i\in {1 , ... , s} $ define $ g_i , f_i , e_i $ to be as in the definition \ref{def:degree} for the prime $ p_i$ in $ K /\Q $.
+	
+	\begin{tcolorbox}
+		\begin{teo} \label{teo:idx_opt}
+			With $ C_\beta $ as defined before we have 
+			\[ i_\beta  =  \prod_{i=1}^s e_i^{g_i - 1} f_i ^{2 g_i - 1}\]
+		\end{teo}
+	\end{tcolorbox}
+	
+	\begin{rem}
+		This index is \textit{optimal} because we have a lot of info about its factorization for definiton, also since $ e_i $ and $ f_i $ are factors of $ n $, the factorization of the last one is enough to know the $ i_\beta $'s. We will see later that is also smaller than other index already studied. 
+	\end{rem}
+	
+	\begin{proof}
+		For $ s=1 $ this is trivial, since $ i_\beta = 1 $. 
+		
+		For $ s \geq 2 $ is possible to prove that $ e_i = \phi ( p_i ^ {e_i}) $. For $ i \in S$ and $ \chi $ such that $ p_i \nmid f_\chi $ we define \[ y(\chi , i) = \phi(p_i^{e_i}) \cdot \chi (\beta (i))  + 1- \chi^{-1} (p_i) \]
+		Considering $ \overline{\chi} $ to be the character induced by $ \chi $ in $ G_i$ we have $ \chi(\beta(i)) = \overline{\chi}(N_{F^i})  $ and $ \chi (p_i) = \overline{\chi}(F_i) $ using the isomorphism between $ G_i $ and the relative modulo ring. There are two cases: 
+		\begin{itemize}
+		\item[$ \chi(p_i) = 1 $ :] $ \overline{\chi}(N_{F^i}) = \sum \overline{\chi}(F_i)^j = \sum 1 = \ord (F_i) = f_i$ %TODO non so perchè dell'ultimo passaggio
+		and so $ y(\chi , i) = \phi(p_i^{e_i})f_i + 0 = e_i f_i $
+		\item[$ \chi(p_i) \neq 1 $ :] 
+		
+		\end{itemize}
+	\end{proof}
 	
 	
 	\newpage
