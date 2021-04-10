@@ -463,12 +463,13 @@
 	\begin{proof}
 		For $ s=1 $ this is trivial, since $ i_\beta = 1 $. 
 		
-		For $ s \geq 2 $ is possible to prove that $ e_i = \phi ( p_i ^ {e_i}) $. For $ i \in S$ and $ \chi $ such that $ p_i \nmid f_\chi $ we define \[ y(\chi , i) = \phi(p_i^{e_i}) \cdot \chi (\beta (i))  + 1- \chi^{-1} (p_i) \]
+		For $ s \geq 2 $ is possible to prove that $ e_i = \phi ( p_i ^ {e_i}) $. For $ i \in S$ and $ \chi $ such that $ p_i \nmid f_\chi $ we define
+		 \[ y(\chi , i) = \phi(p_i^{e_i}) \cdot \chi (\beta (i))  + 1- \chi^{-1} (p_i) \]
 		Considering $ \overline{\chi} $ to be the character induced by $ \chi $ in $ G_i$ we have $ \chi(\beta(i)) = \overline{\chi}(N_{F^i})  $ and $ \chi (p_i) = \overline{\chi}(F_i) $ using the isomorphism between $ G_i $ and the relative modulo ring. There are two cases: 
 		\begin{itemize}
-		\item[$ \chi(p_i) = 1 $ :] $ \overline{\chi}(N_{F^i}) = \sum \overline{\chi}(F_i)^j = \sum 1 = \ord (F_i) = f_i$ %TODO non so perchè dell'ultimo passaggio
-		and so $ y(\chi , i) = \phi(p_i^{e_i})f_i + 0 = e_i f_i $
-		\item[$ \chi(p_i) \neq 1 $ :] 
+		\item[$ \chi(p_i) = 1 $ :] $ \overline{\chi}(N_{F_i}) = \sum \overline{\chi}(F_i)^j = \sum 1 = \ord (F_i) = f_i$ (from fact A in \cite[Page~544]{RIN}) and so $ y(\chi , i) = \phi(p_i^{e_i})f_i + 0 = e_i f_i $
+		\item[$ \chi(p_i) \neq 1 $ :] Since $ \overline{\chi}({F_i})  \neq 1 $ follows $ \overline{\chi}(N_{F_i}) = 0 $. %TODO Ma dove???
+		Hence $ y(\chi , i) = \phi(p_i^{e_i}) \cdot \chi 0  + 1- \chi^{-1} (p_i)= 1- \chi^{-1} (p_i) $
 		
 		\end{itemize}
 	\end{proof}
