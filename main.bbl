@@ -17,6 +17,35 @@
 \endgroup
 
 \datalist[entry]{nty/global//global/global}
+  \entry{GRE}{incollection}{}
+    \name{author}{1}{}{%
+      {{hash=GC}{%
+         family={{Greither}},
+         familyi={G\bibinitperiod},
+         given={Cornelius},
+         giveni={C\bibinitperiod},
+      }}%
+    }
+    \list{language}{1}{%
+      {English}%
+    }
+    \list{publisher}{1}{%
+      {Providence, RI: American Mathematical Society}%
+    }
+    \strng{namehash}{GC1}
+    \strng{fullhash}{GC1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{G}
+    \field{sortinithash}{G}
+    \field{booktitle}{{Number theory. Fifth conference of the Canadian Number
+  Theory Association, Ottawa, Ontario, Canada, August 17--22, 1996}}
+    \field{isbn}{0-8218-0964-4/pbk}
+    \field{pages}{111\bibrangedash 120}
+    \field{title}{{Improving Ramachandra's and Levesque's unit index}}
+    \field{year}{1999}
+  \endentry
+
   \entry{LEV}{misc}{}
     \name{author}{1}{}{%
       {{hash=LC}{%

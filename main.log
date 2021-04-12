@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.5.31)  12 APR 2021 15:42
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.5.31)  12 APR 2021 17:01
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1009,32 +1009,36 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 61.
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
+) (./main.toc)
+\tf@toc=\write8
+\openout8 = `main.toc'.
 
-Package wrapfig Warning: Stationary wrapfigure forced to float on input line 87
-.
 
 [1
 
 {/usr/local/texlive/2019/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-[2] [3]
-Overfull \hbox (1.40855pt too wide) in paragraph at lines 213--214
+
+Package wrapfig Warning: Stationary wrapfigure forced to float on input line 91
+.
+
+[2] [3] [4]
+Overfull \hbox (1.40855pt too wide) in paragraph at lines 217--218
 \T1/cmr/m/n/10 Let's con-sider an in-te-ger n (with $\OML/cmm/m/it/10 n \OMS/cm
 sy/m/n/10 6^^Q \OT1/cmr/m/n/10 2[]  4$\T1/cmr/m/n/10 ), with fac-tor-iza-tion $
 \OML/cmm/m/it/10 n \OT1/cmr/m/n/10 = \OML/cmm/m/it/10 p[] [] p[]$
  []
 
-[4] [5]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 292.
+[5] [6]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 296.
 
  (/usr/local/texlive/2019/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 292.
- [6]
-[7] [8] [9]
-Overfull \hbox (22.92122pt too wide) in paragraph at lines 421--422
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 296.
+ [7]
+[8] [9]
+Overfull \hbox (22.92122pt too wide) in paragraph at lines 425--426
 []\T1/cmr/m/n/10 Of course $\OML/cmm/m/it/10 ^^L$ \T1/cmr/m/n/10 is not unique,
  but for all $\OML/cmm/m/it/10 I \OMS/cmsy/m/n/10 2 P[]$ \T1/cmr/m/n/10 they co
 -in-cide in $\U/msb/m/n/10 Z\OT1/cmr/m/n/10 [[](\U/msb/m/n/10 Q\OT1/cmr/m/n/10 
@@ -1044,30 +1048,30 @@ Overfull \hbox (22.92122pt too wide) in paragraph at lines 421--422
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 423.
+(hyperref)                removing `math shift' on input line 427.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `subscript' on input line 423.
+(hyperref)                removing `subscript' on input line 427.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\beta' on input line 423.
+(hyperref)                removing `\beta' on input line 427.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 423.
+(hyperref)                removing `math shift' on input line 427.
 
-LaTeX Font Info:    Try loading font information for U+euf on input line 429.
+LaTeX Font Info:    Try loading font information for U+euf on input line 433.
 (/usr/local/texlive/2019/texmf-dist/tex/latex/amsfonts/ueuf.fd
 File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
 ) [10] [11]
-[12]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 489.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 489.
+[12] [13]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 493.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 493.
  (./main.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 489.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 489.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 493.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 493.
 Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: CECECE59CD88B3236425AA3102230ED8;666.
 Package logreq Info: Writing requests to 'main.run.xml'.
@@ -1075,13 +1079,13 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 26846 strings out of 492616
- 524272 string characters out of 6129481
- 792443 words of memory out of 5000000
- 30260 multiletter control sequences out of 15000+600000
+ 26856 strings out of 492616
+ 524421 string characters out of 6129481
+ 791443 words of memory out of 5000000
+ 30264 multiletter control sequences out of 15000+600000
  23420 words of font info for 60 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 61i,16n,82p,807b,1649s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 61i,16n,82p,807b,1700s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}
 </usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><
 /usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></
@@ -1114,10 +1118,10 @@ ts/type1/public/cm-super/sfrm1000.pfb></usr/local/texlive/2019/texmf-dist/fonts
 /type1/public/cm-super/sfrm1200.pfb></usr/local/texlive/2019/texmf-dist/fonts/t
 ype1/public/cm-super/sfti0700.pfb></usr/local/texlive/2019/texmf-dist/fonts/typ
 e1/public/cm-super/sfti1000.pfb>
-Output written on main.pdf (12 pages, 428966 bytes).
+Output written on main.pdf (13 pages, 432591 bytes).
 PDF statistics:
- 338 PDF objects out of 1000 (max. 8388607)
- 282 compressed objects within 3 object streams
- 72 named destinations out of 1000 (max. 500000)
+ 359 PDF objects out of 1000 (max. 8388607)
+ 301 compressed objects within 4 object streams
+ 75 named destinations out of 1000 (max. 500000)
  93 words of extra memory for PDF output out of 10000 (max. 10000000)
 

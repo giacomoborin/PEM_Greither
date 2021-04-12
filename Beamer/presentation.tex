@@ -1,12 +1,68 @@
 \documentclass{beamer}
-\usetheme{default}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[italian]{babel}
 
-\title{Beamer Template}
-\author{TeXstudio Team}
+\usepackage[style=numeric, maxnames=4,backend=bibtex]{biblatex}
+% other styles: numeric authortitle
+\addbibresource{../biblio.bib}
+
+\title{Greither unit undex}
+\author{Giacomo Borin}
+%\subtitle{}
+%\date{...}
+\institute{Università di Trento}
+%\titlegraphic{...} 
+
+\usetheme{Madrid}
+\usecolortheme{rose}
+\setbeamercovered{dynamic}
+
+\AtBeginSection{
+	\begin{frame} 
+		\sectionpage
+	\end{frame}
+}
+
+
+% Commands 
+\newcommand{\PS}{\mathcal{P}_S}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\F}{\mathbb{F}}
+\newcommand{\K}{\mathbb{K}}
+\newcommand{\ZZ}[1]{\mathbb{Z}_{#1}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\R}{\mathbb{R}}
+
+\DeclareMathOperator*{\eqb }{=}
+\DeclareMathOperator{\Gal}{Gal}
+\DeclareMathOperator{\ord}{ord}
+
+
 \begin{document}
-\begin{frame}[plain]
-    \maketitle
-\end{frame}
-\begin{frame}{Frame Title}
-\end{frame}
+
+	\begin{frame}[plain]
+	    \maketitle
+	\end{frame}
+	
+	\begin{frame}{Introduzione}
+		In questo lavoro ho rielaborato l'articolo: 
+		\pause
+%		\printbibliograph
+		\begin{exampleblock}{}
+			\fullcite{GRE}
+		\end{exampleblock}	
+		\pause
+		Completando i prerequisiti richiesti per la comprensione e implementando alcuni calcoli in \href{https://www.sagemath.org}{\includegraphics[height= 11pt]{../images/sage.png} }
+		
+	\end{frame}
+	\section{Prereqisiti}
+
+	\begin{frame}
+		\begin{block}{Primo oggetto di interesse: $ E_K $}
+			Il gruppo delle unità di $ K $, il sottocampo reale massimo di $ \Q (\zeta_n )  $
+		\end{block}
+	\end{frame}
+
 \end{document}
