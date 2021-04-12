@@ -59,10 +59,31 @@
 	\end{frame}
 	\section{Prereqisiti}
 
-	\begin{frame}
+	\begin{frame}{Il gruppo delle unità}
 		\begin{block}{Primo oggetto di interesse: $ E_K $}
 			Il gruppo delle unità di $ K $, il sottocampo reale massimo di $ \Q (\zeta_n )  $
 		\end{block}
+		\pause
+		\begin{itemize}
+			\item $ \zeta_n $  l'$ n $-esima radice ciclotomica (con $ n \not \equiv 2 \mod 4 $) \pause
+			\item $ K = \Q (\zeta_n + \zeta_n^{-1})$ \pause
+			\item $ O_K = \Z[\zeta_n + \zeta_n^{-1}] $ \pause
+			\item $ E_K = O _K ^\ast$ , cioè l'insieme degli elementi invertibili 
+		\end{itemize}
 	\end{frame}
-
+	
+	\begin{frame}
+		\proofname: 
+		\newline
+		
+		$  \zeta_n + \zeta_n^{-1}  $ è reale:
+		\[ \overline{\zeta_n + \zeta_n^{-1}} = \overline{\zeta_n} + \overline{\zeta_n}^{-1} = \zeta_n^{-1} + \zeta_n \]
+	\end{frame}
+	
+%
+	\begin{frame}
+		L'indice $ [\Q(\zeta_n) : K] $ vale 2, ed è quindi minimale. \pause \newline
+		
+	\end{frame}
+	
 \end{document}
