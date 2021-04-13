@@ -3,6 +3,7 @@
 \usepackage[utf8]{inputenc}
 \usepackage[italian]{babel}
 \usepackage{tikz-cd,wrapfig}
+\usepackage{tcolorbox}
 
 \usepackage[style=numeric, maxnames=4,backend=bibtex]{biblatex}
 % other styles: numeric authortitle
@@ -26,7 +27,25 @@
 }
 
 
+% Theorem definitons 
+\theoremstyle{plain}
+\newtheorem{teo}{Teorema}[section]
+\newtheorem{lem}[teo]{Lemma}
+\newtheorem{prop}[teo]{Proposizione}
+\newtheorem{cor}[teo]{Corollario}
+\newtheorem*{form}{Formula}
+
+\theoremstyle{remark}
+\newtheorem{rem}{Osservazione}
+\newtheorem{rems}[rem]{Remarks}
+
+\theoremstyle{definition}
+\newtheorem{deff}[teo]{Definizione}
+\newtheorem{idea}{Idea}
+\newtheorem*{nota}{Notazione}
+
 % Commands 
+\newcommand{\noqed}{\let\qed\relax}
 \newcommand{\PS}{\mathcal{P}_S}
 \newcommand{\Z}{\mathbb{Z}}
 \newcommand{\F}{\mathbb{F}}
@@ -74,29 +93,157 @@
 	\end{frame}
 	
 	\begin{frame}
-		\proofname: 
-		\newline
-		\begin{itemize}
-		\item $  \zeta_n + \zeta_n^{-1}  $ è \textbf{reale}:
-		\[ \overline{\zeta_n + \zeta_n^{-1}} = \overline{\zeta_n} + \overline{\zeta_n}^{-1} = \zeta_n^{-1} + \zeta_n \] \pause
-		\item L'indice $ [\Q(\zeta_n) : K] $ vale \textbf{2}, ed è quindi minimale. \pause 
-		Il suo polinomio minimo è: 
-		\[ f(x) = (x-\zeta)(x- \zeta^{-1}) = x^2 - (\zeta + \zeta ^{-1})x +1   \]
-		\end{itemize}
+		\begin{proof} \noqed
+			\begin{itemize}
+			\item $  \zeta_n + \zeta_n^{-1}  $ è \textbf{reale}:
+			\[ \overline{\zeta_n + \zeta_n^{-1}} = \overline{\zeta_n} + \overline{\zeta_n}^{-1} = \zeta_n^{-1} + \zeta_n \] \pause
+			\item L'indice $ [\Q(\zeta_n) : K] $ vale \textbf{2}, ed è quindi minimale. \pause 
+			Il suo polinomio minimo è: 
+			\[ f(x) = (x-\zeta)(x- \zeta^{-1}) = x^2 - (\zeta + \zeta ^{-1})x +1   \]
+			\end{itemize}
+		\end{proof}
 	\end{frame}
 	
 	%
 	\begin{frame}[fragile]
-		\begin{itemize}
-			\item Un sottocampo con queste caratteristiche è \textbf{unico}\pause
-		\end{itemize}
-		\begin{center}
-			\begin{tikzcd}[column sep=small]
-				& {\Q (\zeta)}                            &                               \\
-				{K} \arrow[ru, "2"] \arrow[r] & {H} \arrow[u, "2" ] & {K'} \arrow[lu, "2"'] \arrow[l] \\
-				& {\Q} \arrow[lu] \arrow[ru]      &                              
-			\end{tikzcd}
-		\end{center}
+		\begin{proof}
+			\begin{itemize}
+				\item Un sottocampo con queste caratteristiche è \textbf{unico}:
+				\pause
+			\end{itemize}
+			\begin{center}
+				\begin{tikzcd}[column sep=small]
+					& {\Q (\zeta)}                            &                               \\
+					{K} \arrow[ru, "2"] \arrow[r] & {H} \arrow[u, "2" ] & {K'} \arrow[lu, "2"'] \arrow[l] \\
+					& {\Q} \arrow[lu] \arrow[ru]      &                              
+				\end{tikzcd}
+			\end{center}
+		\end{proof}
+		
 	\end{frame}
+	
+	
+	\begin{frame}
+		\begin{prop}
+			Il gruppo di Galois di $ K $ è isomorfo a $ \Z_n^\ast / \{\pm 1\} $
+		\end{prop}
+		\pause 
+		D'ora in poi indicheremo $ G_0 := \Gal( \Q(\zeta_n) / \Q) $ e $ G := \Gal( K / \Q) $
+		
+	\end{frame}
+	
+	\begin{frame}{Il numero delle classi}
+		\begin{deff}
+				Se $ \K $ è un campo numerico possiamo definire l'\textbf{ideal class group} come il quoziente $ \mathcal{F}_\K / \mathcal{P}_\K $ dove:
+			\begin{itemize}
+				\item[$ \mathcal{F}_\K $] è il gruppo degli ideali frazionari non nulli di $ O_\K $, 
+				\item[$ \mathcal{P}_\K $] è il gruppo degli ideali principali
+			\end{itemize}
+		\end{deff} 
+		\pause 
+		Si può mostrare che questo gruppo è finito e definiamo il \textbf{numero delle classi} come:
+			\[ h_K = |  \mathcal{F}_\K / \mathcal{P}_\K | \]
+	\end{frame}
+	
+	\begin{frame}{Unità circolari}
+		Se considero il gruppo generato da $ \{ -1 ,  \zeta , \, 1 - \zeta ^a \text{ for } a = 1, ... , n-1 \} $ e lo interseco con $ E_K $ ottengo il gruppo delle \textbf{unità circolari}\pause
+		\begin{exampleblock}{}
+			Sinnot ha mostrato che esiste $ a \in \Z $ tale che:
+			\[ [E_K : C_K] = 2^a k_K\]
+			\nocite{SIN}
+		\end{exampleblock}
+	\end{frame}
+	
+	\begin{frame}{Obbiettivo dell'articolo}
+		\begin{alertblock}{}
+			 	Costruire \textbf{esplicitamente} un gruppo  $ C' $ con indice $ [ E_K : C' ] $ finito che sia \textbf{ottimale}
+		\end{alertblock}
+	\end{frame}
+	
+	\subsection{Caratteri di Dirichlet}
+	
+	\begin{frame}{Caratteri di Dirichlet}
+		\begin{deff}
+			 	Dato un gruppo \textit{X} e un campo $ \F $ un carattere di Dirchlet è un omomorfismo di gruppi $ \chi :X \to \F ^*  $
+		 \end{deff}
+		 \pause
+		 Possiamo anche usare l'isomorfismo $ G_0 \simeq \Z_n ^ *$ e definire $\chi$ come omomorfismo di anelli da $ \Z_n $ in $ \C $ (con $\chi$ nulla sugli elementi invertibili)
+		 \pause
+		 \begin{exampleblock}{}
+		 Il 'periodo' di un caratte è detto conduttore (in inglese \textbf{conductor}) e si indica con $ f_\chi $
+		 \end{exampleblock}
+	\end{frame}
+	
+	\begin{frame}{Anelli gruppali}
+		\begin{deff}
+			Dati un gruppo moltiplicativo $ X $ e un anello $ R $ possiamo definire l'\textbf{anello gruppale} $ R[X] $ come l'$ R $-modulo libero con base $ X $, sul quale definiamo un operazione di moltiplicazione inducendola da quella di $ X $
+		\end{deff}
+		\pause
+		Nel nostro caso useremo $ \Z [G_0] $ e $ \Z [G] $, sui quali possiamo sempre esterndere il carattere $\chi$ (perchè definito sulla base)
+	\end{frame}
+	
+	\begin{frame}{Anelli gruppali}
+		\begin{nota}
+				Dati $ z \in \Q (\zeta) $ e $ f \in \Z[G_0]  $ è ben definita la nutazione esponenziale $ x^f $, \pause infatti dati $ g\in G_0 $ abbiamo una buona definizione per  $ z^g = g(z) $ e $ z ^{g_1 + g_2}= z^{g_1} z^{g_2} $
+		\end{nota}
+	\end{frame}
+	
+	\section{La costruzione di Greither}
+	
+	\begin{frame}[fragile]{La funzione $\beta$}
+		Dato $ n= p_1 ^{e_1} \cdots p_s ^{e_s} $ definiamo: 
+		\begin{itemize}
+			\item $ S = \{1, ... , n \}$
+			\item $ \PS = \{ I \,|\, I \subsetneq S\}$ 
+			\item $ n_I = \prod_{i \in I} p_i ^{e_i} $ 
+		\end{itemize} \pause
+		Consideriamo una funzione $$ \beta : \PS \to \Z[G_0] $$ che utilizzeremo per costruire il sottogruppo cercato. \pause 
+		\begin{deff}
+			$\beta$ si dice moltiplicativa se $ \beta (\emptyset) = 1 $ e dati $ I,J $ con intersezione vuota abbiamo $ \beta (I\cup J) = \beta(I) \beta(J)$.
+		\end{deff}
+	\end{frame}
+
+	\begin{frame}{Le unità di Greither}
+		Definiamo ora, per ogni $ a \in (1 , n/2)$ coprimo con $ n $ l'unità reale:
+			\begin{exampleblock}{}
+			\[
+				\xi_a (\beta) := \zeta ^{d_a (\beta)} \frac{\sigma_a (z(\beta))}{z(\beta)} \text{ con } d_a(\beta)= (1-a)\frac{t}{2}
+			\]
+			\end{exampleblock}
+			dove abbiamo che
+			\begin{itemize}
+				\item $ z_I  := 1 - \zeta ^{n_I}$
+				\item $ z(\beta ):= \prod_{i\in I} z_I ^{\beta(I)} $
+				\item $ \sigma_a(\zeta)= \zeta ^a $
+			\end{itemize}
+	\end{frame}	
+	
+	\begin{frame}{il gruppo di Greither}
+		\begin{alertblock}{}
+		 		$C_\beta $ è il gruppo generato da:
+		 		\begin{center}
+		 		
+		 		 $ {-1} $ e $ \xi_a (\beta) $ per $ 1< a< n/2 $ e $ (a,n)=1 $
+		 		\end{center}
+	 	\end{alertblock}
+	 	\pause
+	 	Per l'indice useremo la notazione $$ [E_K : C_\beta] = h_K i_\beta $$
+	\end{frame}
+	
+	\begin{frame}{Buona definizione di $ \beta $}
+		Possiamo limitarci a definire $\beta$ su $ \Z[G] $ e poi considerare un sollevamento (in inglese lift)\\
+		\pause
+		\begin{lem}
+			Se due funzioni $ \beta_1 $ e $ \beta_2 $ coincidono su $ \Q(\zeta_{n/n_I} )$\footnote{$ \zeta_{n/n_I} = \zeta_n^{n_I} $} per ogni $ I \in \PS $ allora le unità $ \xi_a (\beta) $ sono uniche a meno del segno
+		\end{lem}
+	\end{frame}
+	
+	
+	
+	
+	
+	
+	
+	
 	
 \end{document}

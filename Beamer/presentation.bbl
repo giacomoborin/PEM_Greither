@@ -45,5 +45,30 @@
     \field{title}{{Improving Ramachandra's and Levesque's unit index}}
     \field{year}{1999}
   \endentry
+
+  \entry{SIN}{misc}{}
+    \name{author}{1}{}{%
+      {{hash=SW}{%
+         family={{Sinnott}},
+         familyi={S\bibinitperiod},
+         given={W.},
+         giveni={W\bibinitperiod},
+      }}%
+    }
+    \list{language}{1}{%
+      {English}%
+    }
+    \strng{namehash}{SW1}
+    \strng{fullhash}{SW1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{S}
+    \field{sortinithash}{S}
+    \field{howpublished}{{Theorie des nombres, Semin. Delange-Pisot-Poitou,
+  Paris 1979-80, Prog. Math. 12, 277-286 (1981).}}
+    \field{title}{{On the Stickelberger ideal and the circular units of an
+  abelian field}}
+    \field{year}{1981}
+  \endentry
 \enddatalist
 \endinput

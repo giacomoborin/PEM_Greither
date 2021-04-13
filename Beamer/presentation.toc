@@ -3,3 +3,7 @@
 \babel@toc {italian}{}
 \defcounter {refsection}{0}\relax 
 \beamer@sectionintoc {1}{Prereqisiti}{5}{0}{1}
+\defcounter {refsection}{0}\relax 
+\beamer@subsectionintoc {1}{1}{Caratteri di Dirichlet}{23}{0}{1}
+\defcounter {refsection}{0}\relax 
+\beamer@sectionintoc {2}{La costruzione di Greither}{30}{0}{2}

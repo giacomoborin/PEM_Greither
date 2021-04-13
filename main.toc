@@ -7,16 +7,14 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {1.2}Dirichlet Characters}{4}{subsection.1.2}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {1.3}Bho}{5}{subsection.1.3}% 
-\defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {2}The Greither Setup}{5}{section.2}% 
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {2.1}A little remark}{6}{subsection.2.1}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.2}Index calculation}{7}{subsection.2.2}% 
+\contentsline {subsection}{\numberline {2.2}Index calculation}{6}{subsection.2.2}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3}Particular case of formula \ref {eq:idx1}}{9}{section.3}% 
+\contentsline {section}{\numberline {3}Particular case of formula \ref {eq:idx1}}{8}{section.3}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.1}A new system of units}{10}{subsection.3.1}% 
+\contentsline {subsection}{\numberline {3.1}A new system of units}{9}{subsection.3.1}% 
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {3.2}A factorization for $ i_\beta $}{10}{subsection.3.2}% 

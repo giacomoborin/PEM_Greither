@@ -1,10 +1,11 @@
-\begin{itemize}
-			\item Un sottocampo con queste caratteristiche è \textbf{unico}\pause
-		\end{itemize}
-		\begin{center}
-			\begin{tikzcd}[column sep=small]
-				& {\Q (\zeta)}                            &                               \\
-				{K} \arrow[ru, "2"] \arrow[r] & {H} \arrow[u, "2" ] & {K'} \arrow[lu, "2"'] \arrow[l] \\
-				& {\Q} \arrow[lu] \arrow[ru]      &
-			\end{tikzcd}
-		\end{center}
+\frametitle{La funzione $\beta $}
+Dato $ n= p_1 ^{e_1} \cdots p_s ^{e_s} $ definiamo:
+		\begin{itemize}
+			\item $ S = \{1, ... , n \}$
+			\item $ \PS = \{ I \,|\, I \subsetneq S\}$
+			\item $ n_I = \prod_{i \in I} p_i ^{e_i} $
+		\end{itemize} \pause
+		Consideriamo una funzione $$ \beta : \PS \to \Z[G_0] $$ che utilizzeremo per costruire il sottogruppo cercato. \pause
+		\begin{deff}
+			$\beta$ si dice moltiplicativa se $ \beta (\emptyset) = 1 $ e dati $ I,J $ con intersezione vuota abbiamo $ \beta (I\cup J) = \beta(I) \beta(J)$.
+		\end{deff}
