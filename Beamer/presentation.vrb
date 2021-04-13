@@ -1,0 +1,10 @@
+\begin{itemize}
+			\item Un sottocampo con queste caratteristiche è \textbf{unico}\pause
+		\end{itemize}
+		\begin{center}
+			\begin{tikzcd}[column sep=small]
+				& {\Q (\zeta)}                            &                               \\
+				{K} \arrow[ru, "2"] \arrow[r] & {H} \arrow[u, "2" ] & {K'} \arrow[lu, "2"'] \arrow[l] \\
+				& {\Q} \arrow[lu] \arrow[ru]      &
+			\end{tikzcd}
+		\end{center}

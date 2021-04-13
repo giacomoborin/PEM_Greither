@@ -2,6 +2,7 @@
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage[italian]{babel}
+\usepackage{tikz-cd,wrapfig}
 
 \usepackage[style=numeric, maxnames=4,backend=bibtex]{biblatex}
 % other styles: numeric authortitle
@@ -75,15 +76,27 @@
 	\begin{frame}
 		\proofname: 
 		\newline
-		
-		$  \zeta_n + \zeta_n^{-1}  $ è reale:
-		\[ \overline{\zeta_n + \zeta_n^{-1}} = \overline{\zeta_n} + \overline{\zeta_n}^{-1} = \zeta_n^{-1} + \zeta_n \]
+		\begin{itemize}
+		\item $  \zeta_n + \zeta_n^{-1}  $ è \textbf{reale}:
+		\[ \overline{\zeta_n + \zeta_n^{-1}} = \overline{\zeta_n} + \overline{\zeta_n}^{-1} = \zeta_n^{-1} + \zeta_n \] \pause
+		\item L'indice $ [\Q(\zeta_n) : K] $ vale \textbf{2}, ed è quindi minimale. \pause 
+		Il suo polinomio minimo è: 
+		\[ f(x) = (x-\zeta)(x- \zeta^{-1}) = x^2 - (\zeta + \zeta ^{-1})x +1   \]
+		\end{itemize}
 	\end{frame}
 	
-%
-	\begin{frame}
-		L'indice $ [\Q(\zeta_n) : K] $ vale 2, ed è quindi minimale. \pause \newline
-		
+	%
+	\begin{frame}[fragile]
+		\begin{itemize}
+			\item Un sottocampo con queste caratteristiche è \textbf{unico}\pause
+		\end{itemize}
+		\begin{center}
+			\begin{tikzcd}[column sep=small]
+				& {\Q (\zeta)}                            &                               \\
+				{K} \arrow[ru, "2"] \arrow[r] & {H} \arrow[u, "2" ] & {K'} \arrow[lu, "2"'] \arrow[l] \\
+				& {\Q} \arrow[lu] \arrow[ru]      &                              
+			\end{tikzcd}
+		\end{center}
 	\end{frame}
 	
 \end{document}
