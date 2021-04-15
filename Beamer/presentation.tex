@@ -218,7 +218,7 @@
 			\end{itemize}
 	\end{frame}	
 	
-	\begin{frame}{il gruppo di Greither}
+	\begin{frame}{Il gruppo di Greither}
 		\begin{alertblock}{}
 		 		$C_\beta $ è il gruppo generato da:
 		 		\begin{center}
@@ -237,6 +237,25 @@
 			Se due funzioni $ \beta_1 $ e $ \beta_2 $ coincidono su $ \Q(\zeta_{n/n_I} )$\footnote{$ \zeta_{n/n_I} = \zeta_n^{n_I} $} per ogni $ I \in \PS $ allora le unità $ \xi_a (\beta) $ sono uniche a meno del segno
 		\end{lem}
 	\end{frame}
+	
+	\subsection{Calcolo dell'indice}
+	
+	\begin{frame}{Caso generale}
+		\begin{teo}
+				Data una funzione $ \beta : \PS \to \Z [G] $ segue che
+					\begin{equation}
+					\label{eq:idx1}
+						i_\beta = \prod_{ \substack{\chi \neq 1 \\ \text{pari}}} \left( \sum_{\substack{ I \in \PS \\ (f_\chi , n_I) = 1}} \phi (n_I) \cdot \chi (\beta (I)) \cdot \prod_{i \not \in  I} (1- \chi^{-1} (p_i)) \right) 
+					\end{equation}
+		\end{teo}\pause
+		Dove abbiamo che:
+		\begin{itemize}
+			\item $\phi$ è la funzione di Eulero 
+			\item $\chi$ si dice \textit{pari} se $ \chi (-1) = 1 $
+			\item Con $ \chi^{-1} $ si intende il carattere che vale $ 1/\chi $ sugli elementi invertibili
+		\end{itemize}
+	\end{frame}	
+	
 	
 	
 	

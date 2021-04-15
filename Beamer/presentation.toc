@@ -7,3 +7,5 @@
 \beamer@subsectionintoc {1}{1}{Caratteri di Dirichlet}{23}{0}{1}
 \defcounter {refsection}{0}\relax 
 \beamer@sectionintoc {2}{La costruzione di Greither}{30}{0}{2}
+\defcounter {refsection}{0}\relax 
+\beamer@subsectionintoc {2}{1}{Calcolo dell'indice}{39}{0}{2}

@@ -86,8 +86,16 @@
 \headcommand {\slideentry {2}{0}{5}{37/38}{}{0}}
 \defcounter {refsection}{0}\relax 
 \headcommand {\beamer@framepages {37}{38}}
-\headcommand {\beamer@partpages {1}{38}}
+\defcounter {refsection}{0}\relax 
 \headcommand {\beamer@subsectionpages {30}{38}}
-\headcommand {\beamer@sectionpages {30}{38}}
-\headcommand {\beamer@documentpages {38}}
-\headcommand {\gdef \inserttotalframenumber {18}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\beamer@subsectionentry {0}{2}{1}{39}{Calcolo dell'indice}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\slideentry {2}{1}{1}{39/40}{Calcolo dell'indice}{0}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\beamer@framepages {39}{40}}
+\headcommand {\beamer@partpages {1}{40}}
+\headcommand {\beamer@subsectionpages {39}{40}}
+\headcommand {\beamer@sectionpages {30}{40}}
+\headcommand {\beamer@documentpages {40}}
+\headcommand {\gdef \inserttotalframenumber {19}}
