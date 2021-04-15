@@ -69,14 +69,20 @@
 	\begin{frame}{Introduzione}
 		In questo lavoro ho rielaborato l'articolo: 
 		\pause
-%		\printbibliograph
 		\begin{exampleblock}{}
 			\fullcite{GRE}
 		\end{exampleblock}	
 		\pause
 		Completando i prerequisiti richiesti per la comprensione e implementando alcuni calcoli in \href{https://www.sagemath.org}{\includegraphics[height= 11pt]{../images/sage.png} }
-		
 	\end{frame}
+	
+	%Stampo subito la bibliografia per mostrare subito cosa uso
+	\begin{frame}{Bibliografia}
+			\printbibliography[heading=none]
+	\end{frame}
+	
+
+	
 	\section{Prereqisiti}
 
 	\begin{frame}{Il gruppo delle unità}
@@ -256,10 +262,59 @@
 		\end{itemize}
 	\end{frame}	
 	
+	\begin{frame}{Caso generale}
+		Dato un campo numerico $ L $ consideriamo un insieme di unità indipendenti $ \{\epsilon_1 , ... , \epsilon_r\} \subset L$ e siano $ \{ \sigma_1 , ... , \sigma_{r+1} \} $ le sue immersioni (embedding) in $ \R $ o $ \C $. Poniamo $ \delta_j $ uguale a $ 1 $ se $ \sigma_j $ è reale e a $ 2 $ altrimenti. Allora il suo \textbf{regolatore} è definito come 
+		\[ 	R_L(\epsilon_1 , ... , \epsilon_r) = | \det (\delta_i \log | \epsilon_j ^{\sigma_i}|)_{1\leq i,j\leq r} | \]
+		\pause
+		\begin{lem}
+				\label{lem:index_reg}
+				Dati i gruppi $ A \subset B $ di indice finito e generati da unità indipendenti di $ L $ vale che:
+				\begin{equation} \label{eq:index_reg}
+					[B:A]= \frac{R_L(\epsilon_1 , ... , \epsilon_r) }{R_L(\mu_1 , ... , \mu_r) }
+				\end{equation}
+			\end{lem}
+	\end{frame}
+	
+	\begin{frame}
+		Usando l'ultimo lemma possiamo vedere che per dimostrare il teorema basta mostrare che 
+		$$ R(\xi_a(\beta)) = \pm R_K h_K A $$
+		con $ (a,n)=1 \, , \,1 < a <n/2 $ e $ A$ è la parte destra dell'equazione \ref{eq:idx1}.\pause \\
+	
+		Inoltre poi si procede (in modo molto tecnico) come nel capitolo 8 di \cite{CF} e usando:
+		\begin{exampleblock}{Formula}
+					\begin{equation} \label{eq:fact}
+						\sum_{(a,n)=1} \chi ^{-1} (a) \log | z ^{\sigma_a \gamma }| = \chi (\gamma) \sum_{(a,n)=1} \chi ^{-1}(a) \log | z ^{\sigma_a  }|
+					\end{equation}
+		\end{exampleblock}
+	\end{frame}
+	
+	\begin{frame}{Indice per $\beta$ moltiplicativa}
+			\begin{teo}
+				\label{teo:idx_m}
+				Se assumiamo che $ \beta : \PS \to \Z[G] $ sia moltiplicativa abbiamo che:
+				\begin{equation}\label{eq:idx_m}
+					i_\beta =  \prod_{ \substack{\chi \neq 1 \\ \text{pari}}} \left( \prod_{p_i \nmid f_\chi} \left( \phi (p_i^{e_i}) \cdot \chi (\beta (i))  + 1- \chi^{-1} (p_i)\right)  \right) 
+				\end{equation}
+			\end{teo}
+			Dove $ \beta(i) $ indica $ \beta (\{i\})$
+	\end{frame}
+	
+	\begin{frame}{L'indice di Ramachandra}
+		Se poniamo $\beta$ costante ad $ 1 $ otteniamo l'indice delle unità per Ramachandra da \cite{RAM}:
+			\begin{alertblock}{}
+			\begin{equation}\label{eq:idx_ram}
+				[E_K : C_R ] = h_K \cdot  \prod_{ \substack{\chi \neq 1 \\ \text{even}}} \left( \prod_{p_i \nmid f_\chi} \left( \phi (p_i^{e_i})  + 1- \chi (p_i))\right)  \right) 
+			\end{equation}
+			\end{alertblock}
+			Dove $ C_R $ è il gruppo generato da $ -1 $ e le unità della forma
+			\[ \xi_a := \zeta ^{d_a } \prod _{I \in \PS} \frac{ 1 - \zeta^{an_I}}{ 1 - \zeta^{n_I}}  \text{ con } d_a =\frac{1}{2}(1-a) \sum_{I \in \PS} n_I\]
+	\end{frame}
 	
 	
+
 	
 	
+
 	
 	
 	

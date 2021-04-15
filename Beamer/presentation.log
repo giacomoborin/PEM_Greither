@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.5.31)  15 APR 2021 21:32
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.5.31)  15 APR 2021 22:17
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1271,37 +1271,37 @@ Package biblatex Info: Reference segment=0 on input line 63.
 <../images/sage.png, id=76, 682.2288pt x 187.902pt>
 File: ../images/sage.png Graphic file (type png)
 <use ../images/sage.png>
-Package pdftex.def Info: ../images/sage.png  used on input line 79.
+Package pdftex.def Info: ../images/sage.png  used on input line 77.
 (pdftex.def)             Requested size: 39.9326pt x 11.0pt.
  [2
 
  <../images/sage.png>]
 File: ../images/sage.png Graphic file (type png)
 <use ../images/sage.png>
-Package pdftex.def Info: ../images/sage.png  used on input line 79.
+Package pdftex.def Info: ../images/sage.png  used on input line 77.
 (pdftex.def)             Requested size: 39.9326pt x 11.0pt.
  [3
 
 ]
 File: ../images/sage.png Graphic file (type png)
 <use ../images/sage.png>
-Package pdftex.def Info: ../images/sage.png  used on input line 79.
+Package pdftex.def Info: ../images/sage.png  used on input line 77.
 (pdftex.def)             Requested size: 39.9326pt x 11.0pt.
  [4
 
 ] [5
 
 ]
-LaTeX Font Info:    Try loading font information for U+msa on input line 93.
+LaTeX Font Info:    Try loading font information for U+msa on input line 94.
  (/usr/local/texlive/2019/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 93.
+LaTeX Font Info:    Try loading font information for U+msb on input line 94.
  (/usr/local/texlive/2019/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Try loading font information for OT1+mathkerncmss on input 
-line 93.
+line 94.
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/sansmathaccent/ot1mathkerncmss.fd
 File: ot1mathkerncmss.fd 2013/03/27 Fontinst v1.933 font definitions for OT1/ma
@@ -1385,7 +1385,22 @@ thkerncmss.
 
 ] [40
 
+] [41
+
+] [42
+
 ]
+[43
+
+] [44
+
+] [45
+
+] [46
+
+] [47
+
+ </usr/local/texlive/2019/texmf-dist/tex/latex/beamer/beamericonarticle.pdf>]
 \tf@nav=\write9
 \openout9 = `presentation.nav'.
 
@@ -1395,12 +1410,11 @@ thkerncmss.
 \tf@snm=\write11
 \openout11 = `presentation.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 268.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 268.
-
-(./presentation.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 268.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 268.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 319.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 319.
+ (./presentation.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 319.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 319.
 Package rerunfilecheck Info: File `presentation.out' has not changed.
 (rerunfilecheck)             Checksum: F46499235B5D011456A3B929D0D7C3C1;248.
 Package logreq Info: Writing requests to 'presentation.run.xml'.
@@ -1408,10 +1422,10 @@ Package logreq Info: Writing requests to 'presentation.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 30388 strings out of 492616
- 614910 string characters out of 6129481
+ 30448 strings out of 492616
+ 615968 string characters out of 6129481
  849021 words of memory out of 5000000
- 33629 multiletter control sequences out of 15000+600000
+ 33665 multiletter control sequences out of 15000+600000
  30383 words of font info for 85 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  58i,18n,84p,803b,1345s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1440,10 +1454,10 @@ e/2019/texmf-dist/fonts/type1/public/cm-super/sfsi1095.pfb></usr/local/texlive/
 exmf-dist/fonts/type1/public/cm-super/sfss1200.pfb></usr/local/texlive/2019/tex
 mf-dist/fonts/type1/public/cm-super/sfss1440.pfb></usr/local/texlive/2019/texmf
 -dist/fonts/type1/public/cm-super/sfsx1095.pfb>
-Output written on presentation.pdf (40 pages, 382267 bytes).
+Output written on presentation.pdf (47 pages, 416707 bytes).
 PDF statistics:
- 1627 PDF objects out of 1728 (max. 8388607)
- 1335 compressed objects within 14 object streams
- 86 named destinations out of 1000 (max. 500000)
- 1298 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1885 PDF objects out of 2073 (max. 8388607)
+ 1558 compressed objects within 16 object streams
+ 110 named destinations out of 1000 (max. 500000)
+ 1436 words of extra memory for PDF output out of 10000 (max. 10000000)
 
