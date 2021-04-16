@@ -68,7 +68,6 @@
 	
 	\begin{frame}{Introduzione}
 		In questo lavoro ho rielaborato l'articolo: 
-		\pause
 		\begin{exampleblock}{}
 			\fullcite{GRE}
 		\end{exampleblock}	
@@ -244,7 +243,18 @@
 		\end{lem}
 	\end{frame}
 	
-	\subsection{Calcolo dell'indice}
+	\begin{frame}[fragile]{Precisazione sul sollevamento}
+		Dati due insiemi $ Z, \, Y $e una funzione $ \phi : Y \to Z $ diciamo che $ f' : X \to Y $ è un \textbf{sollevamento} di $ f : X \to Z $ se commuta: 
+			\[\begin{tikzcd}
+			 & {Y} \arrow[d, " \phi"] \\
+			{X} \arrow[r, "f"'] \arrow[ru, "f'"] & {Z}               
+			\end{tikzcd}\]
+			\pause
+			Nel nostro caso $\phi$ è il morfismo indotto dalla proiezione 
+			$$G_0 \simeq  \Z_n^\ast  \to  \Z_n^\ast / \pm 1  \simeq G$$
+	\end{frame}
+	
+	\section{Calcolo degli indici}
 	
 	\begin{frame}{Caso generale}
 		\begin{teo}
@@ -310,7 +320,45 @@
 			\[ \xi_a := \zeta ^{d_a } \prod _{I \in \PS} \frac{ 1 - \zeta^{an_I}}{ 1 - \zeta^{n_I}}  \text{ con } d_a =\frac{1}{2}(1-a) \sum_{I \in \PS} n_I\]
 	\end{frame}
 	
+\subsection{Un nuovo sistema di unità}
 	
+	\begin{frame}
+		Costruiamo $\beta$ moltiplicativa, quindi definendo $ \beta (i) $ per ogni $ i \in \{ 1 , ... , s\} $ :
+
+		Definiamo $ G_i $ come il gruppo di Galois: $ \Gal ( \Q(\zeta_{n/p_i^{e_i}})^+ / \Q)) $ e consideriamo l'isomofismo di Frobenius:
+		\[ F_i : G_i \to G_i \text{ con }  \alpha \mapsto \alpha ^ {p_i}\] \pause
+		 Definiamo il suo elemento traccia $ N_{F_i} $ come:
+		 \[ N_{F_i} := 1 + F_i + ... + {F_i}^{\ord (F_i) - 1} \in  \Z [G_i] \] \pause
+		 \begin{alertblock}{}
+			 Consideriamo ora un sollevamento (lift) $ \overline{N_i} $ di $ N_{F_i} $ in $ \Z[G_0] $ e definiamo
+			 \[ \beta (i) =  \overline{N_i} \]
+		 \end{alertblock}\pause
+		 
+		Ovviamente $\beta$ non è unica, ma per il lemma visto prima lo sono le unità a meno di un segno, quindi lo è $ C_\beta $
+	\end{frame}
+
+	
+	\begin{frame}{Decomposizione in $ O_\K $}
+		Consider a prime $ p $ in $ \Z $ and its ideal extension in the ring of integers $ pO_\K $. Since $ O_K $ is a Dedekin domain we can factorize it with prime ideals:
+			\begin{equation}\label{eq:fact_p}
+				pO_\K = \prod_{j=1}^g \mathfrak{p}_j^{e_j}
+			\end{equation} 
+			
+			\begin{deff} \label{def:degree}
+				The number $ g $ is said to be the \textit{decomposition degree} (or number) of $ p $ in the extension $ \K / \Q $.
+				
+				For every $ j=1, ..., g $, $ e_j $ is said to be the \textit{ramification degree} (or index) of $ \mathfrak{p}_j $ in $ \K / \Q $.
+				
+				For every $ j=1, ..., g $, $ f_j := [O_\K / \mathfrak{p}_j : \Z_p ] $ is called the \textit{inertial degree} (or residual). 
+			\end{deff}
+	\end{frame}
+	
+	\begin{frame}{Risultato finale}
+		\begin{teo} \label{teo:idx_opt}
+					With $ C_\beta $ as defined before we have 
+					\[ i_\beta  =  \prod_{i=1}^s e_i^{g_i - 1} f_i ^{2 g_i - 1}\]
+				\end{teo}
+	\end{frame}
 
 	
 	

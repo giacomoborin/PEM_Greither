@@ -251,7 +251,16 @@
 
 	\subsection{A little remark}
 	
-	Sometimes it is easier to work with functions $\beta$ to $ \Z [G] $ instead of $ \Z [G_0] $ (as we will do later), but this is not a problem because we can show that with somo hypotesis $ C_\beta $ remain the same. 
+	Sometimes it is easier to work with functions $\beta$ to $ \Z [G] $ instead of $ \Z [G_0] $ and than consider a lift $ \overline{\beta} : \PS \to \Z [G_0] $. Obviously this is not unique, but this is not a problem because we can show that $ C_\beta $ remain the same. 
+	
+	\begin{rem}
+		Given two set $ Z, \, Y $ and a function $ \phi : Y \to Z $ we say that $ f' : X \to Y $ is a \textbf{lift} of $ f : X \to Z $ if $ f = \phi \circ f' $, i.e. if the following diagram commute: 
+		\[\begin{tikzcd}
+		 & {Y} \arrow[d, " \phi"] \\
+		{X} \arrow[r, "f"'] \arrow[ru, "f'"] & {Z}               
+		\end{tikzcd}\]
+		In our case $\phi$ is the morphism inducted on the group ring by the projection $G_0 \simeq  \Z_n^\ast  \to  \Z_n^\ast / \pm 1  \simeq G$
+	\end{rem}
 	
 	Initally we can osserve that we can factor the real unit $\xi_a(\beta)$ with simpler real units
 	\begin{equation*}
@@ -430,18 +439,18 @@
 	
 	Consider a prime $ p $ in $ \Z $ and its ideal extension in the ring of integers $ pO_\K $. Since $ O_K $ is a Dedekin domain we can factorize it with prime ideals:
 	\begin{equation}\label{eq:fact_p}
-		pO_\K = \prod_{i=1}^g \mathfrak{p}_i^{e_i}
+		pO_\K = \prod_{j=1}^g \mathfrak{p}_j^{e_j}
 	\end{equation} 
 	
 	\begin{deff} \label{def:degree}
 		The number $ g $ is said to be the \textit{decomposition degree} (or number) of $ p $ in the extension $ \K / \Q $.
-		
-		For every $ i=1, ..., g $, $ e_i $ is said to be the \textit{ramification degree} (or index) of $ \mathfrak{p}_i $ in $ \K / \Q $.
-		
-		For every $ i=1, ..., g $, $ f_i := [O_\K / \mathfrak{p}_i  : \Z_p ] $ is called the \textit{inertial degree} (or residual). 
+						
+		For every $ j=1, ..., g $, $ e_j $ is said to be the \textit{ramification degree} (or index) of $ \mathfrak{p}_j $ in $ \K / \Q $.
+						
+		For every $ j=1, ..., g $, $ f_j := [O_\K / \mathfrak{p}_j : \Z_p ] $ is called the \textit{inertial degree} (or residual). 
 	\end{deff}
 	
-	In particular is possible to prove that if $ n= [\K : \Q] $ so \[n = \sum_{i=1}^g f_i e_i\] Also if $ \K / \Q $ is a Galois extension then also $ e_i, f_i $ does not depend on $ i $ and so \[ n = efg \]
+	In particular is possible to prove that if $ n= [\K : \Q] $ so \[n = \sum_{j=1}^g f_j e_j \] Also if $ \K / \Q $ is a Galois extension then also $ e_i, f_i $ does not depend on $ j $ and so \[ n = efg \]
 	
 	We also recall from \cite[Theorem~3.7]{CF} the relation between the characters $ X $ over the galois group of $ \K/\Q $ and decomposition degree of $ p $ in the extension $ \K / \Q $ :
 	\begin{equation}\label{eq:g_char}

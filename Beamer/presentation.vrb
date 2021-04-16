@@ -1,11 +1,9 @@
-\frametitle{La funzione $\beta $}
-Dato $ n= p_1 ^{e_1} \cdots p_s ^{e_s} $ definiamo:
-		\begin{itemize}
-			\item $ S = \{1, ... , n \}$
-			\item $ \PS = \{ I \,|\, I \subsetneq S\}$
-			\item $ n_I = \prod_{i \in I} p_i ^{e_i} $
-		\end{itemize} \pause
-		Consideriamo una funzione $$ \beta : \PS \to \Z[G_0] $$ che utilizzeremo per costruire il sottogruppo cercato. \pause
-		\begin{deff}
-			$\beta$ si dice moltiplicativa se $ \beta (\emptyset) = 1 $ e dati $ I,J $ con intersezione vuota abbiamo $ \beta (I\cup J) = \beta(I) \beta(J)$.
-		\end{deff}
+\frametitle{Precisazione sul sollevamento}
+Dati due insiemi $ Z, \, Y $e una funzione $ \phi : Y \to Z $ diciamo che $ f' : X \to Y $ è un \textbf{sollevamento} di $ f : X \to Z $ se commuta:
+			\[\begin{tikzcd}
+			 & {Y} \arrow[d, " \phi"] \\
+			{X} \arrow[r, "f"'] \arrow[ru, "f'"] & {Z}
+			\end{tikzcd}\]
+			\pause
+			Nel nostro caso $\phi$ è il morfismo indotto dalla proiezione
+			$$G_0 \simeq  \Z_n^\ast  \to  \Z_n^\ast / \pm 1  \simeq G$$
