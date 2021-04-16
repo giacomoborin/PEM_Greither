@@ -1,4 +1,10 @@
 \defcounter {refsection}{0}\relax 
+\beamer@slide {skip1<1>}{16}
+\defcounter {refsection}{0}\relax 
+\beamer@slide {skip1}{16}
+\defcounter {refsection}{0}\relax 
+\beamer@slide {skip1<2>}{17}
+\defcounter {refsection}{0}\relax 
 \beamer@slide {eq:idx1}{42}
 \defcounter {refsection}{0}\relax 
 \beamer@slide {lem:index_reg}{44}
@@ -17,4 +23,4 @@
 \defcounter {refsection}{0}\relax 
 \beamer@slide {def:degree}{54}
 \defcounter {refsection}{0}\relax 
-\beamer@slide {teo:idx_opt}{55}
+\beamer@slide {teo:idx_opt}{59}

@@ -439,18 +439,18 @@
 	
 	Consider a prime $ p $ in $ \Z $ and its ideal extension in the ring of integers $ pO_\K $. Since $ O_K $ is a Dedekin domain we can factorize it with prime ideals:
 	\begin{equation}\label{eq:fact_p}
-		pO_\K = \prod_{j=1}^g \mathfrak{p}_j^{e_j}
+		pO_\K = \prod_{j=1}^g \mathfrak{p}_j^{\epsilon_j}
 	\end{equation} 
 	
 	\begin{deff} \label{def:degree}
 		The number $ g $ is said to be the \textit{decomposition degree} (or number) of $ p $ in the extension $ \K / \Q $.
 						
-		For every $ j=1, ..., g $, $ e_j $ is said to be the \textit{ramification degree} (or index) of $ \mathfrak{p}_j $ in $ \K / \Q $.
+		For every $ j=1, ..., g $, $ \epsilon_j $ is said to be the \textit{ramification degree} (or index) of $ \mathfrak{p}_j $ in $ \K / \Q $.
 						
 		For every $ j=1, ..., g $, $ f_j := [O_\K / \mathfrak{p}_j : \Z_p ] $ is called the \textit{inertial degree} (or residual). 
 	\end{deff}
 	
-	In particular is possible to prove that if $ n= [\K : \Q] $ so \[n = \sum_{j=1}^g f_j e_j \] Also if $ \K / \Q $ is a Galois extension then also $ e_i, f_i $ does not depend on $ j $ and so \[ n = efg \]
+	In particular is possible to prove that if $ n= [\K : \Q] $ so \[n = \sum_{j=1}^g f_j \epsilon_j \] Also if $ \K / \Q $ is a Galois extension then also $ \epsilon_j, f_j$ does not depend on $ j $ and so \[ n = \epsilon fg \]
 	
 	We also recall from \cite[Theorem~3.7]{CF} the relation between the characters $ X $ over the galois group of $ \K/\Q $ and decomposition degree of $ p $ in the extension $ \K / \Q $ :
 	\begin{equation}\label{eq:g_char}
@@ -460,38 +460,41 @@
 	
 	We have now the ingredients for evaluating in a optimal way $ i_\beta $. 
 	
-	For $ i\in {1 , ... , s} $ define $ g_i , f_i , e_i $ to be as in the definition \ref{def:degree} for the prime $ p_i$ in $ K /\Q $.
+	For $ i\in {1 , ... , s} $ define $ g_i , f_i , \epsilon_i $ to be as in the definition \ref{def:degree} for the prime $ p_i$ in $ K /\Q $.
+	
+	Is possible to show (fact A in \cite[Page~544]{RIN}) that the inertia degree $ f_i $ is closely realted with the Frobenius morphism, in fact
+	\[ f_i = \ord (F_i)\]
 	
 	\begin{tcolorbox}
 		\begin{teo} \label{teo:idx_opt}
-			With $ C_\beta $ as defined before we have 
-			\[ i_\beta  =  \prod_{i=1}^s e_i^{g_i - 1} f_i ^{2 g_i - 1}\]
+			With $ C_\beta $ defined as before we have 
+			\[ i_\beta  =  \prod_{i=1}^s \epsilon _i^{g_i - 1} f_i ^{2 g_i - 1}\]
 		\end{teo}
 	\end{tcolorbox}
 	
 	\begin{rem}
-		This index is \textit{optimal} because we have a lot of info about its factorization for definiton, also since $ e_i $ and $ f_i $ are factors of $ n $, the factorization of the last one is enough to know the $ i_\beta $'s. We will see later that is also smaller than other index already studied. 
+		This index is \textit{optimal} because we have a lot of info about its factorization for definiton, also since $ \epsilon _i $ and $ f_i $ are factors of $ n $, the factorization of the last one is enough to know the $ i_\beta $'s. We will see later that is also smaller than other index already studied. 
 	\end{rem}
 	
 	\begin{proof}
 		For $ s=1 $ this is trivial, since $ i_\beta = 1 $. 
 		
-		For $ s \geq 2 $ is possible to prove that $ e_i = \phi ( p_i ^ {e_i}) $. For $ i \in S$ and $ \chi $ such that $ p_i \nmid f_\chi $ we define
+		For $ s \geq 2 $ is possible to prove that $ \epsilon _i = \phi ( p_i ^ {e_i}) $. For $ i \in S$ and $ \chi $ such that $ p_i \nmid f_\chi $ we define
 		 \[ y(\chi , i) = \phi(p_i^{e_i}) \cdot \chi (\beta (i))  + 1- \chi^{-1} (p_i) \]
 		Considering $ \overline{\chi} $ to be the character induced by $ \chi $ in $ G_i$ we have $ \chi(\beta(i)) = \overline{\chi}(N_{F^i})  $ and $ \chi (p_i) = \overline{\chi}(F_i) $ using the isomorphism between $ G_i $ and the relative modulo ring. There are two cases: 
 		\begin{itemize}
-		\item[$ \chi(p_i) = 1 $ :] $ \overline{\chi}(N_{F_i}) = \sum \overline{\chi}(F_i)^j = \sum 1 = \ord (F_i) = f_i$ (from fact A in \cite[Page~544]{RIN}) and so $ y(\chi , i) = \phi(p_i^{e_i})f_i + 0 = e_i f_i $
+		\item[$ \chi(p_i) = 1 $ :] $ \overline{\chi}(N_{F_i}) = \sum \overline{\chi}(F_i)^j = \sum 1 = \ord (F_i) = f_i$  and so $ y(\chi , i) = \phi(p_i^{e_i})f_i + 0 = \epsilon _i f_i $
 		\item[$ \chi(p_i) \neq 1 $ :] Since $ \overline{\chi}({F_i})  \neq 1 $ follows $ \overline{\chi}(N_{F_i}) = 0 $. %TODO Ma dove???
 		Hence $ y(\chi , i) = \phi(p_i^{e_i}) \cdot \chi 0  + 1- \chi^{-1} (p_i)= 1- \chi^{-1} (p_i) $
 		\end{itemize}
 		Then, indexing the product by $ i $:
 		\begin{align*}
 			i_\beta & = \prod_{i=1}^s	\prod_{ \substack{\chi \neq 1 \text{ even}\\ p_i \nmid f_\chi }} y(\chi ,i)				\\	
-			& = \prod_{i=1}^s		\left( \prod_{ \chi(p_i) = 1  } e_i f_i \prod_{\chi(p_i) \neq 1}  (1- \chi^{-1} (p_i))\right) 	\quad (\chi \neq 1 \text{ even, } p_i\nmid f_\chi )		\\	
-			& \eqb ^\ast  \prod_{i=1}^s	((e_i f_i )^{g_i - 1} \cdot f_i ^{g_i})				\\	
-			 & = \prod_{i=1}^s		e_i^{g_i - 1} f_i ^{2 g_i - 1}		
+			& = \prod_{i=1}^s		\left( \prod_{ \chi(p_i) = 1  } \epsilon _i f_i \prod_{\chi(p_i) \neq 1}  (1- \chi^{-1} (p_i))\right) 	\quad (\chi \neq 1 \text{ even, } p_i\nmid f_\chi )		\\	
+			& \eqb ^\ast  \prod_{i=1}^s	((\epsilon _i f_i )^{g_i - 1} \cdot f_i ^{g_i})				\\	
+			 & = \prod_{i=1}^s		\epsilon _i^{g_i - 1} f_i ^{2 g_i - 1}		
 		\end{align*}
-		In $\ast$ the exponent $ g_i - 1 $ come from \ref{eq:g_char} (there isn't the trivial character). Instead for the second part we are using that, since $ \chi^{-1}(p_i) = \overline{\chi^-1}({F_i})  $ is a non trivial $ ord(F_i)=f_i $-th root of unity for all characters (and varing $ \chi $ we get every unit $ g_i $ times) we use that from the factorization of $ x^f - 1  $ as $ (x - 1 )(1 + x + ... + x^{f-1}) $ evaluated in $ 1 $ we have $ \prod_{\zeta^f=1, \zeta\neq 1} (1- \zeta) = f $.
+		In $\ast$ the exponent $ g_i - 1 $ come from \ref{eq:g_char} (there isn't the trivial character). Instead for the second part we are using that, since $ \chi^{-1}(p_i) = \overline{\chi^-1}({F_i})  $ is a non trivial $ \ord(F_i)=f_i $-th root of unity for all characters (and varing $ \chi $ we get every unit $ g_i $ times) we use that from the factorization of $ x^f - 1  $ as $ (x - 1 )(1 + x + ... + x^{f-1}) $ evaluated in $ 1 $ we have $ \prod_{\zeta^f=1, \zeta\neq 1} (1- \zeta) = f $.
 		
 		
 	\end{proof}

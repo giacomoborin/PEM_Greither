@@ -95,6 +95,7 @@
 			\item $ O_K = \Z[\zeta_n + \zeta_n^{-1}] $ \pause
 			\item $ E_K = O _K ^\ast$ , cioè l'insieme degli elementi invertibili 
 		\end{itemize}
+		\hyperlink{skip1}{\beamerskipbutton{Salta dimostrazione}}
 	\end{frame}
 	
 	\begin{frame}
@@ -126,9 +127,10 @@
 		\end{proof}
 		
 	\end{frame}
+
 	
-	
-	\begin{frame}
+	\begin{frame}[label = skip1]
+		
 		\begin{prop}
 			Il gruppo di Galois di $ K $ è isomorfo a $ \Z_n^\ast / \{\pm 1\} $
 		\end{prop}
@@ -339,25 +341,38 @@
 
 	
 	\begin{frame}{Decomposizione in $ O_\K $}
-		Consider a prime $ p $ in $ \Z $ and its ideal extension in the ring of integers $ pO_\K $. Since $ O_K $ is a Dedekin domain we can factorize it with prime ideals:
+		Dato un primo $ p $ in $ \Z $ e la sua estensione come ideale $ pO_\K $ in $ O_K $, dato che qeusto è un dominio di Dedekin possiamo fattorizzare:
 			\begin{equation}\label{eq:fact_p}
-				pO_\K = \prod_{j=1}^g \mathfrak{p}_j^{e_j}
+				pO_\K = \prod_{j=1}^g \mathfrak{p}_j^{\epsilon _j}
 			\end{equation} 
-			
+			\pause
 			\begin{deff} \label{def:degree}
-				The number $ g $ is said to be the \textit{decomposition degree} (or number) of $ p $ in the extension $ \K / \Q $.
+				Il numero $ g $ si dice essere \textbf{grado di decomposizione} di $ p $ nell'estensione $ \K / \Q $.
 				
-				For every $ j=1, ..., g $, $ e_j $ is said to be the \textit{ramification degree} (or index) of $ \mathfrak{p}_j $ in $ \K / \Q $.
+				Per ogni $ j=1, ..., g $, $ \epsilon _j $ si dice essere \textbf{indice di ramificazione} di $ \mathfrak{p}_j $ in $ \K / \Q $.
 				
-				For every $ j=1, ..., g $, $ f_j := [O_\K / \mathfrak{p}_j : \Z_p ] $ is called the \textit{inertial degree} (or residual). 
+				Per ogni $ j=1, ..., g $, $ f_j := [O_\K / \mathfrak{p}_j : \Z_p ] $ si dice \textbf{grado di inerzia}.
 			\end{deff}
+	\end{frame}
+	
+	\begin{frame}{Decomposizione in $ \Z [\zeta_n + \zeta_n^{-1}] $}
+		Si può provare che se $ \K / \Q $ è un'estensione di Galois (come $ K / Q $) $ \epsilon _j, f_j $ non dipendono da $ j $ e quindi \[ n = \epsilon fg \] \pause
+		Per $ i\in {1 , ... , s} $ definiamo $ g_i , f_i , \epsilon _i $ essere i gradi definiti prima per il primo $ p_i$ in $ K /\Q $.\\
+		\pause
+		Queste costanti sono fortemente in relazione con altri oggetti visti finora, ad esempio si può provare:
+		\begin{itemize}
+		\item Se $ X $ è l'insieme dei carattari di $ K / \Q $ vale $ g_i = | \{ \chi \in X \,|\, \chi(p_i)=1 \} $
+		\item Il grado di inerzia $ f_i $ è uguale all'ordine del morphismo di Frobenius $ F_i $
+		\end{itemize}
 	\end{frame}
 	
 	\begin{frame}{Risultato finale}
 		\begin{teo} \label{teo:idx_opt}
-					With $ C_\beta $ as defined before we have 
-					\[ i_\beta  =  \prod_{i=1}^s e_i^{g_i - 1} f_i ^{2 g_i - 1}\]
-				\end{teo}
+					Dato $ C_\beta $ definito come prima abbiamo che
+					\[ i_\beta  =  \prod_{i=1}^s \epsilon _i^{g_i - 1} f_i ^{2 g_i - 1}\]
+		\end{teo}
+		\pause
+		Questo indice si può dire ottimale perchè non solo rende più semplice la sua fattorizzazione (basta sapere quella di $ \epsilon _i $ e $ f_i $), ma inoltre sappiamo che questi dividono $ n $, quindi i fattori di $i_\beta $ sono solo i fattori di $ n $.
 	\end{frame}
 
 	
