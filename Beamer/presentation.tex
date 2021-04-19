@@ -16,15 +16,15 @@
 \institute{Università di Trento}
 %\titlegraphic{...} 
 
-\usetheme{Madrid}
+\usetheme{beunitn}
 \usecolortheme{rose}
 \setbeamercovered{dynamic}
 
-\AtBeginSection{
-	\begin{frame} 
-		\sectionpage
-	\end{frame}
-}
+%\AtBeginSection{
+%	\begin{frame} 
+%		\sectionpage
+%	\end{frame}
+%}
 
 
 % Theorem definitons 
@@ -95,7 +95,7 @@
 			\item $ O_K = \Z[\zeta_n + \zeta_n^{-1}] $ \pause
 			\item $ E_K = O _K ^\ast$ , cioè l'insieme degli elementi invertibili 
 		\end{itemize}
-		\hyperlink{skip1}{\beamerskipbutton{Salta dimostrazione}}
+		\hyperlink{skip1}{\beamerskipbutton{Salta dimostrazione} }
 	\end{frame}
 	
 	\begin{frame}
@@ -324,18 +324,21 @@
 	
 \subsection{Un nuovo sistema di unità}
 	
-	\begin{frame}
+	\begin{frame}{Definizione di $\beta$}
 		Costruiamo $\beta$ moltiplicativa, quindi definendo $ \beta (i) $ per ogni $ i \in \{ 1 , ... , s\} $ :
 
 		Definiamo $ G_i $ come il gruppo di Galois: $ \Gal ( \Q(\zeta_{n/p_i^{e_i}})^+ / \Q)) $ e consideriamo l'isomofismo di Frobenius:
 		\[ F_i : G_i \to G_i \text{ con }  \alpha \mapsto \alpha ^ {p_i}\] \pause
 		 Definiamo il suo elemento traccia $ N_{F_i} $ come:
 		 \[ N_{F_i} := 1 + F_i + ... + {F_i}^{\ord (F_i) - 1} \in  \Z [G_i] \] \pause
-		 \begin{alertblock}{}
-			 Consideriamo ora un sollevamento (lift) $ \overline{N_i} $ di $ N_{F_i} $ in $ \Z[G_0] $ e definiamo
-			 \[ \beta (i) =  \overline{N_i} \]
-		 \end{alertblock}\pause
-		 
+	\end{frame}
+	
+	\begin{frame}{Definizione di $\beta$}
+		\begin{block}{}
+				 Consideriamo ora un sollevamento (lift) $ \overline{N_i} $ di $ N_{F_i} $ in $ \Z[G_0] $ e definiamo
+				 \[ \beta (i) =  \overline{N_i} \]
+		\end{block}\pause
+			 
 		Ovviamente $\beta$ non è unica, ma per il lemma visto prima lo sono le unità a meno di un segno, quindi lo è $ C_\beta $
 	\end{frame}
 
