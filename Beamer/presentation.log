@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.5.31)  19 APR 2021 22:26
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.5.31)  19 APR 2021 23:28
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1259,58 +1259,59 @@ Package biblatex Info: ... file 'presentation.bbl' found.
 Package biblatex Info: Reference section=0 on input line 63.
 Package biblatex Info: Reference segment=0 on input line 63.
  (./presentation.nav)
-<images/logo.png, id=33, 1204.5pt x 1204.5pt>
-File: images/logo.png Graphic file (type png)
-<use images/logo.png>
-Package pdftex.def Info: images/logo.png  used on input line 67.
+<images/logo_white.png, id=53, 1204.5pt x 1204.5pt>
+File: images/logo_white.png Graphic file (type png)
+<use images/logo_white.png>
+Package pdftex.def Info: images/logo_white.png  used on input line 67.
 (pdftex.def)             Requested size: 42.67912pt x 42.67642pt.
  [1
 
 {/usr/local/texlive/2019/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./image
-s/logo.png>]
-<../images/sage.png, id=51, 682.2288pt x 187.902pt>
+s/logo_white.png>]
+<../images/sage.png, id=71, 682.2288pt x 187.902pt>
 File: ../images/sage.png Graphic file (type png)
 <use ../images/sage.png>
 Package pdftex.def Info: ../images/sage.png  used on input line 76.
 (pdftex.def)             Requested size: 39.9326pt x 11.0pt.
-File: images/logo.png Graphic file (type png)
-<use images/logo.png>
-Package pdftex.def Info: images/logo.png  used on input line 76.
+File: images/logo_white.png Graphic file (type png)
+<use images/logo_white.png>
+Package pdftex.def Info: images/logo_white.png  used on input line 76.
 (pdftex.def)             Requested size: 42.67912pt x 42.67642pt.
-
-[2
+ [2
 
  <../images/sage.png>]
 File: ../images/sage.png Graphic file (type png)
 <use ../images/sage.png>
 Package pdftex.def Info: ../images/sage.png  used on input line 76.
 (pdftex.def)             Requested size: 39.9326pt x 11.0pt.
-File: images/logo.png Graphic file (type png)
-<use images/logo.png>
-Package pdftex.def Info: images/logo.png  used on input line 76.
+File: images/logo_white.png Graphic file (type png)
+<use images/logo_white.png>
+Package pdftex.def Info: images/logo_white.png  used on input line 76.
 (pdftex.def)             Requested size: 42.67912pt x 42.67642pt.
  [3
 
 ]
-Overfull \vbox (59.09808pt too high) detected at line 81
+Overfull \vbox (68.27011pt too high) detected at line 81
  []
 
-File: images/logo.png Graphic file (type png)
-<use images/logo.png>
-Package pdftex.def Info: images/logo.png  used on input line 81.
+File: images/logo_white.png Graphic file (type png)
+<use images/logo_white.png>
+Package pdftex.def Info: images/logo_white.png  used on input line 81.
 (pdftex.def)             Requested size: 42.67912pt x 42.67642pt.
 [4
 
  </usr/local/texlive/2019/texmf-dist/tex/latex/beamer/beamericonarticle.pdf>]
+<images/logo.png, id=173, 1204.5pt x 1204.5pt>
 File: images/logo.png Graphic file (type png)
 <use images/logo.png>
 Package pdftex.def Info: images/logo.png  used on input line 85.
 (pdftex.def)             Requested size: 42.67912pt x 42.67642pt.
 [5
 
-]
+ <./images/logo.png>]
 LaTeX Font Info:    Try loading font information for U+msa on input line 99.
- (/usr/local/texlive/2019/texmf-dist/tex/latex/amsfonts/umsa.fd
+
+(/usr/local/texlive/2019/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
 LaTeX Font Info:    Try loading font information for U+msb on input line 99.
@@ -1325,58 +1326,58 @@ line 99.
 File: ot1mathkerncmss.fd 2013/03/27 Fontinst v1.933 font definitions for OT1/ma
 thkerncmss.
 )
-File: images/logo.png Graphic file (type png)
-<use images/logo.png>
-Package pdftex.def Info: images/logo.png  used on input line 99.
+File: images/logo_white.png Graphic file (type png)
+<use images/logo_white.png>
+Package pdftex.def Info: images/logo_white.png  used on input line 99.
 (pdftex.def)             Requested size: 42.67912pt x 42.67642pt.
  [6
 
 ]
-File: images/logo.png Graphic file (type png)
-<use images/logo.png>
-Package pdftex.def Info: images/logo.png  used on input line 99.
+File: images/logo_white.png Graphic file (type png)
+<use images/logo_white.png>
+Package pdftex.def Info: images/logo_white.png  used on input line 99.
 (pdftex.def)             Requested size: 42.67912pt x 42.67642pt.
  [7
 
 ]
-File: images/logo.png Graphic file (type png)
-<use images/logo.png>
-Package pdftex.def Info: images/logo.png  used on input line 99.
+File: images/logo_white.png Graphic file (type png)
+<use images/logo_white.png>
+Package pdftex.def Info: images/logo_white.png  used on input line 99.
 (pdftex.def)             Requested size: 42.67912pt x 42.67642pt.
  [8
 
 ]
-File: images/logo.png Graphic file (type png)
-<use images/logo.png>
-Package pdftex.def Info: images/logo.png  used on input line 99.
+File: images/logo_white.png Graphic file (type png)
+<use images/logo_white.png>
+Package pdftex.def Info: images/logo_white.png  used on input line 99.
 (pdftex.def)             Requested size: 42.67912pt x 42.67642pt.
  [9
 
 ]
-File: images/logo.png Graphic file (type png)
-<use images/logo.png>
-Package pdftex.def Info: images/logo.png  used on input line 99.
+File: images/logo_white.png Graphic file (type png)
+<use images/logo_white.png>
+Package pdftex.def Info: images/logo_white.png  used on input line 99.
 (pdftex.def)             Requested size: 42.67912pt x 42.67642pt.
  [10
 
 ]
-File: images/logo.png Graphic file (type png)
-<use images/logo.png>
-Package pdftex.def Info: images/logo.png  used on input line 111.
+File: images/logo_white.png Graphic file (type png)
+<use images/logo_white.png>
+Package pdftex.def Info: images/logo_white.png  used on input line 111.
 (pdftex.def)             Requested size: 42.67912pt x 42.67642pt.
  [11
 
 ]
-File: images/logo.png Graphic file (type png)
-<use images/logo.png>
-Package pdftex.def Info: images/logo.png  used on input line 111.
+File: images/logo_white.png Graphic file (type png)
+<use images/logo_white.png>
+Package pdftex.def Info: images/logo_white.png  used on input line 111.
 (pdftex.def)             Requested size: 42.67912pt x 42.67642pt.
  [12
 
 ]
-File: images/logo.png Graphic file (type png)
-<use images/logo.png>
-Package pdftex.def Info: images/logo.png  used on input line 111.
+File: images/logo_white.png Graphic file (type png)
+<use images/logo_white.png>
+Package pdftex.def Info: images/logo_white.png  used on input line 111.
 (pdftex.def)             Requested size: 42.67912pt x 42.67642pt.
  [13
 
@@ -1384,116 +1385,116 @@ Package pdftex.def Info: images/logo.png  used on input line 111.
 \openout4 = `presentation.vrb'.
 
  (./presentation.vrb)
-File: images/logo.png Graphic file (type png)
-<use images/logo.png>
-Package pdftex.def Info: images/logo.png  used on input line 129.
+File: images/logo_white.png Graphic file (type png)
+<use images/logo_white.png>
+Package pdftex.def Info: images/logo_white.png  used on input line 129.
 (pdftex.def)             Requested size: 42.67912pt x 42.67642pt.
  [14
 
 ]
 (./presentation.vrb)
-File: images/logo.png Graphic file (type png)
-<use images/logo.png>
-Package pdftex.def Info: images/logo.png  used on input line 129.
+File: images/logo_white.png Graphic file (type png)
+<use images/logo_white.png>
+Package pdftex.def Info: images/logo_white.png  used on input line 129.
 (pdftex.def)             Requested size: 42.67912pt x 42.67642pt.
  [15
 
 ]
-File: images/logo.png Graphic file (type png)
-<use images/logo.png>
-Package pdftex.def Info: images/logo.png  used on input line 140.
+File: images/logo_white.png Graphic file (type png)
+<use images/logo_white.png>
+Package pdftex.def Info: images/logo_white.png  used on input line 140.
 (pdftex.def)             Requested size: 42.67912pt x 42.67642pt.
  [16
 
 ]
-File: images/logo.png Graphic file (type png)
-<use images/logo.png>
-Package pdftex.def Info: images/logo.png  used on input line 140.
+File: images/logo_white.png Graphic file (type png)
+<use images/logo_white.png>
+Package pdftex.def Info: images/logo_white.png  used on input line 140.
 (pdftex.def)             Requested size: 42.67912pt x 42.67642pt.
  [17
 
 ]
-File: images/logo.png Graphic file (type png)
-<use images/logo.png>
-Package pdftex.def Info: images/logo.png  used on input line 153.
+File: images/logo_white.png Graphic file (type png)
+<use images/logo_white.png>
+Package pdftex.def Info: images/logo_white.png  used on input line 153.
 (pdftex.def)             Requested size: 42.67912pt x 42.67642pt.
  [18
 
 ]
-File: images/logo.png Graphic file (type png)
-<use images/logo.png>
-Package pdftex.def Info: images/logo.png  used on input line 153.
+File: images/logo_white.png Graphic file (type png)
+<use images/logo_white.png>
+Package pdftex.def Info: images/logo_white.png  used on input line 153.
 (pdftex.def)             Requested size: 42.67912pt x 42.67642pt.
  [19
 
 ]
-File: images/logo.png Graphic file (type png)
-<use images/logo.png>
-Package pdftex.def Info: images/logo.png  used on input line 162.
+File: images/logo_white.png Graphic file (type png)
+<use images/logo_white.png>
+Package pdftex.def Info: images/logo_white.png  used on input line 162.
 (pdftex.def)             Requested size: 42.67912pt x 42.67642pt.
  [20
 
 ]
-File: images/logo.png Graphic file (type png)
-<use images/logo.png>
-Package pdftex.def Info: images/logo.png  used on input line 162.
+File: images/logo_white.png Graphic file (type png)
+<use images/logo_white.png>
+Package pdftex.def Info: images/logo_white.png  used on input line 162.
 (pdftex.def)             Requested size: 42.67912pt x 42.67642pt.
  [21
 
 ]
-File: images/logo.png Graphic file (type png)
-<use images/logo.png>
-Package pdftex.def Info: images/logo.png  used on input line 168.
+File: images/logo_white.png Graphic file (type png)
+<use images/logo_white.png>
+Package pdftex.def Info: images/logo_white.png  used on input line 168.
 (pdftex.def)             Requested size: 42.67912pt x 42.67642pt.
  [22
 
 ]
-File: images/logo.png Graphic file (type png)
-<use images/logo.png>
-Package pdftex.def Info: images/logo.png  used on input line 182.
+File: images/logo_white.png Graphic file (type png)
+<use images/logo_white.png>
+Package pdftex.def Info: images/logo_white.png  used on input line 182.
 (pdftex.def)             Requested size: 42.67912pt x 42.67642pt.
  [23
 
 ]
-File: images/logo.png Graphic file (type png)
-<use images/logo.png>
-Package pdftex.def Info: images/logo.png  used on input line 182.
+File: images/logo_white.png Graphic file (type png)
+<use images/logo_white.png>
+Package pdftex.def Info: images/logo_white.png  used on input line 182.
 (pdftex.def)             Requested size: 42.67912pt x 42.67642pt.
  [24
 
 ]
-File: images/logo.png Graphic file (type png)
-<use images/logo.png>
-Package pdftex.def Info: images/logo.png  used on input line 182.
+File: images/logo_white.png Graphic file (type png)
+<use images/logo_white.png>
+Package pdftex.def Info: images/logo_white.png  used on input line 182.
 (pdftex.def)             Requested size: 42.67912pt x 42.67642pt.
  [25
 
 ]
-File: images/logo.png Graphic file (type png)
-<use images/logo.png>
-Package pdftex.def Info: images/logo.png  used on input line 190.
+File: images/logo_white.png Graphic file (type png)
+<use images/logo_white.png>
+Package pdftex.def Info: images/logo_white.png  used on input line 190.
 (pdftex.def)             Requested size: 42.67912pt x 42.67642pt.
 
 [26
 
 ]
-File: images/logo.png Graphic file (type png)
-<use images/logo.png>
-Package pdftex.def Info: images/logo.png  used on input line 190.
+File: images/logo_white.png Graphic file (type png)
+<use images/logo_white.png>
+Package pdftex.def Info: images/logo_white.png  used on input line 190.
 (pdftex.def)             Requested size: 42.67912pt x 42.67642pt.
  [27
 
 ]
-File: images/logo.png Graphic file (type png)
-<use images/logo.png>
-Package pdftex.def Info: images/logo.png  used on input line 196.
+File: images/logo_white.png Graphic file (type png)
+<use images/logo_white.png>
+Package pdftex.def Info: images/logo_white.png  used on input line 196.
 (pdftex.def)             Requested size: 42.67912pt x 42.67642pt.
  [28
 
 ]
-File: images/logo.png Graphic file (type png)
-<use images/logo.png>
-Package pdftex.def Info: images/logo.png  used on input line 196.
+File: images/logo_white.png Graphic file (type png)
+<use images/logo_white.png>
+Package pdftex.def Info: images/logo_white.png  used on input line 196.
 (pdftex.def)             Requested size: 42.67912pt x 42.67642pt.
  [29
 
@@ -1508,59 +1509,59 @@ Package pdftex.def Info: images/logo.png  used on input line 198.
 \openout4 = `presentation.vrb'.
 
  (./presentation.vrb)
-File: images/logo.png Graphic file (type png)
-<use images/logo.png>
-Package pdftex.def Info: images/logo.png  used on input line 211.
+File: images/logo_white.png Graphic file (type png)
+<use images/logo_white.png>
+Package pdftex.def Info: images/logo_white.png  used on input line 211.
 (pdftex.def)             Requested size: 42.67912pt x 42.67642pt.
  [31
 
 ] (./presentation.vrb)
-File: images/logo.png Graphic file (type png)
-<use images/logo.png>
-Package pdftex.def Info: images/logo.png  used on input line 211.
+File: images/logo_white.png Graphic file (type png)
+<use images/logo_white.png>
+Package pdftex.def Info: images/logo_white.png  used on input line 211.
 (pdftex.def)             Requested size: 42.67912pt x 42.67642pt.
 
 [32
 
 ] (./presentation.vrb)
-File: images/logo.png Graphic file (type png)
-<use images/logo.png>
-Package pdftex.def Info: images/logo.png  used on input line 211.
+File: images/logo_white.png Graphic file (type png)
+<use images/logo_white.png>
+Package pdftex.def Info: images/logo_white.png  used on input line 211.
 (pdftex.def)             Requested size: 42.67912pt x 42.67642pt.
  [33
 
 ]
-File: images/logo.png Graphic file (type png)
-<use images/logo.png>
-Package pdftex.def Info: images/logo.png  used on input line 226.
+File: images/logo_white.png Graphic file (type png)
+<use images/logo_white.png>
+Package pdftex.def Info: images/logo_white.png  used on input line 226.
 (pdftex.def)             Requested size: 42.67912pt x 42.67642pt.
  [34
 
 ]
-File: images/logo.png Graphic file (type png)
-<use images/logo.png>
-Package pdftex.def Info: images/logo.png  used on input line 238.
+File: images/logo_white.png Graphic file (type png)
+<use images/logo_white.png>
+Package pdftex.def Info: images/logo_white.png  used on input line 238.
 (pdftex.def)             Requested size: 42.67912pt x 42.67642pt.
  [35
 
 ]
-File: images/logo.png Graphic file (type png)
-<use images/logo.png>
-Package pdftex.def Info: images/logo.png  used on input line 238.
+File: images/logo_white.png Graphic file (type png)
+<use images/logo_white.png>
+Package pdftex.def Info: images/logo_white.png  used on input line 238.
 (pdftex.def)             Requested size: 42.67912pt x 42.67642pt.
  [36
 
 ]
-File: images/logo.png Graphic file (type png)
-<use images/logo.png>
-Package pdftex.def Info: images/logo.png  used on input line 246.
+File: images/logo_white.png Graphic file (type png)
+<use images/logo_white.png>
+Package pdftex.def Info: images/logo_white.png  used on input line 246.
 (pdftex.def)             Requested size: 42.67912pt x 42.67642pt.
  [37
 
 ]
-File: images/logo.png Graphic file (type png)
-<use images/logo.png>
-Package pdftex.def Info: images/logo.png  used on input line 246.
+File: images/logo_white.png Graphic file (type png)
+<use images/logo_white.png>
+Package pdftex.def Info: images/logo_white.png  used on input line 246.
 (pdftex.def)             Requested size: 42.67912pt x 42.67642pt.
  [38
 
@@ -1568,17 +1569,17 @@ Package pdftex.def Info: images/logo.png  used on input line 246.
 \openout4 = `presentation.vrb'.
 
  (./presentation.vrb)
-File: images/logo.png Graphic file (type png)
-<use images/logo.png>
-Package pdftex.def Info: images/logo.png  used on input line 257.
+File: images/logo_white.png Graphic file (type png)
+<use images/logo_white.png>
+Package pdftex.def Info: images/logo_white.png  used on input line 257.
 (pdftex.def)             Requested size: 42.67912pt x 42.67642pt.
 
 [39
 
 ] (./presentation.vrb)
-File: images/logo.png Graphic file (type png)
-<use images/logo.png>
-Package pdftex.def Info: images/logo.png  used on input line 257.
+File: images/logo_white.png Graphic file (type png)
+<use images/logo_white.png>
+Package pdftex.def Info: images/logo_white.png  used on input line 257.
 (pdftex.def)             Requested size: 42.67912pt x 42.67642pt.
  [40
 
@@ -1590,94 +1591,94 @@ Package pdftex.def Info: images/logo.png  used on input line 259.
  [41
 
 ]
-File: images/logo.png Graphic file (type png)
-<use images/logo.png>
-Package pdftex.def Info: images/logo.png  used on input line 275.
+File: images/logo_white.png Graphic file (type png)
+<use images/logo_white.png>
+Package pdftex.def Info: images/logo_white.png  used on input line 275.
 (pdftex.def)             Requested size: 42.67912pt x 42.67642pt.
  [42
 
 ]
-File: images/logo.png Graphic file (type png)
-<use images/logo.png>
-Package pdftex.def Info: images/logo.png  used on input line 275.
+File: images/logo_white.png Graphic file (type png)
+<use images/logo_white.png>
+Package pdftex.def Info: images/logo_white.png  used on input line 275.
 (pdftex.def)             Requested size: 42.67912pt x 42.67642pt.
  [43
 
 ]
-File: images/logo.png Graphic file (type png)
-<use images/logo.png>
-Package pdftex.def Info: images/logo.png  used on input line 288.
+File: images/logo_white.png Graphic file (type png)
+<use images/logo_white.png>
+Package pdftex.def Info: images/logo_white.png  used on input line 288.
 (pdftex.def)             Requested size: 42.67912pt x 42.67642pt.
  [44
 
 ]
-File: images/logo.png Graphic file (type png)
-<use images/logo.png>
-Package pdftex.def Info: images/logo.png  used on input line 288.
+File: images/logo_white.png Graphic file (type png)
+<use images/logo_white.png>
+Package pdftex.def Info: images/logo_white.png  used on input line 288.
 (pdftex.def)             Requested size: 42.67912pt x 42.67642pt.
  [45
 
 ]
-File: images/logo.png Graphic file (type png)
-<use images/logo.png>
-Package pdftex.def Info: images/logo.png  used on input line 301.
+File: images/logo_white.png Graphic file (type png)
+<use images/logo_white.png>
+Package pdftex.def Info: images/logo_white.png  used on input line 301.
 (pdftex.def)             Requested size: 42.67912pt x 42.67642pt.
  [46
 
 ]
-File: images/logo.png Graphic file (type png)
-<use images/logo.png>
-Package pdftex.def Info: images/logo.png  used on input line 301.
+File: images/logo_white.png Graphic file (type png)
+<use images/logo_white.png>
+Package pdftex.def Info: images/logo_white.png  used on input line 301.
 (pdftex.def)             Requested size: 42.67912pt x 42.67642pt.
  [47
 
 ]
-File: images/logo.png Graphic file (type png)
-<use images/logo.png>
-Package pdftex.def Info: images/logo.png  used on input line 312.
+File: images/logo_white.png Graphic file (type png)
+<use images/logo_white.png>
+Package pdftex.def Info: images/logo_white.png  used on input line 312.
 (pdftex.def)             Requested size: 42.67912pt x 42.67642pt.
  [48
 
 ]
-File: images/logo.png Graphic file (type png)
-<use images/logo.png>
-Package pdftex.def Info: images/logo.png  used on input line 323.
+File: images/logo_white.png Graphic file (type png)
+<use images/logo_white.png>
+Package pdftex.def Info: images/logo_white.png  used on input line 323.
 (pdftex.def)             Requested size: 42.67912pt x 42.67642pt.
  [49
 
 ]
-File: images/logo.png Graphic file (type png)
-<use images/logo.png>
-Package pdftex.def Info: images/logo.png  used on input line 334.
+File: images/logo_white.png Graphic file (type png)
+<use images/logo_white.png>
+Package pdftex.def Info: images/logo_white.png  used on input line 334.
 (pdftex.def)             Requested size: 42.67912pt x 42.67642pt.
 
 [50
 
 ]
-File: images/logo.png Graphic file (type png)
-<use images/logo.png>
-Package pdftex.def Info: images/logo.png  used on input line 334.
+File: images/logo_white.png Graphic file (type png)
+<use images/logo_white.png>
+Package pdftex.def Info: images/logo_white.png  used on input line 334.
 (pdftex.def)             Requested size: 42.67912pt x 42.67642pt.
  [51
 
 ]
-File: images/logo.png Graphic file (type png)
-<use images/logo.png>
-Package pdftex.def Info: images/logo.png  used on input line 334.
+File: images/logo_white.png Graphic file (type png)
+<use images/logo_white.png>
+Package pdftex.def Info: images/logo_white.png  used on input line 334.
 (pdftex.def)             Requested size: 42.67912pt x 42.67642pt.
  [52
 
 ]
-File: images/logo.png Graphic file (type png)
-<use images/logo.png>
-Package pdftex.def Info: images/logo.png  used on input line 343.
+File: images/logo_white.png Graphic file (type png)
+<use images/logo_white.png>
+Package pdftex.def Info: images/logo_white.png  used on input line 343.
 (pdftex.def)             Requested size: 42.67912pt x 42.67642pt.
  [53
 
 ]
-File: images/logo.png Graphic file (type png)
-<use images/logo.png>
-Package pdftex.def Info: images/logo.png  used on input line 343.
+File: images/logo_white.png Graphic file (type png)
+<use images/logo_white.png>
+Package pdftex.def Info: images/logo_white.png  used on input line 343.
 (pdftex.def)             Requested size: 42.67912pt x 42.67642pt.
  [54
 
@@ -1687,52 +1688,52 @@ LaTeX Font Info:    Try loading font information for U+euf on input line 359.
 (/usr/local/texlive/2019/texmf-dist/tex/latex/amsfonts/ueuf.fd
 File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
 )
-File: images/logo.png Graphic file (type png)
-<use images/logo.png>
-Package pdftex.def Info: images/logo.png  used on input line 359.
+File: images/logo_white.png Graphic file (type png)
+<use images/logo_white.png>
+Package pdftex.def Info: images/logo_white.png  used on input line 359.
 (pdftex.def)             Requested size: 42.67912pt x 42.67642pt.
  [55
 
 ]
-File: images/logo.png Graphic file (type png)
-<use images/logo.png>
-Package pdftex.def Info: images/logo.png  used on input line 359.
+File: images/logo_white.png Graphic file (type png)
+<use images/logo_white.png>
+Package pdftex.def Info: images/logo_white.png  used on input line 359.
 (pdftex.def)             Requested size: 42.67912pt x 42.67642pt.
  [56
 
 ]
-File: images/logo.png Graphic file (type png)
-<use images/logo.png>
-Package pdftex.def Info: images/logo.png  used on input line 370.
+File: images/logo_white.png Graphic file (type png)
+<use images/logo_white.png>
+Package pdftex.def Info: images/logo_white.png  used on input line 370.
 (pdftex.def)             Requested size: 42.67912pt x 42.67642pt.
 
 [57
 
 ]
-File: images/logo.png Graphic file (type png)
-<use images/logo.png>
-Package pdftex.def Info: images/logo.png  used on input line 370.
+File: images/logo_white.png Graphic file (type png)
+<use images/logo_white.png>
+Package pdftex.def Info: images/logo_white.png  used on input line 370.
 (pdftex.def)             Requested size: 42.67912pt x 42.67642pt.
  [58
 
 ]
-File: images/logo.png Graphic file (type png)
-<use images/logo.png>
-Package pdftex.def Info: images/logo.png  used on input line 370.
+File: images/logo_white.png Graphic file (type png)
+<use images/logo_white.png>
+Package pdftex.def Info: images/logo_white.png  used on input line 370.
 (pdftex.def)             Requested size: 42.67912pt x 42.67642pt.
  [59
 
 ]
-File: images/logo.png Graphic file (type png)
-<use images/logo.png>
-Package pdftex.def Info: images/logo.png  used on input line 379.
+File: images/logo_white.png Graphic file (type png)
+<use images/logo_white.png>
+Package pdftex.def Info: images/logo_white.png  used on input line 379.
 (pdftex.def)             Requested size: 42.67912pt x 42.67642pt.
  [60
 
 ]
-File: images/logo.png Graphic file (type png)
-<use images/logo.png>
-Package pdftex.def Info: images/logo.png  used on input line 379.
+File: images/logo_white.png Graphic file (type png)
+<use images/logo_white.png>
+Package pdftex.def Info: images/logo_white.png  used on input line 379.
 (pdftex.def)             Requested size: 42.67912pt x 42.67642pt.
  [61
 
@@ -1758,10 +1759,10 @@ Package logreq Info: Writing requests to 'presentation.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 30512 strings out of 492616
- 615035 string characters out of 6129481
- 848557 words of memory out of 5000000
- 33684 multiletter control sequences out of 15000+600000
+ 30528 strings out of 492616
+ 615442 string characters out of 6129481
+ 848701 words of memory out of 5000000
+ 33699 multiletter control sequences out of 15000+600000
  33342 words of font info for 93 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  58i,18n,84p,803b,1345s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1794,10 +1795,10 @@ xmf-dist/fonts/type1/public/cm-super/sfss1095.pfb></usr/local/texlive/2019/texm
 f-dist/fonts/type1/public/cm-super/sfss1200.pfb></usr/local/texlive/2019/texmf-
 dist/fonts/type1/public/cm-super/sfss1440.pfb></usr/local/texlive/2019/texmf-di
 st/fonts/type1/public/cm-super/sfsx1095.pfb>
-Output written on presentation.pdf (61 pages, 581017 bytes).
+Output written on presentation.pdf (61 pages, 822451 bytes).
 PDF statistics:
- 931 PDF objects out of 1000 (max. 8388607)
- 630 compressed objects within 7 object streams
+ 2165 PDF objects out of 2487 (max. 8388607)
+ 1830 compressed objects within 19 object streams
  146 named destinations out of 1000 (max. 500000)
- 1233 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1238 words of extra memory for PDF output out of 10000 (max. 10000000)
 
