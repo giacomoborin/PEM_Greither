@@ -141,15 +141,23 @@
 \defcounter {refsection}{0}\relax 
 \headcommand {\beamer@framepages {55}{56}}
 \defcounter {refsection}{0}\relax 
-\headcommand {\slideentry {3}{1}{4}{57/59}{Un nuovo sistema di unit\IeC {\`a}}{0}}
+\headcommand {\beamer@subsectionpages {50}{56}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\beamer@subsectionentry {0}{3}{2}{57}{Gradi di decomposizione}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\slideentry {3}{2}{1}{57/59}{Gradi di decomposizione}{0}}
 \defcounter {refsection}{0}\relax 
 \headcommand {\beamer@framepages {57}{59}}
 \defcounter {refsection}{0}\relax 
-\headcommand {\slideentry {3}{1}{5}{60/61}{Un nuovo sistema di unit\IeC {\`a}}{0}}
+\headcommand {\slideentry {3}{2}{2}{60/61}{Gradi di decomposizione}{0}}
 \defcounter {refsection}{0}\relax 
 \headcommand {\beamer@framepages {60}{61}}
-\headcommand {\beamer@partpages {1}{61}}
-\headcommand {\beamer@subsectionpages {50}{61}}
-\headcommand {\beamer@sectionpages {41}{61}}
-\headcommand {\beamer@documentpages {61}}
-\headcommand {\gdef \inserttotalframenumber {31}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\slideentry {3}{2}{3}{62/62}{Gradi di decomposizione}{0}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\beamer@framepages {62}{62}}
+\headcommand {\beamer@partpages {1}{62}}
+\headcommand {\beamer@subsectionpages {57}{62}}
+\headcommand {\beamer@sectionpages {41}{62}}
+\headcommand {\beamer@documentpages {62}}
+\headcommand {\gdef \inserttotalframenumber {32}}

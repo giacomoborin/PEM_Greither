@@ -16,6 +16,7 @@
 \institute{Università di Trento}
 %\titlegraphic{...} 
 
+%\usetheme{metropolis}
 \usetheme{beunitn}
 \usecolortheme{rose}
 \setbeamercovered{dynamic}
@@ -129,10 +130,10 @@
 	\end{frame}
 
 	
-	\begin{frame}[label = skip1]
+	\begin{frame}[label = skip1]{Gruppo di Galois di $ K $}
 		
 		\begin{prop}
-			Il gruppo di Galois di $ K $ è isomorfo a $ \Z_n^\ast / \{\pm 1\} $
+			Il gruppo di Galois di $ K  / \Q$ è isomorfo a $ \Z_n^\ast / \{\pm 1\} $
 		\end{prop}
 		\pause 
 		D'ora in poi indicheremo $ G_0 := \Gal( \Q(\zeta_n) / \Q) $ e $ G := \Gal( K / \Q) $
@@ -357,7 +358,9 @@
 				Per ogni $ j=1, ..., g $, $ f_j := [O_\K / \mathfrak{p}_j : \Z_p ] $ si dice \textbf{grado di inerzia}.
 			\end{deff}
 	\end{frame}
-	
+
+\subsection{Gradi di decomposizione}
+
 	\begin{frame}{Decomposizione in $ \Z [\zeta_n + \zeta_n^{-1}] $}
 		Si può provare che se $ \K / \Q $ è un'estensione di Galois (come $ K / Q $) $ \epsilon _j, f_j $ non dipendono da $ j $ e quindi \[ n = \epsilon fg \] \pause
 		Per $ i\in {1 , ... , s} $ definiamo $ g_i , f_i , \epsilon _i $ essere i gradi definiti prima per il primo $ p_i$ in $ K /\Q $.\\
@@ -378,6 +381,9 @@
 		Questo indice si può dire ottimale perchè non solo rende più semplice la sua fattorizzazione (basta sapere quella di $ \epsilon _i $ e $ f_i $), ma inoltre sappiamo che questi dividono $ n $, quindi i fattori di $i_\beta $ sono solo i fattori di $ n $.
 	\end{frame}
 
+	\begin{frame}{Tabella dei contenuti}
+		\tableofcontents
+	\end{frame}
 	
 	
 
