@@ -76,35 +76,6 @@
     \field{year}{1966}
   \endentry
 
-  \entry{RIN}{book}{}
-    \name{author}{1}{}{%
-      {{hash=RP}{%
-         family={{Ribenboim}},
-         familyi={R\bibinitperiod},
-         given={Paulo},
-         giveni={P\bibinitperiod},
-      }}%
-    }
-    \list{language}{1}{%
-      {English}%
-    }
-    \list{publisher}{1}{%
-      {New York, NY: Springer}%
-    }
-    \strng{namehash}{RP1}
-    \strng{fullhash}{RP1}
-    \field{labelnamesource}{author}
-    \field{labeltitlesource}{title}
-    \field{sortinit}{R}
-    \field{sortinithash}{R}
-    \field{isbn}{0-387-95070-2/hbk}
-    \field{issn}{0172-5939}
-    \field{pages}{xxiv + 681}
-    \field{title}{{Classical theory of algebraic numbers}}
-    \field{journaltitle}{{Universitext}}
-    \field{year}{2001}
-  \endentry
-
   \entry{SIN}{misc}{}
     \name{author}{1}{}{%
       {{hash=SW}{%

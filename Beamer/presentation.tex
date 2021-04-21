@@ -4,6 +4,37 @@
 \usepackage[italian]{babel}
 \usepackage{tikz-cd,wrapfig}
 \usepackage{tcolorbox}
+\usepackage{listings}
+%Typeset for sage
+\lstdefinelanguage{Sage}[]{Python}
+{morekeywords={False,sage,True},sensitive=true}
+
+\lstset{
+  frame=none,
+  backgroundcolor=\color[RGB]{255,255,232},
+  showtabs=False,
+  showspaces=False,
+  showstringspaces=False,
+  commentstyle={\ttfamily\color{dgreencolor}},
+  keywordstyle={\ttfamily\color{dbluecolor}\bfseries},
+  stringstyle={\ttfamily\color{dgraycolor}\bfseries},
+  language=Sage,
+  basicstyle={\fontsize{10pt}{10pt}\ttfamily},
+  aboveskip=0.3em,
+  belowskip=0.1em,
+  numbers=left,
+  numberstyle=\footnotesize
+}
+\definecolor{dblackcolor}{rgb}{0.0,0.0,0.0}
+\definecolor{dbluecolor}{rgb}{0.01,0.02,0.7}
+\definecolor{dgreencolor}{rgb}{0.2,0.4,0.0}
+\definecolor{dgraycolor}{rgb}{0.30,0.3,0.30}
+\newcommand{\dblue}{\color{dbluecolor}\bf}
+\newcommand{\dred}{\color{dredcolor}\bf}
+\newcommand{\dblack}{\color{dblackcolor}\bf}
+
+
+
 
 \usepackage[style=numeric, maxnames=4,backend=bibtex]{biblatex}
 % other styles: numeric authortitle
@@ -21,11 +52,6 @@
 \usecolortheme{rose}
 \setbeamercovered{dynamic}
 
-%\AtBeginSection{
-%	\begin{frame} 
-%		\sectionpage
-%	\end{frame}
-%}
 
 
 % Theorem definitons 
@@ -46,6 +72,7 @@
 \newtheorem*{nota}{Notazione}
 
 % Commands 
+\newcommand{\sage}{\href{https://www.sagemath.org}{\includegraphics[height= 11pt]{../images/sage.png} }}
 \newcommand{\noqed}{\let\qed\relax}
 \newcommand{\PS}{\mathcal{P}_S}
 \newcommand{\Z}{\mathbb{Z}}
@@ -73,11 +100,11 @@
 			\fullcite{GRE}
 		\end{exampleblock}	
 		\pause
-		Completando i prerequisiti richiesti per la comprensione e implementando alcuni calcoli in \href{https://www.sagemath.org}{\includegraphics[height= 11pt]{../images/sage.png} }
+		Completando i prerequisiti richiesti per la comprensione e implementando alcuni calcoli in \sage
 	\end{frame}
 	
 	%Stampo subito la bibliografia per mostrare subito cosa uso
-	\begin{frame}{Bibliografia}
+	\begin{frame}[allowframebreaks]{Bibliografia}
 			\printbibliography[heading=none]
 	\end{frame}
 	
@@ -380,6 +407,24 @@
 		\pause
 		Questo indice si può dire ottimale perchè non solo rende più semplice la sua fattorizzazione (basta sapere quella di $ \epsilon _i $ e $ f_i $), ma inoltre sappiamo che questi dividono $ n $, quindi i fattori di $i_\beta $ sono solo i fattori di $ n $.
 	\end{frame}
+
+	\section{Implementazione dei calcoli}
+	
+\begin{frame}[fragile]{Prova di inserimento codice}
+Vediamo ora l'implementazione di alcuni calcoli in \sage
+
+\begin{lstlisting}
+sage: K.<b> = 
+	NumberField(x^3 - 3, 'a').galois_closure()
+sage: G = K.galois_group()
+sage: P = K.primes_above(3)[0]
+sage: s = hom(K, K, 1/18*b^4 - 1/2*b)
+sage: G(s).ramification_degree(P)
+4
+\end{lstlisting}		
+\end{frame}
+
+
 
 	\begin{frame}{Tabella dei contenuti}
 		\tableofcontents

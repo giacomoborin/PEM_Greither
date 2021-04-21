@@ -153,11 +153,25 @@
 \defcounter {refsection}{0}\relax 
 \headcommand {\beamer@framepages {60}{61}}
 \defcounter {refsection}{0}\relax 
-\headcommand {\slideentry {3}{2}{3}{62/62}{Gradi di decomposizione}{0}}
+\headcommand {\beamer@sectionpages {41}{61}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\beamer@subsectionpages {57}{61}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\sectionentry {4}{Implementazione dei calcoli}{62}{Implementazione dei calcoli}{0}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\slideentry {4}{0}{1}{62/62}{}{0}}
 \defcounter {refsection}{0}\relax 
 \headcommand {\beamer@framepages {62}{62}}
-\headcommand {\beamer@partpages {1}{62}}
-\headcommand {\beamer@subsectionpages {57}{62}}
-\headcommand {\beamer@sectionpages {41}{62}}
-\headcommand {\beamer@documentpages {62}}
-\headcommand {\gdef \inserttotalframenumber {32}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\slideentry {4}{0}{2}{63/63}{}{0}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\beamer@framepages {63}{63}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\slideentry {4}{0}{3}{64/64}{}{0}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\beamer@framepages {64}{64}}
+\headcommand {\beamer@partpages {1}{64}}
+\headcommand {\beamer@subsectionpages {62}{64}}
+\headcommand {\beamer@sectionpages {62}{64}}
+\headcommand {\beamer@documentpages {64}}
+\headcommand {\gdef \inserttotalframenumber {34}}

@@ -13,3 +13,5 @@
 \beamer@subsectionintoc {3}{1}{Un nuovo sistema di unit\IeC {\`a}}{50}{0}{3}
 \defcounter {refsection}{0}\relax 
 \beamer@subsectionintoc {3}{2}{Gradi di decomposizione}{57}{0}{3}
+\defcounter {refsection}{0}\relax 
+\beamer@sectionintoc {4}{Implementazione dei calcoli}{62}{0}{4}

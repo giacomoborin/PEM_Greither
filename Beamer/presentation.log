@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.5.31)  20 APR 2021 11:12
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.5.31)  22 APR 2021 00:32
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -817,12 +817,40 @@ Package: trimspaces 2009/09/17 v1.1 Trim spaces around a token list
 \tcb@out=\write5
 \tcb@record@out=\write6
 )
+(/usr/local/texlive/2019/texmf-dist/tex/latex/listings/listings.sty
+\lst@mode=\count175
+\lst@gtempboxa=\box68
+\lst@token=\toks50
+\lst@length=\count176
+\lst@currlwidth=\dimen261
+\lst@column=\count177
+\lst@pos=\count178
+\lst@lostspace=\dimen262
+\lst@width=\dimen263
+\lst@newlines=\count179
+\lst@lineno=\count180
+\lst@maxwidth=\dimen264
+
+(/usr/local/texlive/2019/texmf-dist/tex/latex/listings/lstmisc.sty
+File: lstmisc.sty 2019/02/27 1.8b (Carsten Heinz)
+\c@lstnumber=\count181
+\lst@skipnumbers=\count182
+\lst@framebox=\box69
+)
+(/usr/local/texlive/2019/texmf-dist/tex/latex/listings/listings.cfg
+File: listings.cfg 2019/02/27 1.8b listings configuration
+))
+Package: listings 2019/02/27 1.8b (Carsten Heinz)
+
+(/usr/local/texlive/2019/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2019/02/27 1.8b listings language file
+)
 (/usr/local/texlive/2019/texmf-dist/tex/latex/biblatex/biblatex.sty
 Package: biblatex 2018/11/02 v3.12 programmable bibliographies (PK/MW)
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/logreq/logreq.sty
 Package: logreq 2010/08/04 v1.0 xml request logger
-\lrq@indent=\count175
+\lrq@indent=\count183
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/logreq/logreq.def
 File: logreq.def 2010/08/04 v1.0 logreq spec v1.0
@@ -830,47 +858,47 @@ File: logreq.def 2010/08/04 v1.0 logreq spec v1.0
 (/usr/local/texlive/2019/texmf-dist/tex/latex/base/ifthen.sty
 Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
 )
-\c@tabx@nest=\count176
-\c@listtotal=\count177
-\c@listcount=\count178
-\c@liststart=\count179
-\c@liststop=\count180
-\c@citecount=\count181
-\c@citetotal=\count182
-\c@multicitecount=\count183
-\c@multicitetotal=\count184
-\c@instcount=\count185
-\c@maxnames=\count186
-\c@minnames=\count187
-\c@maxitems=\count188
-\c@minitems=\count189
-\c@citecounter=\count190
-\c@maxcitecounter=\count191
-\c@savedcitecounter=\count192
-\c@uniquelist=\count193
-\c@uniquename=\count194
-\c@refsection=\count195
-\c@refsegment=\count196
-\c@maxextratitle=\count197
-\c@maxextratitleyear=\count198
-\c@maxextraname=\count199
-\c@maxextradate=\count266
-\c@maxextraalpha=\count267
-\c@abbrvpenalty=\count268
-\c@highnamepenalty=\count269
-\c@lownamepenalty=\count270
-\c@maxparens=\count271
-\c@parenlevel=\count272
-\blx@tempcnta=\count273
-\blx@tempcntb=\count274
-\blx@tempcntc=\count275
-\blx@maxsection=\count276
-\blx@maxsegment@0=\count277
-\blx@notetype=\count278
-\blx@parenlevel@text=\count279
-\blx@parenlevel@foot=\count280
-\blx@sectionciteorder@0=\count281
-\blx@entrysetcounter=\count282
+\c@tabx@nest=\count184
+\c@listtotal=\count185
+\c@listcount=\count186
+\c@liststart=\count187
+\c@liststop=\count188
+\c@citecount=\count189
+\c@citetotal=\count190
+\c@multicitecount=\count191
+\c@multicitetotal=\count192
+\c@instcount=\count193
+\c@maxnames=\count194
+\c@minnames=\count195
+\c@maxitems=\count196
+\c@minitems=\count197
+\c@citecounter=\count198
+\c@maxcitecounter=\count199
+\c@savedcitecounter=\count266
+\c@uniquelist=\count267
+\c@uniquename=\count268
+\c@refsection=\count269
+\c@refsegment=\count270
+\c@maxextratitle=\count271
+\c@maxextratitleyear=\count272
+\c@maxextraname=\count273
+\c@maxextradate=\count274
+\c@maxextraalpha=\count275
+\c@abbrvpenalty=\count276
+\c@highnamepenalty=\count277
+\c@lownamepenalty=\count278
+\c@maxparens=\count279
+\c@parenlevel=\count280
+\blx@tempcnta=\count281
+\blx@tempcntb=\count282
+\blx@tempcntc=\count283
+\blx@maxsection=\count284
+\blx@maxsegment@0=\count285
+\blx@notetype=\count286
+\blx@parenlevel@text=\count287
+\blx@parenlevel@foot=\count288
+\blx@sectionciteorder@0=\count289
+\blx@entrysetcounter=\count290
 \labelnumberwidth=\skip57
 \labelalphawidth=\skip58
 \biblabelsep=\skip59
@@ -881,9 +909,9 @@ Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
 \bibhang=\skip64
 \blx@bcfin=\read3
 \blx@bcfout=\write7
-\c@mincomprange=\count283
-\c@maxcomprange=\count284
-\c@mincompwidth=\count285
+\c@mincomprange=\count291
+\c@maxcomprange=\count292
+\c@mincompwidth=\count293
 Package biblatex Info: Trying to load biblatex default data model...
 Package biblatex Info: ... file 'blx-dm.def' found.
 
@@ -894,74 +922,74 @@ Package biblatex Info: Trying to load biblatex style data model...
 Package biblatex Info: ... file 'numeric.dbx' not found.
 Package biblatex Info: Trying to load biblatex custom data model...
 Package biblatex Info: ... file 'biblatex-dm.cfg' not found.
-\c@afterword=\count286
-\c@savedafterword=\count287
-\c@annotator=\count288
-\c@savedannotator=\count289
-\c@author=\count290
-\c@savedauthor=\count291
-\c@bookauthor=\count292
-\c@savedbookauthor=\count293
-\c@commentator=\count294
-\c@savedcommentator=\count295
-\c@editor=\count296
-\c@savededitor=\count297
-\c@editora=\count298
-\c@savededitora=\count299
-\c@editorb=\count300
-\c@savededitorb=\count301
-\c@editorc=\count302
-\c@savededitorc=\count303
-\c@foreword=\count304
-\c@savedforeword=\count305
-\c@holder=\count306
-\c@savedholder=\count307
-\c@introduction=\count308
-\c@savedintroduction=\count309
-\c@namea=\count310
-\c@savednamea=\count311
-\c@nameb=\count312
-\c@savednameb=\count313
-\c@namec=\count314
-\c@savednamec=\count315
-\c@translator=\count316
-\c@savedtranslator=\count317
-\c@shortauthor=\count318
-\c@savedshortauthor=\count319
-\c@shorteditor=\count320
-\c@savedshorteditor=\count321
-\c@labelname=\count322
-\c@savedlabelname=\count323
-\c@institution=\count324
-\c@savedinstitution=\count325
-\c@lista=\count326
-\c@savedlista=\count327
-\c@listb=\count328
-\c@savedlistb=\count329
-\c@listc=\count330
-\c@savedlistc=\count331
-\c@listd=\count332
-\c@savedlistd=\count333
-\c@liste=\count334
-\c@savedliste=\count335
-\c@listf=\count336
-\c@savedlistf=\count337
-\c@location=\count338
-\c@savedlocation=\count339
-\c@organization=\count340
-\c@savedorganization=\count341
-\c@origlocation=\count342
-\c@savedoriglocation=\count343
-\c@origpublisher=\count344
-\c@savedorigpublisher=\count345
-\c@publisher=\count346
-\c@savedpublisher=\count347
-\c@language=\count348
-\c@savedlanguage=\count349
-\c@origlanguage=\count350
-\c@savedoriglanguage=\count351
-\c@pageref=\count352
-\c@savedpageref=\count353
+\c@afterword=\count294
+\c@savedafterword=\count295
+\c@annotator=\count296
+\c@savedannotator=\count297
+\c@author=\count298
+\c@savedauthor=\count299
+\c@bookauthor=\count300
+\c@savedbookauthor=\count301
+\c@commentator=\count302
+\c@savedcommentator=\count303
+\c@editor=\count304
+\c@savededitor=\count305
+\c@editora=\count306
+\c@savededitora=\count307
+\c@editorb=\count308
+\c@savededitorb=\count309
+\c@editorc=\count310
+\c@savededitorc=\count311
+\c@foreword=\count312
+\c@savedforeword=\count313
+\c@holder=\count314
+\c@savedholder=\count315
+\c@introduction=\count316
+\c@savedintroduction=\count317
+\c@namea=\count318
+\c@savednamea=\count319
+\c@nameb=\count320
+\c@savednameb=\count321
+\c@namec=\count322
+\c@savednamec=\count323
+\c@translator=\count324
+\c@savedtranslator=\count325
+\c@shortauthor=\count326
+\c@savedshortauthor=\count327
+\c@shorteditor=\count328
+\c@savedshorteditor=\count329
+\c@labelname=\count330
+\c@savedlabelname=\count331
+\c@institution=\count332
+\c@savedinstitution=\count333
+\c@lista=\count334
+\c@savedlista=\count335
+\c@listb=\count336
+\c@savedlistb=\count337
+\c@listc=\count338
+\c@savedlistc=\count339
+\c@listd=\count340
+\c@savedlistd=\count341
+\c@liste=\count342
+\c@savedliste=\count343
+\c@listf=\count344
+\c@savedlistf=\count345
+\c@location=\count346
+\c@savedlocation=\count347
+\c@organization=\count348
+\c@savedorganization=\count349
+\c@origlocation=\count350
+\c@savedoriglocation=\count351
+\c@origpublisher=\count352
+\c@savedorigpublisher=\count353
+\c@publisher=\count354
+\c@savedpublisher=\count355
+\c@language=\count356
+\c@savedlanguage=\count357
+\c@origlanguage=\count358
+\c@savedoriglanguage=\count359
+\c@pageref=\count360
+\c@savedpageref=\count361
 \shorthandwidth=\skip65
 \shortjournalwidth=\skip66
 \shortserieswidth=\skip67
@@ -997,13 +1025,13 @@ Package biblatex Info: Trying to load generic definitions...
 Package biblatex Info: ... file 'biblatex.def' found.
  (/usr/local/texlive/2019/texmf-dist/tex/latex/biblatex/biblatex.def
 File: biblatex.def 2018/11/02 v3.12 biblatex compatibility (PK/MW)
-\c@textcitecount=\count354
-\c@textcitetotal=\count355
-\c@textcitemaxnames=\count356
-\c@biburlnumpenalty=\count357
-\c@biburlucpenalty=\count358
-\c@biburllcpenalty=\count359
-\c@smartand=\count360
+\c@textcitecount=\count362
+\c@textcitetotal=\count363
+\c@textcitemaxnames=\count364
+\c@biburlnumpenalty=\count365
+\c@biburlucpenalty=\count366
+\c@biburllcpenalty=\count367
+\c@smartand=\count368
 )
 Package biblatex Info: Trying to load bibliography style 'numeric'...
 Package biblatex Info: ... file 'numeric.bbx' found.
@@ -1015,8 +1043,8 @@ Package biblatex Info: ... file 'standard.bbx' found.
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/biblatex/bbx/standard.bbx
 File: standard.bbx 2018/11/02 v3.12 biblatex bibliography style (PK/MW)
-\c@bbx:relatedcount=\count361
-\c@bbx:relatedtotal=\count362
+\c@bbx:relatedcount=\count369
+\c@bbx:relatedtotal=\count370
 ))
 Package biblatex Info: Trying to load citation style 'numeric'...
 Package biblatex Info: ... file 'numeric.cbx' found.
@@ -1044,9 +1072,9 @@ File: biblatex.cfg
 (./beamerthemebeunitn.sty (./beamerinnerthemebeunitn.sty)
 (./beamerouterthemebeunitn.sty) (./beamercolorthemebeunitn.sty))
 (/usr/local/texlive/2019/texmf-dist/tex/latex/beamer/beamercolorthemerose.sty)
-\c@teo=\count363
-\c@rem=\count364
-\c@idea=\count365
+\c@teo=\count371
+\c@rem=\count372
+\c@idea=\count373
 Package biblatex Info: Trying to load language 'italian'...
 Package biblatex Info: ... file 'italian.lbx' found.
 
@@ -1057,25 +1085,25 @@ File: italian.lbx 2018/11/02 v3.12 biblatex localization (PK/MW)
 Package biblatex Warning: 'babel/polyglossia' detected but 'csquotes' missing.
 (biblatex)                Loading 'csquotes' recommended.
 
-\@quotelevel=\count366
-\@quotereset=\count367
+\@quotelevel=\count374
+\@quotereset=\count375
 (./presentation.aux)
 \openout1 = `presentation.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 64.
-LaTeX Font Info:    ... okay on input line 64.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 64.
-LaTeX Font Info:    ... okay on input line 64.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 64.
-LaTeX Font Info:    ... okay on input line 64.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 64.
-LaTeX Font Info:    ... okay on input line 64.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 64.
-LaTeX Font Info:    ... okay on input line 64.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 64.
-LaTeX Font Info:    ... okay on input line 64.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 64.
-LaTeX Font Info:    ... okay on input line 64.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 91.
+LaTeX Font Info:    ... okay on input line 91.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 91.
+LaTeX Font Info:    ... okay on input line 91.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 91.
+LaTeX Font Info:    ... okay on input line 91.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 91.
+LaTeX Font Info:    ... okay on input line 91.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 91.
+LaTeX Font Info:    ... okay on input line 91.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 91.
+LaTeX Font Info:    ... okay on input line 91.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 91.
+LaTeX Font Info:    ... okay on input line 91.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -1113,17 +1141,17 @@ LaTeX Font Info:    ... okay on input line 64.
 
 (/usr/local/texlive/2019/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count368
-\scratchdimen=\dimen261
-\scratchbox=\box68
-\nofMPsegments=\count369
-\nofMParguments=\count370
-\everyMPshowfont=\toks50
-\MPscratchCnt=\count371
-\MPscratchDim=\dimen262
-\MPnumerator=\count372
-\makeMPintoPDFobject=\count373
-\everyMPtoPDFconversion=\toks51
+\scratchcounter=\count376
+\scratchdimen=\dimen265
+\scratchbox=\box70
+\nofMPsegments=\count377
+\nofMParguments=\count378
+\everyMPshowfont=\toks51
+\MPscratchCnt=\count379
+\MPscratchDim=\dimen266
+\MPnumerator=\count380
+\makeMPintoPDFobject=\count381
+\everyMPtoPDFconversion=\toks52
 ) (/usr/local/texlive/2019/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
 
@@ -1142,8 +1170,8 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
 ABD: EveryShipout initializing macros
-\AtBeginShipoutBox=\box69
-Package hyperref Info: Link coloring OFF on input line 64.
+\AtBeginShipoutBox=\box71
+Package hyperref Info: Link coloring OFF on input line 91.
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
@@ -1151,73 +1179,73 @@ Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
 (/usr/local/texlive/2019/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
-\c@section@level=\count374
+\c@section@level=\count382
 )
-LaTeX Info: Redefining \ref on input line 64.
-LaTeX Info: Redefining \pageref on input line 64.
-LaTeX Info: Redefining \nameref on input line 64.
+LaTeX Info: Redefining \ref on input line 91.
+LaTeX Info: Redefining \pageref on input line 91.
+LaTeX Info: Redefining \nameref on input line 91.
 
 (./presentation.out) (./presentation.out)
 \@outlinefile=\write8
 \openout8 = `presentation.out'.
 
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/cmr/m/n --> OT1/cmss/m/n on input line 64.
+(Font)                  OT1/cmr/m/n --> OT1/cmss/m/n on input line 91.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/cmr/bx/n --> OT1/cmss/bx/n on input line 64.
+(Font)                  OT1/cmr/bx/n --> OT1/cmss/bx/n on input line 91.
 \symnumbers=\mathgroup6
 \sympureletters=\mathgroup7
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
-(Font)                  OT1/cmss/m/n --> T1/cmr/m/n on input line 64.
-LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 64.
+(Font)                  OT1/cmss/m/n --> T1/cmr/m/n on input line 91.
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 91.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/cmr/bx/n --> T1/cmss/bx/n on input line 64.
+(Font)                  OT1/cmr/bx/n --> T1/cmss/bx/n on input line 91.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  OT1/cmr/bx/n --> T1/cmss/bx/n on input line 64.
-LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 64.
+(Font)                  OT1/cmr/bx/n --> T1/cmss/bx/n on input line 91.
+LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 91.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/cmss/m/n --> T1/cmss/m/n on input line 64.
+(Font)                  OT1/cmss/m/n --> T1/cmss/m/n on input line 91.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/cmss/bx/n --> T1/cmss/m/n on input line 64.
-LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 64.
+(Font)                  OT1/cmss/bx/n --> T1/cmss/m/n on input line 91.
+LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 91.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/cmr/m/it --> T1/cmss/m/it on input line 64.
+(Font)                  OT1/cmr/m/it --> T1/cmss/m/it on input line 91.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/cmr/bx/it --> T1/cmss/m/it on input line 64.
-LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 64.
+(Font)                  OT1/cmr/bx/it --> T1/cmss/m/it on input line 91.
+LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 91.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/cmtt/m/n --> T1/cmtt/m/n on input line 64.
+(Font)                  OT1/cmtt/m/n --> T1/cmtt/m/n on input line 91.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> T1/cmtt/m/n on input line 64.
+(Font)                  OT1/cmtt/m/n --> T1/cmtt/m/n on input line 91.
 LaTeX Font Info:    Overwriting symbol font `numbers' in version `bold'
-(Font)                  T1/cmss/m/n --> T1/cmss/bx/n on input line 64.
+(Font)                  T1/cmss/m/n --> T1/cmss/bx/n on input line 91.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
-(Font)                  T1/cmss/m/it --> T1/cmss/bx/it on input line 64.
+(Font)                  T1/cmss/m/it --> T1/cmss/bx/it on input line 91.
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `bold'
-(Font)                  OT1/cmss/bx/n --> T1/cmr/bx/n on input line 64.
+(Font)                  OT1/cmss/bx/n --> T1/cmr/bx/n on input line 91.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  T1/cmss/bx/n --> T1/cmss/bx/n on input line 64.
+(Font)                  T1/cmss/bx/n --> T1/cmss/bx/n on input line 91.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  T1/cmss/m/n --> T1/cmss/bx/n on input line 64.
+(Font)                  T1/cmss/m/n --> T1/cmss/bx/n on input line 91.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  T1/cmss/m/it --> T1/cmss/bx/it on input line 64.
+(Font)                  T1/cmss/m/it --> T1/cmss/bx/it on input line 91.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  T1/cmtt/m/n --> T1/cmtt/bx/n on input line 64.
-LaTeX Font Info:    Redeclaring symbol font `pureletters' on input line 64.
+(Font)                  T1/cmtt/m/n --> T1/cmtt/bx/n on input line 91.
+LaTeX Font Info:    Redeclaring symbol font `pureletters' on input line 91.
 LaTeX Font Info:    Encoding `T1' has changed to `OT1' for symbol font
-(Font)              `pureletters' in the math version `normal' on input line 64
+(Font)              `pureletters' in the math version `normal' on input line 91
 .
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `normal'
-(Font)                  T1/cmss/m/it --> OT1/mathkerncmss/m/sl on input line 64
+(Font)                  T1/cmss/m/it --> OT1/mathkerncmss/m/sl on input line 91
 .
 LaTeX Font Info:    Encoding `T1' has changed to `OT1' for symbol font
-(Font)              `pureletters' in the math version `bold' on input line 64.
+(Font)              `pureletters' in the math version `bold' on input line 91.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
-(Font)                  T1/cmss/bx/it --> OT1/mathkerncmss/m/sl on input line 6
-4.
+(Font)                  T1/cmss/bx/it --> OT1/mathkerncmss/m/sl on input line 9
+1.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
 (Font)                  OT1/mathkerncmss/m/sl --> OT1/mathkerncmss/bx/sl on inp
-ut line 64.
+ut line 91.
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/translator/translator-basic-dicti
 onary-English.dict
@@ -1243,8 +1271,9 @@ Dictionary: translator-numbers-dictionary, Language: English
 tionary-English.dict
 Dictionary: translator-theorem-dictionary, Language: English 
 )
-LaTeX Info: Redefining \it@ocap on input line 64.
-LaTeX Info: Redefining \it@ccap on input line 64.
+LaTeX Info: Redefining \it@ocap on input line 91.
+LaTeX Info: Redefining \it@ccap on input line 91.
+\c@lstlisting=\count383
 Package biblatex Info: Input encoding 'utf8' detected.
 Package biblatex Info: Automatic encoding selection.
 (biblatex)             Assuming data encoding 'utf8'.
@@ -1256,71 +1285,78 @@ Package biblatex Info: Data encoding 'utf8' specified.
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'presentation.bbl' found.
  (./presentation.bbl)
-Package biblatex Info: Reference section=0 on input line 64.
-Package biblatex Info: Reference segment=0 on input line 64.
+Package biblatex Info: Reference section=0 on input line 91.
+Package biblatex Info: Reference segment=0 on input line 91.
  (./presentation.nav)
-<images/logo_white.png, id=57, 1204.5pt x 1204.5pt>
+<images/logo_white.png, id=41, 1204.5pt x 1204.5pt>
 File: images/logo_white.png Graphic file (type png)
 <use images/logo_white.png>
-Package pdftex.def Info: images/logo_white.png  used on input line 68.
-(pdftex.def)             Requested size: 42.67912pt x 42.67642pt.
+Package pdftex.def Info: images/logo_white.png  used on input line 95.
+(pdftex.def)             Requested size: 36.98866pt x 36.97888pt.
+<images/logonome_white.png, id=43, 1927.2pt x 726.715pt>
+File: images/logonome_white.png Graphic file (type png)
+<use images/logonome_white.png>
+Package pdftex.def Info: images/logonome_white.png  used on input line 95.
+(pdftex.def)             Requested size: 156.49014pt x 59.0033pt.
+<images/logo_trasp.png, id=44, 1204.5pt x 1204.5pt>
+File: images/logo_trasp.png Graphic file (type png)
+<use images/logo_trasp.png>
+Package pdftex.def Info: images/logo_trasp.png  used on input line 95.
+(pdftex.def)             Requested size: 284.52756pt x 284.52788pt.
  [1
 
 {/usr/local/texlive/2019/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./image
-s/logo_white.png>]
-<../images/sage.png, id=75, 682.2288pt x 187.902pt>
+s/logo_white.png> <./images/logonome_white.png> <./images/logo_trasp.png>]
+<../images/sage.png, id=63, 682.2288pt x 187.902pt>
 File: ../images/sage.png Graphic file (type png)
 <use ../images/sage.png>
-Package pdftex.def Info: ../images/sage.png  used on input line 77.
+Package pdftex.def Info: ../images/sage.png  used on input line 104.
 (pdftex.def)             Requested size: 39.9326pt x 11.0pt.
 File: images/logo_white.png Graphic file (type png)
 <use images/logo_white.png>
-Package pdftex.def Info: images/logo_white.png  used on input line 77.
-(pdftex.def)             Requested size: 42.67912pt x 42.67642pt.
+Package pdftex.def Info: images/logo_white.png  used on input line 104.
+(pdftex.def)             Requested size: 36.98866pt x 36.97888pt.
  [2
 
  <../images/sage.png>]
 File: ../images/sage.png Graphic file (type png)
 <use ../images/sage.png>
-Package pdftex.def Info: ../images/sage.png  used on input line 77.
+Package pdftex.def Info: ../images/sage.png  used on input line 104.
 (pdftex.def)             Requested size: 39.9326pt x 11.0pt.
 File: images/logo_white.png Graphic file (type png)
 <use images/logo_white.png>
-Package pdftex.def Info: images/logo_white.png  used on input line 77.
-(pdftex.def)             Requested size: 42.67912pt x 42.67642pt.
+Package pdftex.def Info: images/logo_white.png  used on input line 104.
+(pdftex.def)             Requested size: 36.98866pt x 36.97888pt.
  [3
 
 ]
-Overfull \vbox (68.27011pt too high) detected at line 82
- []
-
 File: images/logo_white.png Graphic file (type png)
 <use images/logo_white.png>
-Package pdftex.def Info: images/logo_white.png  used on input line 82.
-(pdftex.def)             Requested size: 42.67912pt x 42.67642pt.
-[4
+Package pdftex.def Info: images/logo_white.png  used on input line 109.
+(pdftex.def)             Requested size: 36.98866pt x 36.97888pt.
+ [4
 
  </usr/local/texlive/2019/texmf-dist/tex/latex/beamer/beamericonarticle.pdf>]
-<images/logo.png, id=177, 1204.5pt x 1204.5pt>
+<images/logo.png, id=164, 1204.5pt x 1204.5pt>
 File: images/logo.png Graphic file (type png)
 <use images/logo.png>
-Package pdftex.def Info: images/logo.png  used on input line 86.
+Package pdftex.def Info: images/logo.png  used on input line 113.
 (pdftex.def)             Requested size: 42.67912pt x 42.67642pt.
-[5
+ [5
 
  <./images/logo.png>]
-LaTeX Font Info:    Try loading font information for U+msa on input line 100.
+LaTeX Font Info:    Try loading font information for U+msa on input line 127.
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 100.
+LaTeX Font Info:    Try loading font information for U+msb on input line 127.
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Try loading font information for OT1+mathkerncmss on input 
-line 100.
+line 127.
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/sansmathaccent/ot1mathkerncmss.fd
 File: ot1mathkerncmss.fd 2013/03/27 Fontinst v1.933 font definitions for OT1/ma
@@ -1328,57 +1364,57 @@ thkerncmss.
 )
 File: images/logo_white.png Graphic file (type png)
 <use images/logo_white.png>
-Package pdftex.def Info: images/logo_white.png  used on input line 100.
-(pdftex.def)             Requested size: 42.67912pt x 42.67642pt.
+Package pdftex.def Info: images/logo_white.png  used on input line 127.
+(pdftex.def)             Requested size: 36.98866pt x 36.97888pt.
  [6
 
 ]
 File: images/logo_white.png Graphic file (type png)
 <use images/logo_white.png>
-Package pdftex.def Info: images/logo_white.png  used on input line 100.
-(pdftex.def)             Requested size: 42.67912pt x 42.67642pt.
+Package pdftex.def Info: images/logo_white.png  used on input line 127.
+(pdftex.def)             Requested size: 36.98866pt x 36.97888pt.
  [7
 
 ]
 File: images/logo_white.png Graphic file (type png)
 <use images/logo_white.png>
-Package pdftex.def Info: images/logo_white.png  used on input line 100.
-(pdftex.def)             Requested size: 42.67912pt x 42.67642pt.
+Package pdftex.def Info: images/logo_white.png  used on input line 127.
+(pdftex.def)             Requested size: 36.98866pt x 36.97888pt.
  [8
 
 ]
 File: images/logo_white.png Graphic file (type png)
 <use images/logo_white.png>
-Package pdftex.def Info: images/logo_white.png  used on input line 100.
-(pdftex.def)             Requested size: 42.67912pt x 42.67642pt.
+Package pdftex.def Info: images/logo_white.png  used on input line 127.
+(pdftex.def)             Requested size: 36.98866pt x 36.97888pt.
  [9
 
 ]
 File: images/logo_white.png Graphic file (type png)
 <use images/logo_white.png>
-Package pdftex.def Info: images/logo_white.png  used on input line 100.
-(pdftex.def)             Requested size: 42.67912pt x 42.67642pt.
+Package pdftex.def Info: images/logo_white.png  used on input line 127.
+(pdftex.def)             Requested size: 36.98866pt x 36.97888pt.
  [10
 
 ]
 File: images/logo_white.png Graphic file (type png)
 <use images/logo_white.png>
-Package pdftex.def Info: images/logo_white.png  used on input line 112.
-(pdftex.def)             Requested size: 42.67912pt x 42.67642pt.
+Package pdftex.def Info: images/logo_white.png  used on input line 139.
+(pdftex.def)             Requested size: 36.98866pt x 36.97888pt.
  [11
 
 ]
 File: images/logo_white.png Graphic file (type png)
 <use images/logo_white.png>
-Package pdftex.def Info: images/logo_white.png  used on input line 112.
-(pdftex.def)             Requested size: 42.67912pt x 42.67642pt.
+Package pdftex.def Info: images/logo_white.png  used on input line 139.
+(pdftex.def)             Requested size: 36.98866pt x 36.97888pt.
  [12
 
 ]
 File: images/logo_white.png Graphic file (type png)
 <use images/logo_white.png>
-Package pdftex.def Info: images/logo_white.png  used on input line 112.
-(pdftex.def)             Requested size: 42.67912pt x 42.67642pt.
+Package pdftex.def Info: images/logo_white.png  used on input line 139.
+(pdftex.def)             Requested size: 36.98866pt x 36.97888pt.
  [13
 
 ]
@@ -1387,121 +1423,121 @@ Package pdftex.def Info: images/logo_white.png  used on input line 112.
  (./presentation.vrb)
 File: images/logo_white.png Graphic file (type png)
 <use images/logo_white.png>
-Package pdftex.def Info: images/logo_white.png  used on input line 130.
-(pdftex.def)             Requested size: 42.67912pt x 42.67642pt.
+Package pdftex.def Info: images/logo_white.png  used on input line 157.
+(pdftex.def)             Requested size: 36.98866pt x 36.97888pt.
  [14
 
 ]
 (./presentation.vrb)
 File: images/logo_white.png Graphic file (type png)
 <use images/logo_white.png>
-Package pdftex.def Info: images/logo_white.png  used on input line 130.
-(pdftex.def)             Requested size: 42.67912pt x 42.67642pt.
+Package pdftex.def Info: images/logo_white.png  used on input line 157.
+(pdftex.def)             Requested size: 36.98866pt x 36.97888pt.
  [15
 
 ]
 File: images/logo_white.png Graphic file (type png)
 <use images/logo_white.png>
-Package pdftex.def Info: images/logo_white.png  used on input line 141.
-(pdftex.def)             Requested size: 42.67912pt x 42.67642pt.
+Package pdftex.def Info: images/logo_white.png  used on input line 168.
+(pdftex.def)             Requested size: 36.98866pt x 36.97888pt.
  [16
 
 ]
 File: images/logo_white.png Graphic file (type png)
 <use images/logo_white.png>
-Package pdftex.def Info: images/logo_white.png  used on input line 141.
-(pdftex.def)             Requested size: 42.67912pt x 42.67642pt.
+Package pdftex.def Info: images/logo_white.png  used on input line 168.
+(pdftex.def)             Requested size: 36.98866pt x 36.97888pt.
  [17
 
 ]
 File: images/logo_white.png Graphic file (type png)
 <use images/logo_white.png>
-Package pdftex.def Info: images/logo_white.png  used on input line 154.
-(pdftex.def)             Requested size: 42.67912pt x 42.67642pt.
+Package pdftex.def Info: images/logo_white.png  used on input line 181.
+(pdftex.def)             Requested size: 36.98866pt x 36.97888pt.
  [18
 
 ]
 File: images/logo_white.png Graphic file (type png)
 <use images/logo_white.png>
-Package pdftex.def Info: images/logo_white.png  used on input line 154.
-(pdftex.def)             Requested size: 42.67912pt x 42.67642pt.
+Package pdftex.def Info: images/logo_white.png  used on input line 181.
+(pdftex.def)             Requested size: 36.98866pt x 36.97888pt.
  [19
 
 ]
 File: images/logo_white.png Graphic file (type png)
 <use images/logo_white.png>
-Package pdftex.def Info: images/logo_white.png  used on input line 163.
-(pdftex.def)             Requested size: 42.67912pt x 42.67642pt.
+Package pdftex.def Info: images/logo_white.png  used on input line 190.
+(pdftex.def)             Requested size: 36.98866pt x 36.97888pt.
  [20
 
 ]
 File: images/logo_white.png Graphic file (type png)
 <use images/logo_white.png>
-Package pdftex.def Info: images/logo_white.png  used on input line 163.
-(pdftex.def)             Requested size: 42.67912pt x 42.67642pt.
+Package pdftex.def Info: images/logo_white.png  used on input line 190.
+(pdftex.def)             Requested size: 36.98866pt x 36.97888pt.
  [21
 
 ]
 File: images/logo_white.png Graphic file (type png)
 <use images/logo_white.png>
-Package pdftex.def Info: images/logo_white.png  used on input line 169.
-(pdftex.def)             Requested size: 42.67912pt x 42.67642pt.
+Package pdftex.def Info: images/logo_white.png  used on input line 196.
+(pdftex.def)             Requested size: 36.98866pt x 36.97888pt.
  [22
 
 ]
 File: images/logo_white.png Graphic file (type png)
 <use images/logo_white.png>
-Package pdftex.def Info: images/logo_white.png  used on input line 183.
-(pdftex.def)             Requested size: 42.67912pt x 42.67642pt.
+Package pdftex.def Info: images/logo_white.png  used on input line 210.
+(pdftex.def)             Requested size: 36.98866pt x 36.97888pt.
  [23
 
 ]
 File: images/logo_white.png Graphic file (type png)
 <use images/logo_white.png>
-Package pdftex.def Info: images/logo_white.png  used on input line 183.
-(pdftex.def)             Requested size: 42.67912pt x 42.67642pt.
+Package pdftex.def Info: images/logo_white.png  used on input line 210.
+(pdftex.def)             Requested size: 36.98866pt x 36.97888pt.
  [24
 
 ]
 File: images/logo_white.png Graphic file (type png)
 <use images/logo_white.png>
-Package pdftex.def Info: images/logo_white.png  used on input line 183.
-(pdftex.def)             Requested size: 42.67912pt x 42.67642pt.
+Package pdftex.def Info: images/logo_white.png  used on input line 210.
+(pdftex.def)             Requested size: 36.98866pt x 36.97888pt.
  [25
 
 ]
 File: images/logo_white.png Graphic file (type png)
 <use images/logo_white.png>
-Package pdftex.def Info: images/logo_white.png  used on input line 191.
-(pdftex.def)             Requested size: 42.67912pt x 42.67642pt.
+Package pdftex.def Info: images/logo_white.png  used on input line 218.
+(pdftex.def)             Requested size: 36.98866pt x 36.97888pt.
 
 [26
 
 ]
 File: images/logo_white.png Graphic file (type png)
 <use images/logo_white.png>
-Package pdftex.def Info: images/logo_white.png  used on input line 191.
-(pdftex.def)             Requested size: 42.67912pt x 42.67642pt.
+Package pdftex.def Info: images/logo_white.png  used on input line 218.
+(pdftex.def)             Requested size: 36.98866pt x 36.97888pt.
  [27
 
 ]
 File: images/logo_white.png Graphic file (type png)
 <use images/logo_white.png>
-Package pdftex.def Info: images/logo_white.png  used on input line 197.
-(pdftex.def)             Requested size: 42.67912pt x 42.67642pt.
+Package pdftex.def Info: images/logo_white.png  used on input line 224.
+(pdftex.def)             Requested size: 36.98866pt x 36.97888pt.
  [28
 
 ]
 File: images/logo_white.png Graphic file (type png)
 <use images/logo_white.png>
-Package pdftex.def Info: images/logo_white.png  used on input line 197.
-(pdftex.def)             Requested size: 42.67912pt x 42.67642pt.
+Package pdftex.def Info: images/logo_white.png  used on input line 224.
+(pdftex.def)             Requested size: 36.98866pt x 36.97888pt.
  [29
 
 ]
 File: images/logo.png Graphic file (type png)
 <use images/logo.png>
-Package pdftex.def Info: images/logo.png  used on input line 199.
+Package pdftex.def Info: images/logo.png  used on input line 226.
 (pdftex.def)             Requested size: 42.67912pt x 42.67642pt.
  [30
 
@@ -1511,58 +1547,58 @@ Package pdftex.def Info: images/logo.png  used on input line 199.
  (./presentation.vrb)
 File: images/logo_white.png Graphic file (type png)
 <use images/logo_white.png>
-Package pdftex.def Info: images/logo_white.png  used on input line 212.
-(pdftex.def)             Requested size: 42.67912pt x 42.67642pt.
+Package pdftex.def Info: images/logo_white.png  used on input line 239.
+(pdftex.def)             Requested size: 36.98866pt x 36.97888pt.
  [31
 
 ] (./presentation.vrb)
 File: images/logo_white.png Graphic file (type png)
 <use images/logo_white.png>
-Package pdftex.def Info: images/logo_white.png  used on input line 212.
-(pdftex.def)             Requested size: 42.67912pt x 42.67642pt.
+Package pdftex.def Info: images/logo_white.png  used on input line 239.
+(pdftex.def)             Requested size: 36.98866pt x 36.97888pt.
 
 [32
 
 ] (./presentation.vrb)
 File: images/logo_white.png Graphic file (type png)
 <use images/logo_white.png>
-Package pdftex.def Info: images/logo_white.png  used on input line 212.
-(pdftex.def)             Requested size: 42.67912pt x 42.67642pt.
+Package pdftex.def Info: images/logo_white.png  used on input line 239.
+(pdftex.def)             Requested size: 36.98866pt x 36.97888pt.
  [33
 
 ]
 File: images/logo_white.png Graphic file (type png)
 <use images/logo_white.png>
-Package pdftex.def Info: images/logo_white.png  used on input line 227.
-(pdftex.def)             Requested size: 42.67912pt x 42.67642pt.
+Package pdftex.def Info: images/logo_white.png  used on input line 254.
+(pdftex.def)             Requested size: 36.98866pt x 36.97888pt.
  [34
 
 ]
 File: images/logo_white.png Graphic file (type png)
 <use images/logo_white.png>
-Package pdftex.def Info: images/logo_white.png  used on input line 239.
-(pdftex.def)             Requested size: 42.67912pt x 42.67642pt.
+Package pdftex.def Info: images/logo_white.png  used on input line 266.
+(pdftex.def)             Requested size: 36.98866pt x 36.97888pt.
  [35
 
 ]
 File: images/logo_white.png Graphic file (type png)
 <use images/logo_white.png>
-Package pdftex.def Info: images/logo_white.png  used on input line 239.
-(pdftex.def)             Requested size: 42.67912pt x 42.67642pt.
+Package pdftex.def Info: images/logo_white.png  used on input line 266.
+(pdftex.def)             Requested size: 36.98866pt x 36.97888pt.
  [36
 
 ]
 File: images/logo_white.png Graphic file (type png)
 <use images/logo_white.png>
-Package pdftex.def Info: images/logo_white.png  used on input line 247.
-(pdftex.def)             Requested size: 42.67912pt x 42.67642pt.
+Package pdftex.def Info: images/logo_white.png  used on input line 274.
+(pdftex.def)             Requested size: 36.98866pt x 36.97888pt.
  [37
 
 ]
 File: images/logo_white.png Graphic file (type png)
 <use images/logo_white.png>
-Package pdftex.def Info: images/logo_white.png  used on input line 247.
-(pdftex.def)             Requested size: 42.67912pt x 42.67642pt.
+Package pdftex.def Info: images/logo_white.png  used on input line 274.
+(pdftex.def)             Requested size: 36.98866pt x 36.97888pt.
  [38
 
 ]
@@ -1571,178 +1607,212 @@ Package pdftex.def Info: images/logo_white.png  used on input line 247.
  (./presentation.vrb)
 File: images/logo_white.png Graphic file (type png)
 <use images/logo_white.png>
-Package pdftex.def Info: images/logo_white.png  used on input line 258.
-(pdftex.def)             Requested size: 42.67912pt x 42.67642pt.
+Package pdftex.def Info: images/logo_white.png  used on input line 285.
+(pdftex.def)             Requested size: 36.98866pt x 36.97888pt.
 
 [39
 
 ] (./presentation.vrb)
 File: images/logo_white.png Graphic file (type png)
 <use images/logo_white.png>
-Package pdftex.def Info: images/logo_white.png  used on input line 258.
-(pdftex.def)             Requested size: 42.67912pt x 42.67642pt.
+Package pdftex.def Info: images/logo_white.png  used on input line 285.
+(pdftex.def)             Requested size: 36.98866pt x 36.97888pt.
  [40
 
 ]
 File: images/logo.png Graphic file (type png)
 <use images/logo.png>
-Package pdftex.def Info: images/logo.png  used on input line 260.
+Package pdftex.def Info: images/logo.png  used on input line 287.
 (pdftex.def)             Requested size: 42.67912pt x 42.67642pt.
  [41
 
 ]
 File: images/logo_white.png Graphic file (type png)
 <use images/logo_white.png>
-Package pdftex.def Info: images/logo_white.png  used on input line 276.
-(pdftex.def)             Requested size: 42.67912pt x 42.67642pt.
+Package pdftex.def Info: images/logo_white.png  used on input line 303.
+(pdftex.def)             Requested size: 36.98866pt x 36.97888pt.
  [42
 
 ]
 File: images/logo_white.png Graphic file (type png)
 <use images/logo_white.png>
-Package pdftex.def Info: images/logo_white.png  used on input line 276.
-(pdftex.def)             Requested size: 42.67912pt x 42.67642pt.
+Package pdftex.def Info: images/logo_white.png  used on input line 303.
+(pdftex.def)             Requested size: 36.98866pt x 36.97888pt.
  [43
 
 ]
 File: images/logo_white.png Graphic file (type png)
 <use images/logo_white.png>
-Package pdftex.def Info: images/logo_white.png  used on input line 289.
-(pdftex.def)             Requested size: 42.67912pt x 42.67642pt.
+Package pdftex.def Info: images/logo_white.png  used on input line 316.
+(pdftex.def)             Requested size: 36.98866pt x 36.97888pt.
  [44
 
 ]
 File: images/logo_white.png Graphic file (type png)
 <use images/logo_white.png>
-Package pdftex.def Info: images/logo_white.png  used on input line 289.
-(pdftex.def)             Requested size: 42.67912pt x 42.67642pt.
+Package pdftex.def Info: images/logo_white.png  used on input line 316.
+(pdftex.def)             Requested size: 36.98866pt x 36.97888pt.
  [45
 
 ]
 File: images/logo_white.png Graphic file (type png)
 <use images/logo_white.png>
-Package pdftex.def Info: images/logo_white.png  used on input line 302.
-(pdftex.def)             Requested size: 42.67912pt x 42.67642pt.
+Package pdftex.def Info: images/logo_white.png  used on input line 329.
+(pdftex.def)             Requested size: 36.98866pt x 36.97888pt.
  [46
 
 ]
 File: images/logo_white.png Graphic file (type png)
 <use images/logo_white.png>
-Package pdftex.def Info: images/logo_white.png  used on input line 302.
-(pdftex.def)             Requested size: 42.67912pt x 42.67642pt.
+Package pdftex.def Info: images/logo_white.png  used on input line 329.
+(pdftex.def)             Requested size: 36.98866pt x 36.97888pt.
  [47
 
 ]
 File: images/logo_white.png Graphic file (type png)
 <use images/logo_white.png>
-Package pdftex.def Info: images/logo_white.png  used on input line 313.
-(pdftex.def)             Requested size: 42.67912pt x 42.67642pt.
+Package pdftex.def Info: images/logo_white.png  used on input line 340.
+(pdftex.def)             Requested size: 36.98866pt x 36.97888pt.
  [48
 
 ]
 File: images/logo_white.png Graphic file (type png)
 <use images/logo_white.png>
-Package pdftex.def Info: images/logo_white.png  used on input line 324.
-(pdftex.def)             Requested size: 42.67912pt x 42.67642pt.
+Package pdftex.def Info: images/logo_white.png  used on input line 351.
+(pdftex.def)             Requested size: 36.98866pt x 36.97888pt.
  [49
 
 ]
 File: images/logo_white.png Graphic file (type png)
 <use images/logo_white.png>
-Package pdftex.def Info: images/logo_white.png  used on input line 335.
-(pdftex.def)             Requested size: 42.67912pt x 42.67642pt.
+Package pdftex.def Info: images/logo_white.png  used on input line 362.
+(pdftex.def)             Requested size: 36.98866pt x 36.97888pt.
 
 [50
 
 ]
 File: images/logo_white.png Graphic file (type png)
 <use images/logo_white.png>
-Package pdftex.def Info: images/logo_white.png  used on input line 335.
-(pdftex.def)             Requested size: 42.67912pt x 42.67642pt.
+Package pdftex.def Info: images/logo_white.png  used on input line 362.
+(pdftex.def)             Requested size: 36.98866pt x 36.97888pt.
  [51
 
 ]
 File: images/logo_white.png Graphic file (type png)
 <use images/logo_white.png>
-Package pdftex.def Info: images/logo_white.png  used on input line 335.
-(pdftex.def)             Requested size: 42.67912pt x 42.67642pt.
+Package pdftex.def Info: images/logo_white.png  used on input line 362.
+(pdftex.def)             Requested size: 36.98866pt x 36.97888pt.
  [52
 
 ]
 File: images/logo_white.png Graphic file (type png)
 <use images/logo_white.png>
-Package pdftex.def Info: images/logo_white.png  used on input line 344.
-(pdftex.def)             Requested size: 42.67912pt x 42.67642pt.
+Package pdftex.def Info: images/logo_white.png  used on input line 371.
+(pdftex.def)             Requested size: 36.98866pt x 36.97888pt.
  [53
 
 ]
 File: images/logo_white.png Graphic file (type png)
 <use images/logo_white.png>
-Package pdftex.def Info: images/logo_white.png  used on input line 344.
-(pdftex.def)             Requested size: 42.67912pt x 42.67642pt.
+Package pdftex.def Info: images/logo_white.png  used on input line 371.
+(pdftex.def)             Requested size: 36.98866pt x 36.97888pt.
  [54
 
 ]
-LaTeX Font Info:    Try loading font information for U+euf on input line 360.
+LaTeX Font Info:    Try loading font information for U+euf on input line 387.
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/amsfonts/ueuf.fd
 File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
 )
 File: images/logo_white.png Graphic file (type png)
 <use images/logo_white.png>
-Package pdftex.def Info: images/logo_white.png  used on input line 360.
-(pdftex.def)             Requested size: 42.67912pt x 42.67642pt.
+Package pdftex.def Info: images/logo_white.png  used on input line 387.
+(pdftex.def)             Requested size: 36.98866pt x 36.97888pt.
  [55
 
 ]
 File: images/logo_white.png Graphic file (type png)
 <use images/logo_white.png>
-Package pdftex.def Info: images/logo_white.png  used on input line 360.
-(pdftex.def)             Requested size: 42.67912pt x 42.67642pt.
+Package pdftex.def Info: images/logo_white.png  used on input line 387.
+(pdftex.def)             Requested size: 36.98866pt x 36.97888pt.
  [56
 
 ]
 File: images/logo_white.png Graphic file (type png)
 <use images/logo_white.png>
-Package pdftex.def Info: images/logo_white.png  used on input line 373.
-(pdftex.def)             Requested size: 42.67912pt x 42.67642pt.
+Package pdftex.def Info: images/logo_white.png  used on input line 400.
+(pdftex.def)             Requested size: 36.98866pt x 36.97888pt.
 
 [57
 
 ]
 File: images/logo_white.png Graphic file (type png)
 <use images/logo_white.png>
-Package pdftex.def Info: images/logo_white.png  used on input line 373.
-(pdftex.def)             Requested size: 42.67912pt x 42.67642pt.
+Package pdftex.def Info: images/logo_white.png  used on input line 400.
+(pdftex.def)             Requested size: 36.98866pt x 36.97888pt.
  [58
 
 ]
 File: images/logo_white.png Graphic file (type png)
 <use images/logo_white.png>
-Package pdftex.def Info: images/logo_white.png  used on input line 373.
-(pdftex.def)             Requested size: 42.67912pt x 42.67642pt.
+Package pdftex.def Info: images/logo_white.png  used on input line 400.
+(pdftex.def)             Requested size: 36.98866pt x 36.97888pt.
  [59
 
 ]
 File: images/logo_white.png Graphic file (type png)
 <use images/logo_white.png>
-Package pdftex.def Info: images/logo_white.png  used on input line 382.
-(pdftex.def)             Requested size: 42.67912pt x 42.67642pt.
+Package pdftex.def Info: images/logo_white.png  used on input line 409.
+(pdftex.def)             Requested size: 36.98866pt x 36.97888pt.
  [60
 
 ]
 File: images/logo_white.png Graphic file (type png)
 <use images/logo_white.png>
-Package pdftex.def Info: images/logo_white.png  used on input line 382.
-(pdftex.def)             Requested size: 42.67912pt x 42.67642pt.
+Package pdftex.def Info: images/logo_white.png  used on input line 409.
+(pdftex.def)             Requested size: 36.98866pt x 36.97888pt.
  [61
+
+]
+File: images/logo.png Graphic file (type png)
+<use images/logo.png>
+Package pdftex.def Info: images/logo.png  used on input line 411.
+(pdftex.def)             Requested size: 42.67912pt x 42.67642pt.
+ [62
+
+]
+\openout4 = `presentation.vrb'.
+
+ (./presentation.vrb
+File: ../images/sage.png Graphic file (type png)
+<use ../images/sage.png>
+Package pdftex.def Info: ../images/sage.png  used on input line 2.
+(pdftex.def)             Requested size: 39.9326pt x 11.0pt.
+LaTeX Font Info:    Try loading font information for T1+cmtt on input line 4.
+
+(/usr/local/texlive/2019/texmf-dist/tex/latex/base/t1cmtt.fd
+File: t1cmtt.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `T1/cmtt/bx/n' in size <10> not available
+(Font)              Font shape `T1/cmtt/m/n' tried instead on input line 5.
+
+Overfull \hbox (7.63628pt too wide) in paragraph at lines 6--7
+[][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+)
+File: images/logo_white.png Graphic file (type png)
+<use images/logo_white.png>
+Package pdftex.def Info: images/logo_white.png  used on input line 425.
+(pdftex.def)             Requested size: 36.98866pt x 36.97888pt.
+ [63
 
 ] (./presentation.toc)
 File: images/logo_white.png Graphic file (type png)
 <use images/logo_white.png>
-Package pdftex.def Info: images/logo_white.png  used on input line 386.
-(pdftex.def)             Requested size: 42.67912pt x 42.67642pt.
- [62
+Package pdftex.def Info: images/logo_white.png  used on input line 431.
+(pdftex.def)             Requested size: 36.98866pt x 36.97888pt.
+ [64
 
 ]
 \tf@nav=\write9
@@ -1754,23 +1824,23 @@ Package pdftex.def Info: images/logo_white.png  used on input line 386.
 \tf@snm=\write11
 \openout11 = `presentation.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 395.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 395.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 440.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 440.
  (./presentation.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 395.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 395.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 440.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 440.
 Package rerunfilecheck Info: File `presentation.out' has not changed.
-(rerunfilecheck)             Checksum: B0CA7052DFC4E7ECBD575BE50FA5A74E;385.
+(rerunfilecheck)             Checksum: 89F69E7A22A7871EE71567CEB30655EE;447.
 Package logreq Info: Writing requests to 'presentation.run.xml'.
 \openout1 = `presentation.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 30579 strings out of 492616
- 616886 string characters out of 6129481
- 848701 words of memory out of 5000000
- 33745 multiletter control sequences out of 15000+600000
- 33342 words of font info for 93 fonts, out of 8000000 for 9000
+ 32444 strings out of 492616
+ 642160 string characters out of 6129481
+ 870579 words of memory out of 5000000
+ 35585 multiletter control sequences out of 15000+600000
+ 32112 words of font info for 92 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  58i,18n,84p,803b,1437s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}
@@ -1797,15 +1867,17 @@ ve/2019/texmf-dist/fonts/type1/public/cm-super/sfsi0800.pfb></usr/local/texlive
 /2019/texmf-dist/fonts/type1/public/cm-super/sfsi1095.pfb></usr/local/texlive/2
 019/texmf-dist/fonts/type1/public/cm-super/sfss0600.pfb></usr/local/texlive/201
 9/texmf-dist/fonts/type1/public/cm-super/sfss0800.pfb></usr/local/texlive/2019/
-texmf-dist/fonts/type1/public/cm-super/sfss1000.pfb></usr/local/texlive/2019/te
-xmf-dist/fonts/type1/public/cm-super/sfss1095.pfb></usr/local/texlive/2019/texm
-f-dist/fonts/type1/public/cm-super/sfss1200.pfb></usr/local/texlive/2019/texmf-
-dist/fonts/type1/public/cm-super/sfss1440.pfb></usr/local/texlive/2019/texmf-di
-st/fonts/type1/public/cm-super/sfsx1095.pfb>
-Output written on presentation.pdf (62 pages, 829984 bytes).
+texmf-dist/fonts/type1/public/cm-super/sfss0900.pfb></usr/local/texlive/2019/te
+xmf-dist/fonts/type1/public/cm-super/sfss1000.pfb></usr/local/texlive/2019/texm
+f-dist/fonts/type1/public/cm-super/sfss1095.pfb></usr/local/texlive/2019/texmf-
+dist/fonts/type1/public/cm-super/sfss1200.pfb></usr/local/texlive/2019/texmf-di
+st/fonts/type1/public/cm-super/sfss1440.pfb></usr/local/texlive/2019/texmf-dist
+/fonts/type1/public/cm-super/sfsx1095.pfb></usr/local/texlive/2019/texmf-dist/f
+onts/type1/public/cm-super/sftt1000.pfb>
+Output written on presentation.pdf (64 pages, 1103864 bytes).
 PDF statistics:
- 2200 PDF objects out of 2487 (max. 8388607)
- 1864 compressed objects within 19 object streams
- 149 named destinations out of 1000 (max. 500000)
- 1246 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 2250 PDF objects out of 2487 (max. 8388607)
+ 1925 compressed objects within 20 object streams
+ 153 named destinations out of 1000 (max. 500000)
+ 1264 words of extra memory for PDF output out of 10000 (max. 10000000)
 

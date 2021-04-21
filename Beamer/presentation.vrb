@@ -1,9 +1,12 @@
-\frametitle{Precisazione sul sollevamento}
-Dati due insiemi $ Z, \, Y $e una funzione $ \phi : Y \to Z $ diciamo che $ f' : X \to Y $ è un \textbf{sollevamento} di $ f : X \to Z $ se commuta:
-			\[\begin{tikzcd}
-			 & {Y} \arrow[d, " \phi"] \\
-			{X} \arrow[r, "f"'] \arrow[ru, "f'"] & {Z}
-			\end{tikzcd}\]
-			\pause
-			Nel nostro caso $\phi$ è il morfismo indotto dalla proiezione
-			$$G_0 \simeq  \Z_n^\ast  \to  \Z_n^\ast / \pm 1  \simeq G$$
+\frametitle{Prova di inserimento codice}
+Vediamo ora l'implementazione di alcuni calcoli in \sage
+
+\begin{lstlisting}
+sage: K.<b> =
+	NumberField(x^3 - 3, 'a').galois_closure()
+sage: G = K.galois_group()
+sage: P = K.primes_above(3)[0]
+sage: s = hom(K, K, 1/18*b^4 - 1/2*b)
+sage: G(s).ramification_degree(P)
+4
+\end{lstlisting}		
