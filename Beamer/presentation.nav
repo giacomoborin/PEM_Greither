@@ -190,8 +190,12 @@
 \headcommand {\slideentry {4}{0}{3}{63/63}{}{0}}
 \defcounter {refsection}{0}\relax 
 \headcommand {\beamer@framepages {63}{63}}
-\headcommand {\beamer@partpages {1}{63}}
-\headcommand {\beamer@subsectionpages {61}{63}}
-\headcommand {\beamer@sectionpages {61}{63}}
-\headcommand {\beamer@documentpages {63}}
-\headcommand {\gdef \inserttotalframenumber {34}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\slideentry {4}{0}{3}{63/64}{}{0}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\beamer@framepages {63}{64}}
+\headcommand {\beamer@partpages {1}{64}}
+\headcommand {\beamer@subsectionpages {61}{64}}
+\headcommand {\beamer@sectionpages {61}{64}}
+\headcommand {\beamer@documentpages {64}}
+\headcommand {\gdef \inserttotalframenumber {35}}

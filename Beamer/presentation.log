@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.5.31)  25 APR 2021 16:03
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.5.31)  5 MAY 2021 11:32
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1308,10 +1308,10 @@ Package pdftex.def Info: images/logo_trasp.png  used on input line 105.
 
 {/usr/local/texlive/2019/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./image
 s/logo_white.png> <./images/logonome_white.png> <./images/logo_trasp.png>]
-<images/sage.png, id=83, 682.2288pt x 187.902pt>
-File: images/sage.png Graphic file (type png)
-<use images/sage.png>
-Package pdftex.def Info: images/sage.png  used on input line 114.
+<../images/sage.png, id=83, 682.2288pt x 187.902pt>
+File: ../images/sage.png Graphic file (type png)
+<use ../images/sage.png>
+Package pdftex.def Info: ../images/sage.png  used on input line 114.
 (pdftex.def)             Requested size: 27.5968pt x 7.60329pt.
 File: images/logo_white.png Graphic file (type png)
 <use images/logo_white.png>
@@ -1319,10 +1319,10 @@ Package pdftex.def Info: images/logo_white.png  used on input line 114.
 (pdftex.def)             Requested size: 36.98866pt x 36.97888pt.
  [2
 
- <./images/sage.png>]
-File: images/sage.png Graphic file (type png)
-<use images/sage.png>
-Package pdftex.def Info: images/sage.png  used on input line 114.
+ <../images/sage.png>]
+File: ../images/sage.png Graphic file (type png)
+<use ../images/sage.png>
+Package pdftex.def Info: ../images/sage.png  used on input line 114.
 (pdftex.def)             Requested size: 27.5968pt x 7.60329pt.
 File: images/logo_white.png Graphic file (type png)
 <use images/logo_white.png>
@@ -1338,14 +1338,14 @@ Package pdftex.def Info: images/logo_white.png  used on input line 119.
  [4
 
  </usr/local/texlive/2019/texmf-dist/tex/latex/beamer/beamericonarticle.pdf>]
-<images/logo_new.png, id=183, 401.5pt x 401.5pt>
-File: images/logo_new.png Graphic file (type png)
-<use images/logo_new.png>
-Package pdftex.def Info: images/logo_new.png  used on input line 123.
+<images/logo_math.png, id=184, 401.5pt x 401.5pt>
+File: images/logo_math.png Graphic file (type png)
+<use images/logo_math.png>
+Package pdftex.def Info: images/logo_math.png  used on input line 123.
 (pdftex.def)             Requested size: 42.67912pt x 42.67642pt.
  [5
 
- <./images/logo_new.png>]
+ <./images/logo_math.png (PNG copy)>]
 LaTeX Font Info:    Try loading font information for U+msa on input line 137.
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/amsfonts/umsa.fd
@@ -1536,9 +1536,9 @@ Package pdftex.def Info: images/logo_white.png  used on input line 236.
  [29
 
 ]
-File: images/logo_new.png Graphic file (type png)
-<use images/logo_new.png>
-Package pdftex.def Info: images/logo_new.png  used on input line 238.
+File: images/logo_math.png Graphic file (type png)
+<use images/logo_math.png>
+Package pdftex.def Info: images/logo_math.png  used on input line 238.
 (pdftex.def)             Requested size: 42.67912pt x 42.67642pt.
  [30
 
@@ -1633,9 +1633,9 @@ Package pdftex.def Info: images/logo_white.png  used on input line 298.
 [40
 
 ]
-File: images/logo_new.png Graphic file (type png)
-<use images/logo_new.png>
-Package pdftex.def Info: images/logo_new.png  used on input line 300.
+File: images/logo_math.png Graphic file (type png)
+<use images/logo_math.png>
+Package pdftex.def Info: images/logo_math.png  used on input line 300.
 (pdftex.def)             Requested size: 42.67912pt x 42.67642pt.
  [41
 
@@ -1791,9 +1791,9 @@ Package pdftex.def Info: images/logo_white.png  used on input line 424.
  [60
 
 ]
-File: images/logo_new.png Graphic file (type png)
-<use images/logo_new.png>
-Package pdftex.def Info: images/logo_new.png  used on input line 426.
+File: images/logo_math.png Graphic file (type png)
+<use images/logo_math.png>
+Package pdftex.def Info: images/logo_math.png  used on input line 426.
 (pdftex.def)             Requested size: 42.67912pt x 42.67642pt.
  [61
 
@@ -1801,9 +1801,9 @@ Package pdftex.def Info: images/logo_new.png  used on input line 426.
 \openout4 = `presentation.vrb'.
 
  (./presentation.vrb
-File: images/sage.png Graphic file (type png)
-<use images/sage.png>
-Package pdftex.def Info: images/sage.png  used on input line 2.
+File: ../images/sage.png Graphic file (type png)
+<use ../images/sage.png>
+Package pdftex.def Info: ../images/sage.png  used on input line 2.
 (pdftex.def)             Requested size: 27.5968pt x 7.60329pt.
 LaTeX Font Info:    Try loading font information for T1+cmtt on input line 4.
 
@@ -1832,6 +1832,14 @@ Package pdftex.def Info: images/logo_white.png  used on input line 446.
  [63
 
 ]
+File: images/logo_white.png Graphic file (type png)
+<use images/logo_white.png>
+Package pdftex.def Info: images/logo_white.png  used on input line 446.
+(pdftex.def)             Requested size: 36.98866pt x 36.97888pt.
+ [64
+
+
+]
 \tf@nav=\write9
 \openout9 = `presentation.nav'.
 
@@ -1853,13 +1861,13 @@ Package logreq Info: Writing requests to 'presentation.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 32462 strings out of 492616
- 642360 string characters out of 6129481
- 870868 words of memory out of 5000000
- 35601 multiletter control sequences out of 15000+600000
- 32112 words of font info for 92 fonts, out of 8000000 for 9000
+ 32474 strings out of 492616
+ 642587 string characters out of 6129481
+ 871093 words of memory out of 5000000
+ 35609 multiletter control sequences out of 15000+600000
+ 32884 words of font info for 93 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 58i,18n,84p,803b,1437s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 58i,18n,84p,803b,1450s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}
 </usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><
 /usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></
@@ -1890,11 +1898,12 @@ f-dist/fonts/type1/public/cm-super/sfss1095.pfb></usr/local/texlive/2019/texmf-
 dist/fonts/type1/public/cm-super/sfss1200.pfb></usr/local/texlive/2019/texmf-di
 st/fonts/type1/public/cm-super/sfss1440.pfb></usr/local/texlive/2019/texmf-dist
 /fonts/type1/public/cm-super/sfsx1095.pfb></usr/local/texlive/2019/texmf-dist/f
-onts/type1/public/cm-super/sftt1000.pfb>
-Output written on presentation.pdf (63 pages, 927227 bytes).
+onts/type1/public/cm-super/sfsx1440.pfb></usr/local/texlive/2019/texmf-dist/fon
+ts/type1/public/cm-super/sftt1000.pfb>
+Output written on presentation.pdf (64 pages, 972977 bytes).
 PDF statistics:
- 2249 PDF objects out of 2487 (max. 8388607)
- 1925 compressed objects within 20 object streams
- 155 named destinations out of 1000 (max. 500000)
+ 2278 PDF objects out of 2487 (max. 8388607)
+ 1953 compressed objects within 20 object streams
+ 157 named destinations out of 1000 (max. 500000)
  1304 words of extra memory for PDF output out of 10000 (max. 10000000)
 
