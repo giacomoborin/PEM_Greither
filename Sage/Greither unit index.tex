@@ -1,0 +1,1381 @@
+\documentclass[11pt]{article}
+
+    \usepackage[breakable]{tcolorbox}
+    \usepackage{parskip} % Stop auto-indenting (to mimic markdown behaviour)
+    
+    \usepackage{iftex}
+    \ifPDFTeX
+    	\usepackage[T1]{fontenc}
+    	\usepackage{mathpazo}
+    \else
+    	\usepackage{fontspec}
+    \fi
+
+    % Basic figure setup, for now with no caption control since it's done
+    % automatically by Pandoc (which extracts ![](path) syntax from Markdown).
+    \usepackage{graphicx}
+    % Maintain compatibility with old templates. Remove in nbconvert 6.0
+    \let\Oldincludegraphics\includegraphics
+    % Ensure that by default, figures have no caption (until we provide a
+    % proper Figure object with a Caption API and a way to capture that
+    % in the conversion process - todo).
+    \usepackage{caption}
+    \DeclareCaptionFormat{nocaption}{}
+    \captionsetup{format=nocaption,aboveskip=0pt,belowskip=0pt}
+
+    \usepackage{float}
+    \floatplacement{figure}{H} % forces figures to be placed at the correct location
+    \usepackage{xcolor} % Allow colors to be defined
+    \usepackage{enumerate} % Needed for markdown enumerations to work
+    \usepackage{geometry} % Used to adjust the document margins
+    \usepackage{amsmath} % Equations
+    \usepackage{amssymb} % Equations
+    \usepackage{textcomp} % defines textquotesingle
+    % Hack from http://tex.stackexchange.com/a/47451/13684:
+    \AtBeginDocument{%
+        \def\PYZsq{\textquotesingle}% Upright quotes in Pygmentized code
+    }
+    \usepackage{upquote} % Upright quotes for verbatim code
+    \usepackage{eurosym} % defines \euro
+    \usepackage[mathletters]{ucs} % Extended unicode (utf-8) support
+    \usepackage{fancyvrb} % verbatim replacement that allows latex
+    \usepackage{grffile} % extends the file name processing of package graphics 
+                         % to support a larger range
+    \makeatletter % fix for old versions of grffile with XeLaTeX
+    \@ifpackagelater{grffile}{2019/11/01}
+    {
+      % Do nothing on new versions
+    }
+    {
+      \def\Gread@@xetex#1{%
+        \IfFileExists{"\Gin@base".bb}%
+        {\Gread@eps{\Gin@base.bb}}%
+        {\Gread@@xetex@aux#1}%
+      }
+    }
+    \makeatother
+    \usepackage[Export]{adjustbox} % Used to constrain images to a maximum size
+    \adjustboxset{max size={0.9\linewidth}{0.9\paperheight}}
+
+    % The hyperref package gives us a pdf with properly built
+    % internal navigation ('pdf bookmarks' for the table of contents,
+    % internal cross-reference links, web links for URLs, etc.)
+    \usepackage{hyperref}
+    % The default LaTeX title has an obnoxious amount of whitespace. By default,
+    % titling removes some of it. It also provides customization options.
+    \usepackage{titling}
+    \usepackage{longtable} % longtable support required by pandoc >1.10
+    \usepackage{booktabs}  % table support for pandoc > 1.12.2
+    \usepackage[inline]{enumitem} % IRkernel/repr support (it uses the enumerate* environment)
+    \usepackage[normalem]{ulem} % ulem is needed to support strikethroughs (\sout)
+                                % normalem makes italics be italics, not underlines
+    \usepackage{mathrsfs}
+    
+
+    
+    % Colors for the hyperref package
+    \definecolor{urlcolor}{rgb}{0,.145,.698}
+    \definecolor{linkcolor}{rgb}{.71,0.21,0.01}
+    \definecolor{citecolor}{rgb}{.12,.54,.11}
+
+    % ANSI colors
+    \definecolor{ansi-black}{HTML}{3E424D}
+    \definecolor{ansi-black-intense}{HTML}{282C36}
+    \definecolor{ansi-red}{HTML}{E75C58}
+    \definecolor{ansi-red-intense}{HTML}{B22B31}
+    \definecolor{ansi-green}{HTML}{00A250}
+    \definecolor{ansi-green-intense}{HTML}{007427}
+    \definecolor{ansi-yellow}{HTML}{DDB62B}
+    \definecolor{ansi-yellow-intense}{HTML}{B27D12}
+    \definecolor{ansi-blue}{HTML}{208FFB}
+    \definecolor{ansi-blue-intense}{HTML}{0065CA}
+    \definecolor{ansi-magenta}{HTML}{D160C4}
+    \definecolor{ansi-magenta-intense}{HTML}{A03196}
+    \definecolor{ansi-cyan}{HTML}{60C6C8}
+    \definecolor{ansi-cyan-intense}{HTML}{258F8F}
+    \definecolor{ansi-white}{HTML}{C5C1B4}
+    \definecolor{ansi-white-intense}{HTML}{A1A6B2}
+    \definecolor{ansi-default-inverse-fg}{HTML}{FFFFFF}
+    \definecolor{ansi-default-inverse-bg}{HTML}{000000}
+
+    % common color for the border for error outputs.
+    \definecolor{outerrorbackground}{HTML}{FFDFDF}
+
+    % commands and environments needed by pandoc snippets
+    % extracted from the output of `pandoc -s`
+    \providecommand{\tightlist}{%
+      \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+    \DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+    % Add ',fontsize=\small' for more characters per line
+    \newenvironment{Shaded}{}{}
+    \newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{{#1}}}}
+    \newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.56,0.13,0.00}{{#1}}}
+    \newcommand{\DecValTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
+    \newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
+    \newcommand{\FloatTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
+    \newcommand{\CharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+    \newcommand{\StringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+    \newcommand{\CommentTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textit{{#1}}}}
+    \newcommand{\OtherTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{{#1}}}
+    \newcommand{\AlertTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{{#1}}}}
+    \newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.02,0.16,0.49}{{#1}}}
+    \newcommand{\RegionMarkerTok}[1]{{#1}}
+    \newcommand{\ErrorTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{{#1}}}}
+    \newcommand{\NormalTok}[1]{{#1}}
+    
+    % Additional commands for more recent versions of Pandoc
+    \newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.53,0.00,0.00}{{#1}}}
+    \newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+    \newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+    \newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.73,0.40,0.53}{{#1}}}
+    \newcommand{\ImportTok}[1]{{#1}}
+    \newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.73,0.13,0.13}{\textit{{#1}}}}
+    \newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
+    \newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
+    \newcommand{\VariableTok}[1]{\textcolor[rgb]{0.10,0.09,0.49}{{#1}}}
+    \newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{{#1}}}}
+    \newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.40,0.40,0.40}{{#1}}}
+    \newcommand{\BuiltInTok}[1]{{#1}}
+    \newcommand{\ExtensionTok}[1]{{#1}}
+    \newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.74,0.48,0.00}{{#1}}}
+    \newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.49,0.56,0.16}{{#1}}}
+    \newcommand{\InformationTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
+    \newcommand{\WarningTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
+    
+    
+    % Define a nice break command that doesn't care if a line doesn't already
+    % exist.
+    \def\br{\hspace*{\fill} \\* }
+    % Math Jax compatibility definitions
+    \def\gt{>}
+    \def\lt{<}
+    \let\Oldtex\TeX
+    \let\Oldlatex\LaTeX
+    \renewcommand{\TeX}{\textrm{\Oldtex}}
+    \renewcommand{\LaTeX}{\textrm{\Oldlatex}}
+    % Document parameters
+    % Document title
+    \title{Greither unit index}
+    
+    
+    
+    
+    
+% Pygments definitions
+\makeatletter
+\def\PY@reset{\let\PY@it=\relax \let\PY@bf=\relax%
+    \let\PY@ul=\relax \let\PY@tc=\relax%
+    \let\PY@bc=\relax \let\PY@ff=\relax}
+\def\PY@tok#1{\csname PY@tok@#1\endcsname}
+\def\PY@toks#1+{\ifx\relax#1\empty\else%
+    \PY@tok{#1}\expandafter\PY@toks\fi}
+\def\PY@do#1{\PY@bc{\PY@tc{\PY@ul{%
+    \PY@it{\PY@bf{\PY@ff{#1}}}}}}}
+\def\PY#1#2{\PY@reset\PY@toks#1+\relax+\PY@do{#2}}
+
+\@namedef{PY@tok@w}{\def\PY@tc##1{\textcolor[rgb]{0.73,0.73,0.73}{##1}}}
+\@namedef{PY@tok@c}{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\@namedef{PY@tok@cp}{\def\PY@tc##1{\textcolor[rgb]{0.74,0.48,0.00}{##1}}}
+\@namedef{PY@tok@k}{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\@namedef{PY@tok@kp}{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\@namedef{PY@tok@kt}{\def\PY@tc##1{\textcolor[rgb]{0.69,0.00,0.25}{##1}}}
+\@namedef{PY@tok@o}{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\@namedef{PY@tok@ow}{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.67,0.13,1.00}{##1}}}
+\@namedef{PY@tok@nb}{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\@namedef{PY@tok@nf}{\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\@namedef{PY@tok@nc}{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\@namedef{PY@tok@nn}{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\@namedef{PY@tok@ne}{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.82,0.25,0.23}{##1}}}
+\@namedef{PY@tok@nv}{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\@namedef{PY@tok@no}{\def\PY@tc##1{\textcolor[rgb]{0.53,0.00,0.00}{##1}}}
+\@namedef{PY@tok@nl}{\def\PY@tc##1{\textcolor[rgb]{0.63,0.63,0.00}{##1}}}
+\@namedef{PY@tok@ni}{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.60,0.60,0.60}{##1}}}
+\@namedef{PY@tok@na}{\def\PY@tc##1{\textcolor[rgb]{0.49,0.56,0.16}{##1}}}
+\@namedef{PY@tok@nt}{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\@namedef{PY@tok@nd}{\def\PY@tc##1{\textcolor[rgb]{0.67,0.13,1.00}{##1}}}
+\@namedef{PY@tok@s}{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\@namedef{PY@tok@sd}{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\@namedef{PY@tok@si}{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.73,0.40,0.53}{##1}}}
+\@namedef{PY@tok@se}{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.73,0.40,0.13}{##1}}}
+\@namedef{PY@tok@sr}{\def\PY@tc##1{\textcolor[rgb]{0.73,0.40,0.53}{##1}}}
+\@namedef{PY@tok@ss}{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\@namedef{PY@tok@sx}{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\@namedef{PY@tok@m}{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\@namedef{PY@tok@gh}{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,0.50}{##1}}}
+\@namedef{PY@tok@gu}{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.50,0.00,0.50}{##1}}}
+\@namedef{PY@tok@gd}{\def\PY@tc##1{\textcolor[rgb]{0.63,0.00,0.00}{##1}}}
+\@namedef{PY@tok@gi}{\def\PY@tc##1{\textcolor[rgb]{0.00,0.63,0.00}{##1}}}
+\@namedef{PY@tok@gr}{\def\PY@tc##1{\textcolor[rgb]{1.00,0.00,0.00}{##1}}}
+\@namedef{PY@tok@ge}{\let\PY@it=\textit}
+\@namedef{PY@tok@gs}{\let\PY@bf=\textbf}
+\@namedef{PY@tok@gp}{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,0.50}{##1}}}
+\@namedef{PY@tok@go}{\def\PY@tc##1{\textcolor[rgb]{0.53,0.53,0.53}{##1}}}
+\@namedef{PY@tok@gt}{\def\PY@tc##1{\textcolor[rgb]{0.00,0.27,0.87}{##1}}}
+\@namedef{PY@tok@err}{\def\PY@bc##1{{\setlength{\fboxsep}{\string -\fboxrule}\fcolorbox[rgb]{1.00,0.00,0.00}{1,1,1}{\strut ##1}}}}
+\@namedef{PY@tok@kc}{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\@namedef{PY@tok@kd}{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\@namedef{PY@tok@kn}{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\@namedef{PY@tok@kr}{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\@namedef{PY@tok@bp}{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\@namedef{PY@tok@fm}{\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\@namedef{PY@tok@vc}{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\@namedef{PY@tok@vg}{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\@namedef{PY@tok@vi}{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\@namedef{PY@tok@vm}{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\@namedef{PY@tok@sa}{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\@namedef{PY@tok@sb}{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\@namedef{PY@tok@sc}{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\@namedef{PY@tok@dl}{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\@namedef{PY@tok@s2}{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\@namedef{PY@tok@sh}{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\@namedef{PY@tok@s1}{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\@namedef{PY@tok@mb}{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\@namedef{PY@tok@mf}{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\@namedef{PY@tok@mh}{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\@namedef{PY@tok@mi}{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\@namedef{PY@tok@il}{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\@namedef{PY@tok@mo}{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\@namedef{PY@tok@ch}{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\@namedef{PY@tok@cm}{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\@namedef{PY@tok@cpf}{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\@namedef{PY@tok@c1}{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\@namedef{PY@tok@cs}{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+
+\def\PYZbs{\char`\\}
+\def\PYZus{\char`\_}
+\def\PYZob{\char`\{}
+\def\PYZcb{\char`\}}
+\def\PYZca{\char`\^}
+\def\PYZam{\char`\&}
+\def\PYZlt{\char`\<}
+\def\PYZgt{\char`\>}
+\def\PYZsh{\char`\#}
+\def\PYZpc{\char`\%}
+\def\PYZdl{\char`\$}
+\def\PYZhy{\char`\-}
+\def\PYZsq{\char`\'}
+\def\PYZdq{\char`\"}
+\def\PYZti{\char`\~}
+% for compatibility with earlier versions
+\def\PYZat{@}
+\def\PYZlb{[}
+\def\PYZrb{]}
+\makeatother
+
+
+    % For linebreaks inside Verbatim environment from package fancyvrb. 
+    \makeatletter
+        \newbox\Wrappedcontinuationbox 
+        \newbox\Wrappedvisiblespacebox 
+        \newcommand*\Wrappedvisiblespace {\textcolor{red}{\textvisiblespace}} 
+        \newcommand*\Wrappedcontinuationsymbol {\textcolor{red}{\llap{\tiny$\m@th\hookrightarrow$}}} 
+        \newcommand*\Wrappedcontinuationindent {3ex } 
+        \newcommand*\Wrappedafterbreak {\kern\Wrappedcontinuationindent\copy\Wrappedcontinuationbox} 
+        % Take advantage of the already applied Pygments mark-up to insert 
+        % potential linebreaks for TeX processing. 
+        %        {, <, #, %, $, ' and ": go to next line. 
+        %        _, }, ^, &, >, - and ~: stay at end of broken line. 
+        % Use of \textquotesingle for straight quote. 
+        \newcommand*\Wrappedbreaksatspecials {% 
+            \def\PYGZus{\discretionary{\char`\_}{\Wrappedafterbreak}{\char`\_}}% 
+            \def\PYGZob{\discretionary{}{\Wrappedafterbreak\char`\{}{\char`\{}}% 
+            \def\PYGZcb{\discretionary{\char`\}}{\Wrappedafterbreak}{\char`\}}}% 
+            \def\PYGZca{\discretionary{\char`\^}{\Wrappedafterbreak}{\char`\^}}% 
+            \def\PYGZam{\discretionary{\char`\&}{\Wrappedafterbreak}{\char`\&}}% 
+            \def\PYGZlt{\discretionary{}{\Wrappedafterbreak\char`\<}{\char`\<}}% 
+            \def\PYGZgt{\discretionary{\char`\>}{\Wrappedafterbreak}{\char`\>}}% 
+            \def\PYGZsh{\discretionary{}{\Wrappedafterbreak\char`\#}{\char`\#}}% 
+            \def\PYGZpc{\discretionary{}{\Wrappedafterbreak\char`\%}{\char`\%}}% 
+            \def\PYGZdl{\discretionary{}{\Wrappedafterbreak\char`\$}{\char`\$}}% 
+            \def\PYGZhy{\discretionary{\char`\-}{\Wrappedafterbreak}{\char`\-}}% 
+            \def\PYGZsq{\discretionary{}{\Wrappedafterbreak\textquotesingle}{\textquotesingle}}% 
+            \def\PYGZdq{\discretionary{}{\Wrappedafterbreak\char`\"}{\char`\"}}% 
+            \def\PYGZti{\discretionary{\char`\~}{\Wrappedafterbreak}{\char`\~}}% 
+        } 
+        % Some characters . , ; ? ! / are not pygmentized. 
+        % This macro makes them "active" and they will insert potential linebreaks 
+        \newcommand*\Wrappedbreaksatpunct {% 
+            \lccode`\~`\.\lowercase{\def~}{\discretionary{\hbox{\char`\.}}{\Wrappedafterbreak}{\hbox{\char`\.}}}% 
+            \lccode`\~`\,\lowercase{\def~}{\discretionary{\hbox{\char`\,}}{\Wrappedafterbreak}{\hbox{\char`\,}}}% 
+            \lccode`\~`\;\lowercase{\def~}{\discretionary{\hbox{\char`\;}}{\Wrappedafterbreak}{\hbox{\char`\;}}}% 
+            \lccode`\~`\:\lowercase{\def~}{\discretionary{\hbox{\char`\:}}{\Wrappedafterbreak}{\hbox{\char`\:}}}% 
+            \lccode`\~`\?\lowercase{\def~}{\discretionary{\hbox{\char`\?}}{\Wrappedafterbreak}{\hbox{\char`\?}}}% 
+            \lccode`\~`\!\lowercase{\def~}{\discretionary{\hbox{\char`\!}}{\Wrappedafterbreak}{\hbox{\char`\!}}}% 
+            \lccode`\~`\/\lowercase{\def~}{\discretionary{\hbox{\char`\/}}{\Wrappedafterbreak}{\hbox{\char`\/}}}% 
+            \catcode`\.\active
+            \catcode`\,\active 
+            \catcode`\;\active
+            \catcode`\:\active
+            \catcode`\?\active
+            \catcode`\!\active
+            \catcode`\/\active 
+            \lccode`\~`\~ 	
+        }
+    \makeatother
+
+    \let\OriginalVerbatim=\Verbatim
+    \makeatletter
+    \renewcommand{\Verbatim}[1][1]{%
+        %\parskip\z@skip
+        \sbox\Wrappedcontinuationbox {\Wrappedcontinuationsymbol}%
+        \sbox\Wrappedvisiblespacebox {\FV@SetupFont\Wrappedvisiblespace}%
+        \def\FancyVerbFormatLine ##1{\hsize\linewidth
+            \vtop{\raggedright\hyphenpenalty\z@\exhyphenpenalty\z@
+                \doublehyphendemerits\z@\finalhyphendemerits\z@
+                \strut ##1\strut}%
+        }%
+        % If the linebreak is at a space, the latter will be displayed as visible
+        % space at end of first line, and a continuation symbol starts next line.
+        % Stretch/shrink are however usually zero for typewriter font.
+        \def\FV@Space {%
+            \nobreak\hskip\z@ plus\fontdimen3\font minus\fontdimen4\font
+            \discretionary{\copy\Wrappedvisiblespacebox}{\Wrappedafterbreak}
+            {\kern\fontdimen2\font}%
+        }%
+        
+        % Allow breaks at special characters using \PYG... macros.
+        \Wrappedbreaksatspecials
+        % Breaks at punctuation characters . , ; ? ! and / need catcode=\active 	
+        \OriginalVerbatim[#1,codes*=\Wrappedbreaksatpunct]%
+    }
+    \makeatother
+
+    % Exact colors from NB
+    \definecolor{incolor}{HTML}{303F9F}
+    \definecolor{outcolor}{HTML}{D84315}
+    \definecolor{cellborder}{HTML}{CFCFCF}
+    \definecolor{cellbackground}{HTML}{F7F7F7}
+    
+    % prompt
+    \makeatletter
+    \newcommand{\boxspacing}{\kern\kvtcb@left@rule\kern\kvtcb@boxsep}
+    \makeatother
+    \newcommand{\prompt}[4]{
+        {\ttfamily\llap{{\color{#2}[#3]:\hspace{3pt}#4}}\vspace{-\baselineskip}}
+    }
+    
+
+    
+    % Prevent overflowing lines due to hard-to-break entities
+    \sloppy 
+    % Setup hyperref package
+    \hypersetup{
+      breaklinks=true,  % so long urls are correctly broken across lines
+      colorlinks=true,
+      urlcolor=urlcolor,
+      linkcolor=linkcolor,
+      citecolor=citecolor,
+      }
+    % Slightly bigger margins than the latex defaults
+    
+    \geometry{verbose,tmargin=1in,bmargin=1in,lmargin=1in,rmargin=1in}
+    
+    
+
+\begin{document}
+    
+    \maketitle
+    
+    
+
+    
+    \hypertarget{greither-unit-index-a-sagemath-implementation}{%
+\section{Greither unit index, a Sagemath
+implementation}\label{greither-unit-index-a-sagemath-implementation}}
+
+Here we will implement some of the calculation from the article of
+Cornelius Greither: \emph{``Improving Ramachandra's and Levesque's unit
+index''}.\\
+In particular we will evaluate the index \(i_\beta\) in a very efficient
+way and the generators \(\xi_a(\beta)\) of the group \(C_\beta\)
+
+    \hypertarget{definition-of-n-end-its-factorization}{%
+\subsection{\texorpdfstring{Definition of \(n\) end its
+factorization}{Definition of n end its factorization}}\label{definition-of-n-end-its-factorization}}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{63}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{n}\PY{o}{=}\PY{l+m+mi}{693}
+\PY{n}{fn} \PY{o}{=} \PY{n}{factor}\PY{p}{(}\PY{n}{n}\PY{p}{)}
+\PY{n}{show}\PY{p}{(}\PY{n}{fn}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{math}
+\newcommand{\Bold}[1]{\mathbf{#1}}3^{2} \cdot 7 \cdot 11
+\end{math}
+
+    
+    Also we define these simple functions that we will use later to have a
+simple overview of the quatity used.
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{64}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{k}{def} \PY{n+nf}{p}\PY{p}{(}\PY{n}{i}\PY{p}{)}\PY{p}{:}
+    \PY{k}{return} \PY{n}{fn}\PY{p}{[}\PY{n}{i}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}
+\PY{k}{def} \PY{n+nf}{e}\PY{p}{(}\PY{n}{i}\PY{p}{)}\PY{p}{:}
+    \PY{k}{return} \PY{n}{fn}\PY{p}{[}\PY{n}{i}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}
+\PY{k}{def} \PY{n+nf}{pe}\PY{p}{(}\PY{n}{i}\PY{p}{)}\PY{p}{:}
+    \PY{k}{return} \PY{n}{p}\PY{p}{(}\PY{n}{i}\PY{p}{)}\PY{o}{*}\PY{o}{*}\PY{n}{e}\PY{p}{(}\PY{n}{i}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{65}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{pe}\PY{p}{(}\PY{l+m+mi}{1}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+            \begin{tcolorbox}[breakable, size=fbox, boxrule=.5pt, pad at break*=1mm, opacityfill=0]
+\prompt{Out}{outcolor}{65}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+9
+\end{Verbatim}
+\end{tcolorbox}
+        
+    \hypertarget{definition-of-the-power-set-p_s}{%
+\subsubsection{\texorpdfstring{Definition of the~Power set
+\(P_S\)}{Definition of the~Power set P\_S}}\label{definition-of-the-power-set-p_s}}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{66}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{s} \PY{o}{=} \PY{n+nb}{len}\PY{p}{(}\PY{n}{fn}\PY{p}{)}
+\PY{n}{S} \PY{o}{=} \PY{p}{[} \PY{n}{i} \PY{o}{+}\PY{l+m+mi}{1} \PY{k}{for} \PY{n}{i} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{n}{s}\PY{p}{)}\PY{p}{]}
+\PY{n}{PS} \PY{o}{=} \PY{n}{Subsets}\PY{p}{(}\PY{n}{S}\PY{p}{)}\PY{o}{.}\PY{n}{list}\PY{p}{(}\PY{p}{)}
+\PY{n}{PS}\PY{o}{.}\PY{n}{remove}\PY{p}{(}\PY{n}{Set}\PY{p}{(}\PY{n}{S}\PY{p}{)}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{67}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{PS}
+\end{Verbatim}
+\end{tcolorbox}
+
+            \begin{tcolorbox}[breakable, size=fbox, boxrule=.5pt, pad at break*=1mm, opacityfill=0]
+\prompt{Out}{outcolor}{67}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+[\{\}, \{1\}, \{2\}, \{3\}, \{1, 2\}, \{1, 3\}, \{2, 3\}]
+\end{Verbatim}
+\end{tcolorbox}
+        
+    \texttt{nI(I)} evaluate the quantity \(n=\prod_{i\in I} p_i^{e_i}\)
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{68}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{k}{def} \PY{n+nf}{nI}\PY{p}{(}\PY{n}{I}\PY{p}{)}\PY{p}{:}
+    \PY{n}{ret} \PY{o}{=} \PY{l+m+mi}{1}
+    \PY{k}{for} \PY{n}{i} \PY{o+ow}{in} \PY{n}{I}\PY{p}{:}
+        \PY{n}{ret} \PY{o}{*}\PY{o}{=} \PY{n}{pe}\PY{p}{(}\PY{n}{i}\PY{p}{)}
+    \PY{k}{return} \PY{n}{ret}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{69}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{nI}\PY{p}{(}\PY{p}{\PYZob{}}\PY{l+m+mi}{1}\PY{p}{,}\PY{l+m+mi}{3}\PY{p}{\PYZcb{}}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+            \begin{tcolorbox}[breakable, size=fbox, boxrule=.5pt, pad at break*=1mm, opacityfill=0]
+\prompt{Out}{outcolor}{69}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+99
+\end{Verbatim}
+\end{tcolorbox}
+        
+    \hypertarget{definition-of-zeta-and-the-group-g}{%
+\subsection{\texorpdfstring{Definition of \(\zeta\) and the group
+\(G\)}{Definition of \textbackslash zeta and the group G}}\label{definition-of-zeta-and-the-group-g}}
+
+Here we define the Cyclotomic Field \(\mathbb{Q}(\zeta_n)\) and the
+variable \texttt{z}~is assigned to \(\zeta_n\).
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{70}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{Qn}\PY{o}{.}\PY{o}{\PYZlt{}}\PY{n}{z}\PY{o}{\PYZgt{}}\PY{o}{=}\PY{n}{CyclotomicField}\PY{p}{(}\PY{n}{n}\PY{p}{)}
+\PY{p}{(}\PY{n}{Qn}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+            \begin{tcolorbox}[breakable, size=fbox, boxrule=.5pt, pad at break*=1mm, opacityfill=0]
+\prompt{Out}{outcolor}{70}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+Cyclotomic Field of order 693 and degree 360
+\end{Verbatim}
+\end{tcolorbox}
+        
+    We could directly evaluate the group \(G_0\) as the Galois group of the
+Field, but it uses a long computational time, so we will follows a
+different approach: defining \(G\) directly from its elements.\\
+Also I have done some functions to do some operations in \(G\), but in
+the end I have not used them
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{ }{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{G\PYZus{}0} \PY{o}{=} \PY{n}{Qn}\PY{o}{.}\PY{n}{galois\PYZus{}group}\PY{p}{(}\PY{p}{)} \PY{c+c1}{\PYZsh{}loooooong time}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{71}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{G} \PY{o}{=} \PY{p}{[} \PY{n}{a} \PY{k}{for} \PY{n}{a} \PY{o+ow}{in} \PY{p}{[}\PY{l+m+mf}{1.}\PY{o}{.}\PY{n}{n}\PY{o}{/}\PY{o}{/}\PY{l+m+mi}{2}\PY{p}{]} \PY{k}{if} \PY{n}{gcd}\PY{p}{(}\PY{n}{a}\PY{p}{,}\PY{n}{n}\PY{p}{)}\PY{o}{==}\PY{l+m+mi}{1}\PY{p}{]}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{72}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{show}\PY{p}{(}\PY{n}{G}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+\begin{multline*}
+\newcommand{\Bold}[1]{\mathbf{#1}}[1, 2, 4, 5, 8, 10, 13, 16, 17, 19, 20, 23, 25, 26, 29, 31, 32, 34, 37, 38, 40, 41, 43, 46, 47, 50, 52, 53, 58, 59, 61, \\
+62, 64, 65, 67, 68, 71, 73, 74, 76, 79, 80, 82, 83, 85, 86, 89, 92, 94, 95, 97, 100, 101, 103, 104, 106, 107, 109, \\
+113, 115, 116, 118, 122, 124, 125, 127, 128, 130, 131, 134, 136, 137, 139, 142, 145, 146, 148, 149, 151, 152, \\
+155, 157, 158, 160, 163, 164, 166, 167, 169, 170, 172, 173, 178, 179, 181, 184, 185, 188, 190, 191, 193, 194, \\
+197, 199, 200, 202, 205, 206, 208, 211, 212, 214, 215, 218, 221, 223, 226, 227, 229, 230, 232, 233, 235, 236, \\
+239, 241, 244, 247, 248, 250, 251, 254, 256, 257, 260, 262, 263, 265, 268, 269, 271, 272, 274, 277, 278, 281, 283,\\
+ 284, 289, 290, 292, 293, 295, 296, 298, 299, 302, 304, 305, 307, 310, 311, 313, 314, 316, 317, \\
+ 320, 323, 325, 326, 328, 331, 332, 334, 335, 337, 338, 340, 344, 346]
+\end{multline*}
+
+    
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{84}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{k}{def} \PY{n+nf}{corr}\PY{p}{(}\PY{n}{r}\PY{p}{)}\PY{p}{:}
+    \PY{k}{if} \PY{n}{r} \PY{o+ow}{not} \PY{o+ow}{in} \PY{n}{G}\PY{p}{:}
+        \PY{n}{r} \PY{o}{=} \PY{n}{n}\PY{o}{\PYZhy{}}\PY{n}{r}
+    \PY{k}{return} \PY{n}{r}
+
+\PY{k}{def} \PY{n+nf}{power}\PY{p}{(}\PY{n}{x}\PY{p}{,}\PY{n}{a}\PY{p}{)}\PY{p}{:}
+    \PY{n}{r} \PY{o}{=} \PY{n}{power\PYZus{}mod}\PY{p}{(}\PY{n}{x}\PY{p}{,}\PY{n}{a}\PY{p}{,}\PY{n}{n}\PY{p}{)}
+    \PY{k}{return} \PY{n}{corr}\PY{p}{(}\PY{n}{r}\PY{p}{)}
+
+\PY{k}{def} \PY{n+nf}{molt}\PY{p}{(}\PY{n}{x}\PY{p}{,}\PY{n}{y}\PY{p}{)}\PY{p}{:}
+    \PY{n}{r} \PY{o}{=} \PY{n}{mod}\PY{p}{(}\PY{n}{x}\PY{o}{*}\PY{n}{y}\PY{p}{,}\PY{n}{n}\PY{p}{)}
+    \PY{k}{return} \PY{n}{corr}\PY{p}{(}\PY{n}{r}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{85}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{molt}\PY{p}{(}\PY{l+m+mi}{166}\PY{p}{,}\PY{l+m+mi}{50}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+            \begin{tcolorbox}[breakable, size=fbox, boxrule=.5pt, pad at break*=1mm, opacityfill=0]
+\prompt{Out}{outcolor}{85}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+16
+\end{Verbatim}
+\end{tcolorbox}
+        
+    \hypertarget{calculation-of-the-index}{%
+\section{Calculation of the index}\label{calculation-of-the-index}}
+
+First we define the number field \(K\) as the Maximal Real subfield of
+\(\mathbb{Q}(\zeta_n)\), using that is equal to
+\(\mathbb{Q}(\zeta_n + \zeta_n^{-1})\)
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{86}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{zz} \PY{o}{=} \PY{n}{z} \PY{o}{+} \PY{n}{z}\PY{o}{.}\PY{n}{conjugate}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{87}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{K} \PY{o}{=} \PY{n}{NumberField}\PY{p}{(}\PY{n}{zz}\PY{o}{.}\PY{n}{minpoly}\PY{p}{(}\PY{p}{)}\PY{p}{,}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{a}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    We define \(\epsilon_i\) knowing that is equal to \(\phi(p_i^{e_i})\)
+and \(g_i\) using its definition: we embed the the prime \(p_i\) in
+\(O_K\) and we factor it
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{88}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{k}{def} \PY{n+nf}{eps}\PY{p}{(}\PY{n}{i}\PY{p}{)}\PY{p}{:}
+    \PY{k}{return} \PY{n}{euler\PYZus{}phi}\PY{p}{(}\PY{n}{pe}\PY{p}{(}\PY{n}{i}\PY{p}{)}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{89}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{k}{def} \PY{n+nf}{g}\PY{p}{(}\PY{n}{i}\PY{p}{)}\PY{p}{:}
+    \PY{n}{I} \PY{o}{=} \PY{n}{K}\PY{o}{.}\PY{n}{ideal}\PY{p}{(}\PY{n}{p}\PY{p}{(}\PY{n}{i}\PY{p}{)}\PY{p}{)}
+    \PY{k}{return} \PY{n+nb}{len}\PY{p}{(}\PY{n}{I}\PY{o}{.}\PY{n}{factor}\PY{p}{(}\PY{p}{)}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    For \(f_i\) we use the equality ${[}K:\mathbb{Q}{]} = \epsilon\_i g\_i
+f\_i $ since we know the other three elements.\\
+\emph{Memo}: ${[}K:\mathbb{Q}{]} = \phi(n)/2 $\\
+Later we will see another possible evaluation (a bit slower) using the
+Frobenious morphism.
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{91}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{k}{def} \PY{n+nf}{f}\PY{p}{(}\PY{n}{i}\PY{p}{)}\PY{p}{:}
+    \PY{k}{return} \PY{n}{euler\PYZus{}phi}\PY{p}{(}\PY{n}{n}\PY{p}{)}\PY{o}{/}\PY{p}{(}\PY{l+m+mi}{2}\PY{o}{*}\PY{n}{g}\PY{p}{(}\PY{n}{i}\PY{p}{)}\PY{o}{*}\PY{n}{eps}\PY{p}{(}\PY{n}{i}\PY{p}{)}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    So we have that:
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{92}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{k}{def} \PY{n+nf}{i\PYZus{}b}\PY{p}{(}\PY{p}{)}\PY{p}{:}
+    \PY{n}{i\PYZus{}b}\PY{o}{=}\PY{l+m+mi}{1}
+    \PY{k}{for} \PY{n}{i} \PY{o+ow}{in} \PY{n}{S}\PY{p}{:}
+        \PY{n}{i\PYZus{}b} \PY{o}{*}\PY{o}{=} \PY{p}{(}\PY{n}{eps}\PY{p}{(}\PY{n}{i}\PY{p}{)}\PY{o}{*}\PY{o}{*}\PY{p}{(}\PY{n}{g}\PY{p}{(}\PY{n}{i}\PY{p}{)}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{)}\PY{p}{)} \PY{o}{*} \PY{p}{(}\PY{n}{f}\PY{p}{(}\PY{n}{i}\PY{p}{)}\PY{o}{*}\PY{o}{*}\PY{p}{(}\PY{l+m+mi}{2}\PY{o}{*}\PY{n}{g}\PY{p}{(}\PY{n}{i}\PY{p}{)} \PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{)}\PY{p}{)}
+    \PY{k}{return} \PY{n}{i\PYZus{}b}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{93}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{i} \PY{o}{=} \PY{n}{i\PYZus{}b}\PY{p}{(}\PY{p}{)}
+\PY{n}{i}
+\end{Verbatim}
+\end{tcolorbox}
+
+            \begin{tcolorbox}[breakable, size=fbox, boxrule=.5pt, pad at break*=1mm, opacityfill=0]
+\prompt{Out}{outcolor}{93}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+699840000
+\end{Verbatim}
+\end{tcolorbox}
+        
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{94}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{show}\PY{p}{(}\PY{n}{factor}\PY{p}{(}\PY{n}{i}\PY{p}{)}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{math}
+\newcommand{\Bold}[1]{\mathbf{#1}}2^{9} \cdot 3^{7} \cdot 5^{4}
+\end{math}
+
+    
+    Here we have another evaluation of \(i_\beta\) that compress all the
+calculation to optimize the result
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{95}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{k}{def} \PY{n+nf}{i\PYZus{}b\PYZus{}compressed}\PY{p}{(}\PY{n}{n}\PY{p}{)}\PY{p}{:}
+    \PY{n}{fn} \PY{o}{=} \PY{n}{factor}\PY{p}{(}\PY{n}{n}\PY{p}{)}
+    \PY{n}{s} \PY{o}{=} \PY{n+nb}{len}\PY{p}{(}\PY{n}{fn}\PY{p}{)}
+    \PY{n}{S} \PY{o}{=} \PY{p}{[} \PY{n}{i} \PY{o}{+}\PY{l+m+mi}{1} \PY{k}{for} \PY{n}{i} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{n}{s}\PY{p}{)}\PY{p}{]}
+    \PY{n}{K}\PY{o}{.}\PY{o}{\PYZlt{}}\PY{n}{z}\PY{o}{\PYZgt{}} \PY{o}{=} \PY{n}{CyclotomicField}\PY{p}{(}\PY{n}{n}\PY{p}{)}
+    \PY{n}{zz} \PY{o}{=} \PY{n}{z} \PY{o}{+} \PY{n}{z}\PY{o}{.}\PY{n}{conjugate}\PY{p}{(}\PY{p}{)}
+    \PY{n}{K} \PY{o}{=} \PY{n}{NumberField}\PY{p}{(}\PY{n}{zz}\PY{o}{.}\PY{n}{minpoly}\PY{p}{(}\PY{p}{)}\PY{p}{,}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{a}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+    \PY{n}{ibb}\PY{o}{=}\PY{l+m+mi}{1}
+    \PY{k}{for} \PY{n}{j} \PY{o+ow}{in} \PY{n}{S}\PY{p}{:}
+        \PY{n}{eps} \PY{o}{=} \PY{n}{euler\PYZus{}phi}\PY{p}{(}\PY{n}{fn}\PY{p}{[}\PY{n}{j}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{o}{*}\PY{o}{*}\PY{n}{fn}\PY{p}{[}\PY{n}{j}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{)}
+        \PY{n}{g} \PY{o}{=} \PY{n+nb}{len}\PY{p}{(}\PY{n}{K}\PY{o}{.}\PY{n}{ideal}\PY{p}{(}\PY{n}{fn}\PY{p}{[}\PY{n}{j}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{)}\PY{o}{.}\PY{n}{factor}\PY{p}{(}\PY{p}{)}\PY{p}{)}
+        \PY{n}{f} \PY{o}{=} \PY{n}{euler\PYZus{}phi}\PY{p}{(}\PY{n}{n}\PY{p}{)}\PY{o}{/}\PY{p}{(}\PY{l+m+mi}{2}\PY{o}{*}\PY{n}{g}\PY{o}{*}\PY{n}{eps}\PY{p}{)}
+        \PY{n}{ibb} \PY{o}{*}\PY{o}{=} \PY{p}{(}\PY{n}{eps}\PY{o}{*}\PY{o}{*}\PY{p}{(}\PY{n}{g}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{)}\PY{p}{)} \PY{o}{*} \PY{p}{(}\PY{n}{f}\PY{o}{*}\PY{o}{*}\PY{p}{(}\PY{l+m+mi}{2}\PY{o}{*}\PY{n}{g}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{)}\PY{p}{)}
+    \PY{k}{return} \PY{n}{ibb}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{100}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{show}\PY{p}{(}\PY{n}{factor}\PY{p}{(}\PY{n}{i\PYZus{}b\PYZus{}compressed}\PY{p}{(}\PY{l+m+mi}{3}\PY{o}{*}\PY{l+m+mi}{5}\PY{o}{*}\PY{l+m+mi}{49}\PY{p}{)}\PY{p}{)}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{math}
+\newcommand{\Bold}[1]{\mathbf{#1}}2^{6} \cdot 3^{4} \cdot 7^{4}
+\end{math}
+
+    
+    \hypertarget{generators-construction}{%
+\section{Generators construction}\label{generators-construction}}
+
+Now with several steps we proceed in the costruction of the generators,
+starting with the definition of \(\beta\)
+
+    \hypertarget{definition-the-frobenious-morphism}{%
+\subsection{Definition the Frobenious
+morphism}\label{definition-the-frobenious-morphism}}
+
+Given \(i \in S\) we want to find a lift in \(G_0\) of the frobenious
+morphism:
+
+\begin{alignat*}{2}
+        F_i : \mathbb{Q}(\zeta_{n/p_i^{e_i}})^+ &\longrightarrow \: \mathbb{Q}(\zeta_{n/p_i^{e_i}})^+  \\
+        \zeta_{n/p_i^{e_i}}  &\longmapsto \: \zeta_{n/p_i^{e_i}} ^ {p_i}
+\end{alignat*} So we need an element \(f\) that sends
+\(\zeta_{n/p_i^{e_i}} \simeq \zeta _n^{p_i^{e_i}}\) in
+\(\zeta _n^{p_i^{e_i+1}}= \zeta _n^{p_i^{e_i} p_i}\)
+
+    First we can see it as an integer in the list \texttt{G}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{101}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{k}{def} \PY{n+nf}{frob}\PY{p}{(}\PY{n}{i}\PY{p}{)}\PY{p}{:}
+    \PY{n}{zi} \PY{o}{=} \PY{n}{z}\PY{o}{\PYZca{}}\PY{n}{pe}\PY{p}{(}\PY{n}{i}\PY{p}{)}
+    \PY{k}{for} \PY{n}{f} \PY{o+ow}{in} \PY{n}{G}\PY{p}{:}
+        \PY{k}{if} \PY{n}{zi}\PY{o}{\PYZca{}}\PY{n}{f}\PY{o}{==}\PY{n}{zi}\PY{o}{\PYZca{}}\PY{n}{p}\PY{p}{(}\PY{n}{i}\PY{p}{)}\PY{p}{:}
+            \PY{k}{return} \PY{n}{f}
+\end{Verbatim}
+\end{tcolorbox}
+
+    But also we can give the result directly as an automorphism of
+\(\mathbb{Q}(\zeta_{n})\) (so an element in \(G_0\)).\\
+\textbf{Remark}: With this costruction we directly considerate a lifting
+of the function without defining it on the field
+\(\mathbb{Q}(\zeta_{n/p_i^{e_i}})^+\).\\
+\emph{Memo:} We have seen that the final results does not depends on the
+particular lifting
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{102}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{k}{def} \PY{n+nf}{frobhom}\PY{p}{(}\PY{n}{i}\PY{p}{)}\PY{p}{:}
+    \PY{n}{zi} \PY{o}{=} \PY{n}{z}\PY{o}{\PYZca{}}\PY{n}{pe}\PY{p}{(}\PY{n}{i}\PY{p}{)}
+    \PY{k}{for} \PY{n}{f} \PY{o+ow}{in} \PY{n}{G}\PY{p}{:}
+        \PY{k}{if} \PY{n}{zi}\PY{o}{\PYZca{}}\PY{n}{f}\PY{o}{==}\PY{n}{zi}\PY{o}{\PYZca{}}\PY{n}{p}\PY{p}{(}\PY{n}{i}\PY{p}{)}\PY{p}{:}
+            \PY{k}{return} \PY{n}{Qn}\PY{o}{.}\PY{n}{hom}\PY{p}{(}\PY{p}{[}\PY{n}{z}\PY{o}{*}\PY{o}{*}\PY{n}{f}\PY{p}{]}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{104}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{p}{(}\PY{n}{frobhom}\PY{p}{(}\PY{l+m+mi}{2}\PY{p}{)}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+            \begin{tcolorbox}[breakable, size=fbox, boxrule=.5pt, pad at break*=1mm, opacityfill=0]
+\prompt{Out}{outcolor}{104}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+Ring endomorphism of Cyclotomic Field of order 693 and degree 360
+  Defn: z |--> z\^{}106
+\end{Verbatim}
+\end{tcolorbox}
+        
+    Now to find the trace elements we need to have the order of the element
+\(f\) in \(G_i\).\\
+We already know that this is the inertia degree of the prime \(p_i\),
+but now we will follow a different approach. Also here we define the
+morphism on \(\mathbb{Q}(\zeta_{n/p_i^{e_i}})\) and we check when its
+generator (\texttt{zz}) is fixed.\\
+\textbf{Remark}: is not the same of checking when \(\zeta\) is fixed
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{105}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{k}{def} \PY{n+nf}{ford}\PY{p}{(}\PY{n}{i}\PY{p}{)}\PY{p}{:}
+    \PY{n}{Qi}\PY{o}{.}\PY{o}{\PYZlt{}}\PY{n}{zi}\PY{o}{\PYZgt{}}\PY{o}{=}\PY{n}{CyclotomicField}\PY{p}{(}\PY{n}{n}\PY{o}{/}\PY{n}{pe}\PY{p}{(}\PY{n}{i}\PY{p}{)}\PY{p}{)}
+    \PY{n}{f} \PY{o}{=} \PY{n}{Qi}\PY{o}{.}\PY{n}{hom}\PY{p}{(}\PY{p}{[}\PY{n}{zi}\PY{o}{\PYZca{}}\PY{n}{p}\PY{p}{(}\PY{n}{i}\PY{p}{)}\PY{p}{]}\PY{p}{)}
+    \PY{n}{o} \PY{o}{=} \PY{l+m+mi}{1}
+    \PY{n}{zz}\PY{o}{=}\PY{n}{zi}\PY{o}{+}\PY{n}{zi}\PY{o}{.}\PY{n}{conjugate}\PY{p}{(}\PY{p}{)}
+    \PY{k}{while} \PY{p}{(}\PY{o+ow}{not} \PY{p}{(}\PY{n}{f}\PY{o}{*}\PY{o}{*}\PY{n}{o}\PY{p}{)}\PY{p}{(}\PY{n}{zz}\PY{p}{)}\PY{o}{==}\PY{n}{zz}\PY{p}{)} \PY{p}{:} 
+        \PY{n}{o} \PY{o}{+}\PY{o}{=} \PY{l+m+mi}{1}
+    \PY{k}{return} \PY{n}{o}
+\end{Verbatim}
+\end{tcolorbox}
+
+    We can see that the two results are indeed equivalent
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{107}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{p}{[}\PY{n}{ford}\PY{p}{(}\PY{n}{i}\PY{p}{)}\PY{o}{==}\PY{n}{f}\PY{p}{(}\PY{n}{i}\PY{p}{)} \PY{k}{for} \PY{n}{i} \PY{o+ow}{in} \PY{n}{S}\PY{p}{]}
+\end{Verbatim}
+\end{tcolorbox}
+
+            \begin{tcolorbox}[breakable, size=fbox, boxrule=.5pt, pad at break*=1mm, opacityfill=0]
+\prompt{Out}{outcolor}{107}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+[True, True, True]
+\end{Verbatim}
+\end{tcolorbox}
+        
+    \hypertarget{definition-of-beta-and-its-evaluation}{%
+\subsection{\texorpdfstring{Definition of \(\beta\) and its
+evaluation}{Definition of \textbackslash beta and its evaluation}}\label{definition-of-beta-and-its-evaluation}}
+
+We start defining its value on the singletons \(\{i\}\). Also to have an
+elements in \(\mathbb{Z}[G_0]\) we simply use a list of elements in
+\(G_0\), since we only need to evalutate them and we can simply use a
+recursive evalutation.\\
+\textbf{Remark}: we use \texttt{f(i)}~instead of \texttt{ford(i)}
+because it is faster
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{113}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{k}{def} \PY{n+nf}{beta0}\PY{p}{(}\PY{n}{i} \PY{p}{:} \PY{n+nb}{int}\PY{p}{)}\PY{p}{:}
+    \PY{n}{fi} \PY{o}{=} \PY{n}{frobhom}\PY{p}{(}\PY{n}{i}\PY{p}{)}
+    \PY{k}{return} \PY{p}{[} \PY{n}{fi}\PY{o}{*}\PY{o}{*}\PY{n}{j} \PY{k}{for} \PY{n}{j} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{n}{f}\PY{p}{(}\PY{n}{i}\PY{p}{)}\PY{p}{)}\PY{p}{]}
+\end{Verbatim}
+\end{tcolorbox}
+
+    We anticipate the valutations on the singletons to save computational
+time later
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{115}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{vbeta} \PY{o}{=} \PY{p}{[}\PY{n}{beta0}\PY{p}{(}\PY{n}{i}\PY{p}{)} \PY{k}{for} \PY{n}{i} \PY{o+ow}{in} \PY{n}{S}\PY{p}{]}
+\end{Verbatim}
+\end{tcolorbox}
+
+    For our costruction the only thing we need is \(\zeta ^{ \beta(I)}\)
+(\texttt{valbeta(base,I)}), that we can evaluate starting from
+\(\zeta ^{ \beta(i)}\) (\texttt{valbeta0(base,i)}) using that
+\(\beta(I) = \prod_{i \in S} \beta(i)\) and
+\(\zeta^{\gamma \delta} = (\zeta^\gamma )^\delta\)
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{118}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{k}{def} \PY{n+nf}{valbeta0}\PY{p}{(}\PY{n}{base}\PY{p}{,}\PY{n}{i}\PY{p}{)}\PY{p}{:}
+    \PY{n}{v} \PY{o}{=} \PY{l+m+mi}{1}
+    \PY{k}{for} \PY{n}{vf} \PY{o+ow}{in} \PY{n}{vbeta}\PY{p}{[}\PY{n}{i}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{:}
+        \PY{n}{v} \PY{o}{*}\PY{o}{=} \PY{n}{vf}\PY{p}{(}\PY{n}{base}\PY{p}{)}
+    \PY{k}{return} \PY{n}{v}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{119}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{k}{def} \PY{n+nf}{valbeta}\PY{p}{(}\PY{n}{base}\PY{p}{,}\PY{n}{I}\PY{p}{)}\PY{p}{:}
+    \PY{k}{if} \PY{n}{I}\PY{o}{.}\PY{n}{is\PYZus{}empty}\PY{p}{(}\PY{p}{)}\PY{p}{:}
+        \PY{k}{return} \PY{n}{base}
+    \PY{k}{for} \PY{n}{i} \PY{o+ow}{in} \PY{n}{I}\PY{p}{:}
+        \PY{n}{base} \PY{o}{=} \PY{n}{valbeta0}\PY{p}{(}\PY{n}{base}\PY{p}{,}\PY{n}{i}\PY{p}{)}
+    \PY{k}{return} \PY{n}{base}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \hypertarget{calculation-of-the-generators}{%
+\section{Calculation of the generators}\label{calculation-of-the-generators}}
+
+We proceed now with the evalutation of
+\[ z(\beta ):= \prod_{I \in P_S } z_I ^{\beta(I)} \] 
+where $ z_I := 1 - \zeta^{n\_I}$
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{120}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{k}{def} \PY{n+nf}{zbeta}\PY{p}{(}\PY{p}{)}\PY{p}{:}
+    \PY{n}{ret} \PY{o}{=} \PY{l+m+mi}{1}
+    \PY{k}{for} \PY{n}{I} \PY{o+ow}{in} \PY{n}{PS}\PY{p}{:}
+        \PY{n}{zI}\PY{o}{=} \PY{l+m+mi}{1} \PY{o}{\PYZhy{}} \PY{n}{z}\PY{o}{*}\PY{o}{*}\PY{n}{nI}\PY{p}{(}\PY{n}{I}\PY{p}{)}
+        \PY{n}{ret} \PY{o}{*}\PY{o}{=} \PY{n}{valbeta}\PY{p}{(}\PY{n}{zI}\PY{p}{,}\PY{n}{I}\PY{p}{)}
+    \PY{k}{return} \PY{n}{ret}
+\end{Verbatim}
+\end{tcolorbox}
+
+    We store it in the memory to save computational time later, also we can
+see that this is a very long and complicate element
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{121}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{zb} \PY{o}{=} \PY{n}{zbeta}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{122}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{zb}
+\end{Verbatim}
+\end{tcolorbox}
+
+            \begin{tcolorbox}[breakable, size=fbox, boxrule=.5pt, pad at break*=1mm, opacityfill=0]
+\prompt{Out}{outcolor}{122}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+-2465587991975972409997855703400081267284478063824725976147930668910100878000971
+8275492951476329688534353553899890762466013670947676001*z\^{}359 + 2465587991975972
+40999785570340008126728447806382472597614793066891010087800097182754929514763296
+88534353553899890762466013670947676001*z\^{}358 - 246558799197597240999785570340008
+12672844780638247259761479306689101008780009718275492951476329688534353553899890
+762466013670947676001*z\^{}357 + 24655879919759724099978557034000812672844780638247
+25976147930668910100878000971827549295147632968853435355389989076246601367094767
+6001*z\^{}355 - 2465587991975972409997855703400081267284478063824725976147930668910
+1008780009718275492951476329688534353553899890762466013670947676001*z\^{}354 + 2465
+58799197597240999785570340008126728447806382472597614793066891010087800097182754
+92951476329688534353553899890762466013670947676001*z\^{}353 - 246558799197597240999
+78557034000812672844780638247259761479306689101008780009718275492951476329688534
+353553899890762466013670947676001*z\^{}344 + 24655879919759724099978557034000812672
+84478063824725976147930668910100878000971827549295147632968853435355389989076246
+6013670947676001*z\^{}343 + 2465587991975972409997855703400081267284478063824725976
+1479306689101008780009718275492951476329688534353553899890762466013670947676001*
+z\^{}338 - 246558799197597240999785570340008126728447806382472597614793066891010087
+80009718275492951476329688534353553899890762466013670947676001*z\^{}337 + 246558799
+19759724099978557034000812672844780638247259761479306689101008780009718275492951
+476329688534353553899890762466013670947676001*z\^{}336 - 24655879919759724099978557
+03400081267284478063824725976147930668910100878000971827549295147632968853435355
+3899890762466013670947676001*z\^{}334 + 2465587991975972409997855703400081267284478
+06382472597614793066891010087800097182754929514763296885343535538998907624660136
+70947676001*z\^{}326 - 246558799197597240999785570340008126728447806382472597614793
+06689101008780009718275492951476329688534353553899890762466013670947676001*z\^{}325
++ 246558799197597240999785570340008126728447806382472597614793066891010087800097
+18275492951476329688534353553899890762466013670947676001*z\^{}324 + 246558799197597
+24099978557034000812672844780638247259761479306689101008780009718275492951476329
+688534353553899890762466013670947676001*z\^{}323 - 49311759839519448199957114068001
+62534568956127649451952295861337820201756001943655098590295265937706870710779978
+1524932027341895352002*z\^{}322 + 2465587991975972409997855703400081267284478063824
+72597614793066891010087800097182754929514763296885343535538998907624660136709476
+76001*z\^{}321 + 246558799197597240999785570340008126728447806382472597614793066891
+01008780009718275492951476329688534353553899890762466013670947676001*z\^{}320 - 493
+11759839519448199957114068001625345689561276494519522958613378202017560019436550
+985902952659377068707107799781524932027341895352002*z\^{}319 + 24655879919759724099
+97855703400081267284478063824725976147930668910100878000971827549295147632968853
+4353553899890762466013670947676001*z\^{}312 - 2465587991975972409997855703400081267
+28447806382472597614793066891010087800097182754929514763296885343535538998907624
+66013670947676001*z\^{}310 - 246558799197597240999785570340008126728447806382472597
+61479306689101008780009718275492951476329688534353553899890762466013670947676001
+*z\^{}305 + 24655879919759724099978557034000812672844780638247259761479306689101008
+780009718275492951476329688534353553899890762466013670947676001*z\^{}304 - 24655879
+91975972409997855703400081267284478063824725976147930668910100878000971827549295
+1476329688534353553899890762466013670947676001*z\^{}303 + 2465587991975972409997855
+70340008126728447806382472597614793066891010087800097182754929514763296885343535
+53899890762466013670947676001*z\^{}301 - 246558799197597240999785570340008126728447
+80638247259761479306689101008780009718275492951476329688534353553899890762466013
+670947676001*z\^{}296 + 24655879919759724099978557034000812672844780638247259761479
+306689101008780009718275492951476329688534353553899890762466013670947676001*z\^{}29
+5 - 2465587991975972409997855703400081267284478063824725976147930668910100878000
+9718275492951476329688534353553899890762466013670947676001*z\^{}294 + 2465587991975
+97240999785570340008126728447806382472597614793066891010087800097182754929514763
+29688534353553899890762466013670947676001*z\^{}292 - 246558799197597240999785570340
+00812672844780638247259761479306689101008780009718275492951476329688534353553899
+890762466013670947676001*z\^{}291 + 24655879919759724099978557034000812672844780638
+24725976147930668910100878000971827549295147632968853435355389989076246601367094
+7676001*z\^{}289 + 2465587991975972409997855703400081267284478063824725976147930668
+9101008780009718275492951476329688534353553899890762466013670947676001*z\^{}287 - 2
+46558799197597240999785570340008126728447806382472597614793066891010087800097182
+75492951476329688534353553899890762466013670947676001*z\^{}286 - 246558799197597240
+99978557034000812672844780638247259761479306689101008780009718275492951476329688
+534353553899890762466013670947676001*z\^{}281 + 24655879919759724099978557034000812
+67284478063824725976147930668910100878000971827549295147632968853435355389989076
+2466013670947676001*z\^{}280 - 2465587991975972409997855703400081267284478063824725
+97614793066891010087800097182754929514763296885343535538998907624660136709476760
+01*z\^{}279 + 246558799197597240999785570340008126728447806382472597614793066891010
+08780009718275492951476329688534353553899890762466013670947676001*z\^{}278 - 246558
+79919759724099978557034000812672844780638247259761479306689101008780009718275492
+951476329688534353553899890762466013670947676001*z\^{}276 + 49311759839519448199957
+11406800162534568956127649451952295861337820201756001943655098590295265937706870
+7107799781524932027341895352002*z\^{}275 - 2465587991975972409997855703400081267284
+47806382472597614793066891010087800097182754929514763296885343535538998907624660
+13670947676001*z\^{}274 + 246558799197597240999785570340008126728447806382472597614
+79306689101008780009718275492951476329688534353553899890762466013670947676001*z\^{}
+273 - 24655879919759724099978557034000812672844780638247259761479306689101008780
+009718275492951476329688534353553899890762466013670947676001*z\^{}271 + 24655879919
+75972409997855703400081267284478063824725976147930668910100878000971827549295147
+6329688534353553899890762466013670947676001*z\^{}263 - 2465587991975972409997855703
+40008126728447806382472597614793066891010087800097182754929514763296885343535538
+99890762466013670947676001*z\^{}262 + 246558799197597240999785570340008126728447806
+38247259761479306689101008780009718275492951476329688534353553899890762466013670
+947676001*z\^{}261 - 24655879919759724099978557034000812672844780638247259761479306
+689101008780009718275492951476329688534353553899890762466013670947676001*z\^{}259 -
+24655879919759724099978557034000812672844780638247259761479306689101008780009718
+275492951476329688534353553899890762466013670947676001*z\^{}257 + 24655879919759724
+09997855703400081267284478063824725976147930668910100878000971827549295147632968
+8534353553899890762466013670947676001*z\^{}256 - 2465587991975972409997855703400081
+26728447806382472597614793066891010087800097182754929514763296885343535538998907
+62466013670947676001*z\^{}255 - 246558799197597240999785570340008126728447806382472
+59761479306689101008780009718275492951476329688534353553899890762466013670947676
+001*z\^{}254 + 49311759839519448199957114068001625345689561276494519522958613378202
+017560019436550985902952659377068707107799781524932027341895352002*z\^{}253 + 24655
+87991975972409997855703400081267284478063824725976147930668910100878000971827549
+2951476329688534353553899890762466013670947676001*z\^{}249 - 2465587991975972409997
+85570340008126728447806382472597614793066891010087800097182754929514763296885343
+53553899890762466013670947676001*z\^{}247 - 246558799197597240999785570340008126728
+44780638247259761479306689101008780009718275492951476329688534353553899890762466
+013670947676001*z\^{}245 + 24655879919759724099978557034000812672844780638247259761
+479306689101008780009718275492951476329688534353553899890762466013670947676001*z
+\^{}244 + 2465587991975972409997855703400081267284478063824725976147930668910100878
+0009718275492951476329688534353553899890762466013670947676001*z\^{}243 - 4931175983
+95194481999571140680016253456895612764945195229586133782020175600194365509859029
+52659377068707107799781524932027341895352002*z\^{}242 + 246558799197597240999785570
+34000812672844780638247259761479306689101008780009718275492951476329688534353553
+899890762466013670947676001*z\^{}241 - 24655879919759724099978557034000812672844780
+63824725976147930668910100878000971827549295147632968853435355389989076246601367
+0947676001*z\^{}240 + 2465587991975972409997855703400081267284478063824725976147930
+6689101008780009718275492951476329688534353553899890762466013670947676001*z\^{}239
++ 246558799197597240999785570340008126728447806382472597614793066891010087800097
+18275492951476329688534353553899890762466013670947676001*z\^{}237 - 246558799197597
+24099978557034000812672844780638247259761479306689101008780009718275492951476329
+688534353553899890762466013670947676001*z\^{}235 - 24655879919759724099978557034000
+81267284478063824725976147930668910100878000971827549295147632968853435355389989
+0762466013670947676001*z\^{}233 - 4931175983951944819995711406800162534568956127649
+45195229586133782020175600194365509859029526593770687071077997815249320273418953
+52002*z\^{}232 + 493117598395194481999571140680016253456895612764945195229586133782
+02017560019436550985902952659377068707107799781524932027341895352002*z\^{}231 + 246
+55879919759724099978557034000812672844780638247259761479306689101008780009718275
+492951476329688534353553899890762466013670947676001*z\^{}229 - 24655879919759724099
+97855703400081267284478063824725976147930668910100878000971827549295147632968853
+4353553899890762466013670947676001*z\^{}228 + 2465587991975972409997855703400081267
+28447806382472597614793066891010087800097182754929514763296885343535538998907624
+66013670947676001*z\^{}227 + 246558799197597240999785570340008126728447806382472597
+61479306689101008780009718275492951476329688534353553899890762466013670947676001
+*z\^{}225 + 24655879919759724099978557034000812672844780638247259761479306689101008
+780009718275492951476329688534353553899890762466013670947676001*z\^{}224 - 49311759
+83951944819995711406800162534568956127649451952295861337820201756001943655098590
+2952659377068707107799781524932027341895352002*z\^{}223 + 2465587991975972409997855
+70340008126728447806382472597614793066891010087800097182754929514763296885343535
+53899890762466013670947676001*z\^{}222 + 246558799197597240999785570340008126728447
+80638247259761479306689101008780009718275492951476329688534353553899890762466013
+670947676001*z\^{}221 - 49311759839519448199957114068001625345689561276494519522958
+613378202017560019436550985902952659377068707107799781524932027341895352002*z\^{}22
+0 - 2465587991975972409997855703400081267284478063824725976147930668910100878000
+9718275492951476329688534353553899890762466013670947676001*z\^{}218 + 2465587991975
+97240999785570340008126728447806382472597614793066891010087800097182754929514763
+29688534353553899890762466013670947676001*z\^{}217 - 246558799197597240999785570340
+00812672844780638247259761479306689101008780009718275492951476329688534353553899
+890762466013670947676001*z\^{}216 + 24655879919759724099978557034000812672844780638
+24725976147930668910100878000971827549295147632968853435355389989076246601367094
+7676001*z\^{}215 + 2465587991975972409997855703400081267284478063824725976147930668
+9101008780009718275492951476329688534353553899890762466013670947676001*z\^{}213 + 2
+46558799197597240999785570340008126728447806382472597614793066891010087800097182
+75492951476329688534353553899890762466013670947676001*z\^{}212 - 493117598395194481
+99957114068001625345689561276494519522958613378202017560019436550985902952659377
+068707107799781524932027341895352002*z\^{}211 + 24655879919759724099978557034000812
+67284478063824725976147930668910100878000971827549295147632968853435355389989076
+2466013670947676001*z\^{}210 - 2465587991975972409997855703400081267284478063824725
+97614793066891010087800097182754929514763296885343535538998907624660136709476760
+01*z\^{}208 - 246558799197597240999785570340008126728447806382472597614793066891010
+08780009718275492951476329688534353553899890762466013670947676001*z\^{}206 + 246558
+79919759724099978557034000812672844780638247259761479306689101008780009718275492
+951476329688534353553899890762466013670947676001*z\^{}205 - 24655879919759724099978
+55703400081267284478063824725976147930668910100878000971827549295147632968853435
+3553899890762466013670947676001*z\^{}204 + 2465587991975972409997855703400081267284
+47806382472597614793066891010087800097182754929514763296885343535538998907624660
+13670947676001*z\^{}202 + 246558799197597240999785570340008126728447806382472597614
+79306689101008780009718275492951476329688534353553899890762466013670947676001*z\^{}
+200 - 24655879919759724099978557034000812672844780638247259761479306689101008780
+009718275492951476329688534353553899890762466013670947676001*z\^{}199 + 24655879919
+75972409997855703400081267284478063824725976147930668910100878000971827549295147
+6329688534353553899890762466013670947676001*z\^{}198 - 2465587991975972409997855703
+40008126728447806382472597614793066891010087800097182754929514763296885343535538
+99890762466013670947676001*z\^{}196 - 246558799197597240999785570340008126728447806
+38247259761479306689101008780009718275492951476329688534353553899890762466013670
+947676001*z\^{}194 + 24655879919759724099978557034000812672844780638247259761479306
+689101008780009718275492951476329688534353553899890762466013670947676001*z\^{}193 -
+24655879919759724099978557034000812672844780638247259761479306689101008780009718
+275492951476329688534353553899890762466013670947676001*z\^{}192 + 24655879919759724
+09997855703400081267284478063824725976147930668910100878000971827549295147632968
+8534353553899890762466013670947676001*z\^{}190 + 2465587991975972409997855703400081
+26728447806382472597614793066891010087800097182754929514763296885343535538998907
+62466013670947676001*z\^{}186 - 246558799197597240999785570340008126728447806382472
+59761479306689101008780009718275492951476329688534353553899890762466013670947676
+001*z\^{}184 - 24655879919759724099978557034000812672844780638247259761479306689101
+008780009718275492951476329688534353553899890762466013670947676001*z\^{}182 + 24655
+87991975972409997855703400081267284478063824725976147930668910100878000971827549
+2951476329688534353553899890762466013670947676001*z\^{}181 - 2465587991975972409997
+85570340008126728447806382472597614793066891010087800097182754929514763296885343
+53553899890762466013670947676001*z\^{}180 + 246558799197597240999785570340008126728
+44780638247259761479306689101008780009718275492951476329688534353553899890762466
+013670947676001*z\^{}178 + 24655879919759724099978557034000812672844780638247259761
+479306689101008780009718275492951476329688534353553899890762466013670947676001*z
+\^{}174 - 2465587991975972409997855703400081267284478063824725976147930668910100878
+0009718275492951476329688534353553899890762466013670947676001*z\^{}172 - 2465587991
+97597240999785570340008126728447806382472597614793066891010087800097182754929514
+76329688534353553899890762466013670947676001*z\^{}170 + 246558799197597240999785570
+34000812672844780638247259761479306689101008780009718275492951476329688534353553
+899890762466013670947676001*z\^{}169 - 24655879919759724099978557034000812672844780
+63824725976147930668910100878000971827549295147632968853435355389989076246601367
+0947676001*z\^{}168 + 2465587991975972409997855703400081267284478063824725976147930
+6689101008780009718275492951476329688534353553899890762466013670947676001*z\^{}166
+- 246558799197597240999785570340008126728447806382472597614793066891010087800097
+18275492951476329688534353553899890762466013670947676001*z\^{}165 + 246558799197597
+24099978557034000812672844780638247259761479306689101008780009718275492951476329
+688534353553899890762466013670947676001*z\^{}164 + 24655879919759724099978557034000
+81267284478063824725976147930668910100878000971827549295147632968853435355389989
+0762466013670947676001*z\^{}162 - 2465587991975972409997855703400081267284478063824
+72597614793066891010087800097182754929514763296885343535538998907624660136709476
+76001*z\^{}160 - 246558799197597240999785570340008126728447806382472597614793066891
+01008780009718275492951476329688534353553899890762466013670947676001*z\^{}158 + 246
+55879919759724099978557034000812672844780638247259761479306689101008780009718275
+492951476329688534353553899890762466013670947676001*z\^{}157 - 24655879919759724099
+97855703400081267284478063824725976147930668910100878000971827549295147632968853
+4353553899890762466013670947676001*z\^{}156 - 2465587991975972409997855703400081267
+28447806382472597614793066891010087800097182754929514763296885343535538998907624
+66013670947676001*z\^{}155 + 493117598395194481999571140680016253456895612764945195
+22958613378202017560019436550985902952659377068707107799781524932027341895352002
+*z\^{}154 - 24655879919759724099978557034000812672844780638247259761479306689101008
+780009718275492951476329688534353553899890762466013670947676001*z\^{}153 + 24655879
+91975972409997855703400081267284478063824725976147930668910100878000971827549295
+1476329688534353553899890762466013670947676001*z\^{}152 + 2465587991975972409997855
+70340008126728447806382472597614793066891010087800097182754929514763296885343535
+53899890762466013670947676001*z\^{}150 + 246558799197597240999785570340008126728447
+80638247259761479306689101008780009718275492951476329688534353553899890762466013
+670947676001*z\^{}149 - 49311759839519448199957114068001625345689561276494519522958
+613378202017560019436550985902952659377068707107799781524932027341895352002*z\^{}14
+8 + 2465587991975972409997855703400081267284478063824725976147930668910100878000
+9718275492951476329688534353553899890762466013670947676001*z\^{}147 - 2465587991975
+97240999785570340008126728447806382472597614793066891010087800097182754929514763
+29688534353553899890762466013670947676001*z\^{}146 + 246558799197597240999785570340
+00812672844780638247259761479306689101008780009718275492951476329688534353553899
+890762466013670947676001*z\^{}144 - 49311759839519448199957114068001625345689561276
+49451952295861337820201756001943655098590295265937706870710779978152493202734189
+5352002*z\^{}143 + 2465587991975972409997855703400081267284478063824725976147930668
+9101008780009718275492951476329688534353553899890762466013670947676001*z\^{}142 - 2
+46558799197597240999785570340008126728447806382472597614793066891010087800097182
+75492951476329688534353553899890762466013670947676001*z\^{}141 + 246558799197597240
+99978557034000812672844780638247259761479306689101008780009718275492951476329688
+534353553899890762466013670947676001*z\^{}140 + 24655879919759724099978557034000812
+67284478063824725976147930668910100878000971827549295147632968853435355389989076
+2466013670947676001*z\^{}138 + 2465587991975972409997855703400081267284478063824725
+97614793066891010087800097182754929514763296885343535538998907624660136709476760
+01*z\^{}137 - 493117598395194481999571140680016253456895612764945195229586133782020
+17560019436550985902952659377068707107799781524932027341895352002*z\^{}136 + 246558
+79919759724099978557034000812672844780638247259761479306689101008780009718275492
+951476329688534353553899890762466013670947676001*z\^{}135 - 24655879919759724099978
+55703400081267284478063824725976147930668910100878000971827549295147632968853435
+3553899890762466013670947676001*z\^{}133 - 2465587991975972409997855703400081267284
+47806382472597614793066891010087800097182754929514763296885343535538998907624660
+13670947676001*z\^{}131 + 246558799197597240999785570340008126728447806382472597614
+79306689101008780009718275492951476329688534353553899890762466013670947676001*z\^{}
+130 - 24655879919759724099978557034000812672844780638247259761479306689101008780
+009718275492951476329688534353553899890762466013670947676001*z\^{}129 + 24655879919
+75972409997855703400081267284478063824725976147930668910100878000971827549295147
+6329688534353553899890762466013670947676001*z\^{}127 + 2465587991975972409997855703
+40008126728447806382472597614793066891010087800097182754929514763296885343535538
+99890762466013670947676001*z\^{}125 - 246558799197597240999785570340008126728447806
+38247259761479306689101008780009718275492951476329688534353553899890762466013670
+947676001*z\^{}124 + 24655879919759724099978557034000812672844780638247259761479306
+689101008780009718275492951476329688534353553899890762466013670947676001*z\^{}123 -
+24655879919759724099978557034000812672844780638247259761479306689101008780009718
+275492951476329688534353553899890762466013670947676001*z\^{}121 - 24655879919759724
+09997855703400081267284478063824725976147930668910100878000971827549295147632968
+8534353553899890762466013670947676001*z\^{}119 + 2465587991975972409997855703400081
+26728447806382472597614793066891010087800097182754929514763296885343535538998907
+62466013670947676001*z\^{}118 - 246558799197597240999785570340008126728447806382472
+59761479306689101008780009718275492951476329688534353553899890762466013670947676
+001*z\^{}117 + 24655879919759724099978557034000812672844780638247259761479306689101
+008780009718275492951476329688534353553899890762466013670947676001*z\^{}115 + 49311
+75983951944819995711406800162534568956127649451952295861337820201756001943655098
+5902952659377068707107799781524932027341895352002*z\^{}111 - 2465587991975972409997
+85570340008126728447806382472597614793066891010087800097182754929514763296885343
+53553899890762466013670947676001*z\^{}110 - 246558799197597240999785570340008126728
+44780638247259761479306689101008780009718275492951476329688534353553899890762466
+013670947676001*z\^{}109 - 24655879919759724099978557034000812672844780638247259761
+479306689101008780009718275492951476329688534353553899890762466013670947676001*z
+\^{}107 + 2465587991975972409997855703400081267284478063824725976147930668910100878
+0009718275492951476329688534353553899890762466013670947676001*z\^{}106 - 2465587991
+97597240999785570340008126728447806382472597614793066891010087800097182754929514
+76329688534353553899890762466013670947676001*z\^{}105 + 246558799197597240999785570
+34000812672844780638247259761479306689101008780009718275492951476329688534353553
+899890762466013670947676001*z\^{}103 - 24655879919759724099978557034000812672844780
+63824725976147930668910100878000971827549295147632968853435355389989076246601367
+0947676001*z\^{}102 + 2465587991975972409997855703400081267284478063824725976147930
+6689101008780009718275492951476329688534353553899890762466013670947676001*z\^{}101
++ 246558799197597240999785570340008126728447806382472597614793066891010087800097
+18275492951476329688534353553899890762466013670947676001*z\^{}99 - 2465587991975972
+40999785570340008126728447806382472597614793066891010087800097182754929514763296
+88534353553899890762466013670947676001*z\^{}97 + 2465587991975972409997855703400081
+26728447806382472597614793066891010087800097182754929514763296885343535538998907
+62466013670947676001*z\^{}89 - 2465587991975972409997855703400081267284478063824725
+97614793066891010087800097182754929514763296885343535538998907624660136709476760
+01*z\^{}88 + 2465587991975972409997855703400081267284478063824725976147930668910100
+8780009718275492951476329688534353553899890762466013670947676001*z\^{}87 + 24655879
+91975972409997855703400081267284478063824725976147930668910100878000971827549295
+1476329688534353553899890762466013670947676001*z\^{}86 - 49311759839519448199957114
+06800162534568956127649451952295861337820201756001943655098590295265937706870710
+7799781524932027341895352002*z\^{}85 + 24655879919759724099978557034000812672844780
+63824725976147930668910100878000971827549295147632968853435355389989076246601367
+0947676001*z\^{}84 - 24655879919759724099978557034000812672844780638247259761479306
+689101008780009718275492951476329688534353553899890762466013670947676001*z\^{}83 - 
+24655879919759724099978557034000812672844780638247259761479306689101008780009718
+275492951476329688534353553899890762466013670947676001*z\^{}78 + 246558799197597240
+99978557034000812672844780638247259761479306689101008780009718275492951476329688
+534353553899890762466013670947676001*z\^{}77 + 246558799197597240999785570340008126
+72844780638247259761479306689101008780009718275492951476329688534353553899890762
+466013670947676001*z\^{}75 - 246558799197597240999785570340008126728447806382472597
+61479306689101008780009718275492951476329688534353553899890762466013670947676001
+*z\^{}73 - 246558799197597240999785570340008126728447806382472597614793066891010087
+80009718275492951476329688534353553899890762466013670947676001*z\^{}68 + 2465587991
+97597240999785570340008126728447806382472597614793066891010087800097182754929514
+76329688534353553899890762466013670947676001*z\^{}67 - 2465587991975972409997855703
+40008126728447806382472597614793066891010087800097182754929514763296885343535538
+99890762466013670947676001*z\^{}66 + 2465587991975972409997855703400081267284478063
+82472597614793066891010087800097182754929514763296885343535538998907624660136709
+47676001*z\^{}64 - 2465587991975972409997855703400081267284478063824725976147930668
+9101008780009718275492951476329688534353553899890762466013670947676001*z\^{}59 + 24
+65587991975972409997855703400081267284478063824725976147930668910100878000971827
+5492951476329688534353553899890762466013670947676001*z\^{}58 - 24655879919759724099
+97855703400081267284478063824725976147930668910100878000971827549295147632968853
+4353553899890762466013670947676001*z\^{}57 - 24655879919759724099978557034000812672
+84478063824725976147930668910100878000971827549295147632968853435355389989076246
+6013670947676001*z\^{}56 + 49311759839519448199957114068001625345689561276494519522
+958613378202017560019436550985902952659377068707107799781524932027341895352002*z
+\^{}55 - 24655879919759724099978557034000812672844780638247259761479306689101008780
+009718275492951476329688534353553899890762466013670947676001*z\^{}54 + 246558799197
+59724099978557034000812672844780638247259761479306689101008780009718275492951476
+329688534353553899890762466013670947676001*z\^{}52 - 246558799197597240999785570340
+00812672844780638247259761479306689101008780009718275492951476329688534353553899
+890762466013670947676001*z\^{}45 + 246558799197597240999785570340008126728447806382
+47259761479306689101008780009718275492951476329688534353553899890762466013670947
+676001*z\^{}43 - 246558799197597240999785570340008126728447806382472597614793066891
+01008780009718275492951476329688534353553899890762466013670947676001*z\^{}42 + 2465
+58799197597240999785570340008126728447806382472597614793066891010087800097182754
+92951476329688534353553899890762466013670947676001*z\^{}41 + 2465587991975972409997
+85570340008126728447806382472597614793066891010087800097182754929514763296885343
+53553899890762466013670947676001*z\^{}38 - 2465587991975972409997855703400081267284
+47806382472597614793066891010087800097182754929514763296885343535538998907624660
+13670947676001*z\^{}37 + 2465587991975972409997855703400081267284478063824725976147
+9306689101008780009718275492951476329688534353553899890762466013670947676001*z\^{}3
+6 - 2465587991975972409997855703400081267284478063824725976147930668910100878000
+9718275492951476329688534353553899890762466013670947676001*z\^{}34 + 24655879919759
+72409997855703400081267284478063824725976147930668910100878000971827549295147632
+9688534353553899890762466013670947676001*z\^{}26 - 24655879919759724099978557034000
+81267284478063824725976147930668910100878000971827549295147632968853435355389989
+0762466013670947676001*z\^{}25 + 24655879919759724099978557034000812672844780638247
+25976147930668910100878000971827549295147632968853435355389989076246601367094767
+6001*z\^{}24 - 24655879919759724099978557034000812672844780638247259761479306689101
+008780009718275492951476329688534353553899890762466013670947676001*z\^{}22 + 246558
+79919759724099978557034000812672844780638247259761479306689101008780009718275492
+951476329688534353553899890762466013670947676001*z\^{}21 - 246558799197597240999785
+57034000812672844780638247259761479306689101008780009718275492951476329688534353
+553899890762466013670947676001*z\^{}20 + 246558799197597240999785570340008126728447
+80638247259761479306689101008780009718275492951476329688534353553899890762466013
+670947676001*z\^{}12 - 246558799197597240999785570340008126728447806382472597614793
+06689101008780009718275492951476329688534353553899890762466013670947676001*z\^{}10
+- 246558799197597240999785570340008126728447806382472597614793066891010087800097
+18275492951476329688534353553899890762466013670947676001*z\^{}5 + 24655879919759724
+09997855703400081267284478063824725976147930668910100878000971827549295147632968
+8534353553899890762466013670947676001*z\^{}4 - 246558799197597240999785570340008126
+72844780638247259761479306689101008780009718275492951476329688534353553899890762
+466013670947676001*z\^{}3 + 2465587991975972409997855703400081267284478063824725976
+1479306689101008780009718275492951476329688534353553899890762466013670947676001*
+z
+\end{Verbatim}
+\end{tcolorbox}
+        
+    An interesting wall of numbers, however now we can use it to evaluate the elements 
+\[ \zeta ^{\frac{(1-a)}{2} n_I \beta (I)} \] and \begin{equation}
+        \zeta ^{(1-a)\frac{t}{2}} \text{ with } t = \sum_{I \in P_S} n_I \beta(I) 
+    \end{equation}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{123}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{k}{def} \PY{n+nf}{zdbeta}\PY{p}{(}\PY{n}{a}\PY{p}{,}\PY{n}{I}\PY{p}{)}\PY{p}{:}
+    \PY{n}{d} \PY{o}{=} \PY{p}{(}\PY{l+m+mi}{1}\PY{o}{\PYZhy{}}\PY{n}{a}\PY{p}{)}\PY{o}{*}\PY{n}{nI}\PY{p}{(}\PY{n}{I}\PY{p}{)}\PY{o}{/}\PY{l+m+mi}{2}
+    \PY{n}{valbeta}\PY{p}{(}\PY{n}{z}\PY{o}{\PYZca{}}\PY{n}{d}\PY{p}{,}\PY{n}{I}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{124}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{k}{def} \PY{n+nf}{zdbeta}\PY{p}{(}\PY{n}{a}\PY{p}{)}\PY{p}{:}
+    \PY{n}{ret} \PY{o}{=} \PY{l+m+mi}{1}
+    \PY{n}{d}\PY{o}{=} \PY{p}{(}\PY{l+m+mi}{1}\PY{o}{\PYZhy{}}\PY{n}{a}\PY{p}{)}\PY{o}{/}\PY{l+m+mi}{2}
+    \PY{k}{for} \PY{n}{I} \PY{o+ow}{in} \PY{n}{PS}\PY{p}{:}
+        \PY{n}{ret} \PY{o}{*}\PY{o}{=} \PY{n}{valbeta}\PY{p}{(}\PY{n}{z}\PY{o}{\PYZca{}}\PY{p}{(}\PY{n}{d}\PY{o}{*}\PY{n}{nI}\PY{p}{(}\PY{n}{I}\PY{p}{)}\PY{p}{)}\PY{p}{,}\PY{n}{I}\PY{p}{)}
+    \PY{k}{return} \PY{n}{ret}
+\end{Verbatim}
+\end{tcolorbox}
+
+    And finally we can evaluate \begin{equation}
+        \xi_a (\beta) := \zeta ^{d_a (\beta)} \frac{\sigma_a (z(\beta))}{z(\beta)} \text{ with } d_a(\beta)= (1-a)\frac{t}{2}
+    \end{equation}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{125}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{k}{def} \PY{n+nf}{xibeta}\PY{p}{(}\PY{n}{a}\PY{p}{)}\PY{p}{:}
+    \PY{n}{sa} \PY{o}{=} \PY{n}{Qn}\PY{o}{.}\PY{n}{hom}\PY{p}{(}\PY{p}{[}\PY{n}{z}\PY{o}{*}\PY{o}{*}\PY{n}{a}\PY{p}{]}\PY{p}{)}
+    \PY{k}{return} \PY{n}{zdbeta}\PY{p}{(}\PY{n}{a}\PY{p}{)}\PY{o}{*}\PY{n}{sa}\PY{p}{(}\PY{n}{zb}\PY{p}{)}\PY{o}{/}\PY{n}{zb}
+\end{Verbatim}
+\end{tcolorbox}
+
+    Consider a particulare case, we can easly see that the result is in the
+ring of integer \(\mathbb{Z}[\zeta]\) and that it is real comparing
+itself with the conjugate
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{127}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{a} \PY{o}{=} \PY{n}{G}\PY{p}{[}\PY{l+m+mi}{42}\PY{p}{]}
+\PY{n}{xi} \PY{o}{=} \PY{n}{xibeta}\PY{p}{(}\PY{n}{a}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{129}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{show}\PY{p}{(}\PY{n}{xi}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{math}
+\newcommand{\Bold}[1]{\mathbf{#1}}-43 z^{359} - 72 z^{358} - 80 z^{357} - 123 z^{356} - 138 z^{355} - 146 z^{354} - 189 z^{353} - 189 z^{352} - 173 z^{351} - 173 z^{350} - 174 z^{349} - 174 z^{348} - 174 z^{347} - 174 z^{346} - 194 z^{345} - 194 z^{344} - 194 z^{343} - 194 z^{342} - 194 z^{341} - 180 z^{340} - 156 z^{339} - 113 z^{338} - 84 z^{337} - 76 z^{336} - 33 z^{335} - 33 z^{334} - 45 z^{333} - 11 z^{332} - 11 z^{331} - 27 z^{330} - 27 z^{329} - 27 z^{328} - 12 z^{327} + 31 z^{326} + 60 z^{325} + 88 z^{324} + 131 z^{323} + 146 z^{322} + 134 z^{321} + 177 z^{320} + 163 z^{319} + 147 z^{318} + 147 z^{317} + 141 z^{316} + 141 z^{315} + 141 z^{314} + 156 z^{313} + 176 z^{312} + 176 z^{311} + 175 z^{310} + 175 z^{309} + 175 z^{308} + 161 z^{307} + 137 z^{306} + 114 z^{305} + 85 z^{304} + 77 z^{303} + 34 z^{302} + 34 z^{301} + 46 z^{300} + 3 z^{299} + 3 z^{298} - 5 z^{297} - 48 z^{296} - 77 z^{295} - 85 z^{294} - 128 z^{293} - 143 z^{292} - 151 z^{291} - 194 z^{290} - 194 z^{289} - 158 z^{288} - 158 z^{287} - 144 z^{286} - 144 z^{285} - 144 z^{284} - 137 z^{283} - 157 z^{282} - 157 z^{281} - 172 z^{280} - 172 z^{279} - 172 z^{278} - 149 z^{277} - 125 z^{276} - 82 z^{275} - 53 z^{274} - 45 z^{273} - 2 z^{272} - 2 z^{271} - 14 z^{270} + 29 z^{269} + 29 z^{268} + 13 z^{267} + 19 z^{266} + 19 z^{265} + 43 z^{264} + 86 z^{263} + 115 z^{262} + 128 z^{261} + 128 z^{260} + 114 z^{259} + 94 z^{258} + 94 z^{257} + 65 z^{256} + 41 z^{255} - 2 z^{254} - 2 z^{253} + 14 z^{252} + 14 z^{251} + 37 z^{250} + 57 z^{249} + 57 z^{248} + 57 z^{247} + 37 z^{246} + 37 z^{245} + 17 z^{244} - 7 z^{243} - 50 z^{242} - 65 z^{241} - 49 z^{240} - 49 z^{239} - 20 z^{238} - 20 z^{234} - 28 z^{233} - 57 z^{232} - 81 z^{231} - 124 z^{230} - 139 z^{229} - 131 z^{228} - 131 z^{227} - 102 z^{226} - 58 z^{225} - 15 z^{224} + 14 z^{223} + 2 z^{222} + 45 z^{221} + 31 z^{220} - 5 z^{219} - 5 z^{218} - 26 z^{217} - 26 z^{216} - 26 z^{215} + 3 z^{214} + 47 z^{213} + 90 z^{212} + 119 z^{211} + 127 z^{210} + 170 z^{209} + 156 z^{208} + 120 z^{207} + 120 z^{206} + 91 z^{205} + 67 z^{204} + 24 z^{203} + 24 z^{202} + 60 z^{201} + 54 z^{200} + 83 z^{199} + 103 z^{198} + 103 z^{197} + 89 z^{196} + 60 z^{195} + 60 z^{194} + 31 z^{193} + 7 z^{192} - 36 z^{191} - 36 z^{190} + 29 z^{187} + 49 z^{186} + 49 z^{185} + 50 z^{184} + 30 z^{183} + 30 z^{182} + z^{181} - 23 z^{180} - 66 z^{179} - 66 z^{178} - 50 z^{177} - 50 z^{176} - 21 z^{175} - z^{174} - z^{173} - z^{172} - 21 z^{171} - 21 z^{170} - 50 z^{169} - 74 z^{168} - 102 z^{167} - 117 z^{166} - 101 z^{165} - 101 z^{164} - 72 z^{163} - 37 z^{162} - 37 z^{161} - 37 z^{160} - 57 z^{159} - 57 z^{158} - 86 z^{157} - 110 z^{156} - 153 z^{155} - 168 z^{154} - 152 z^{153} - 152 z^{152} - 116 z^{151} - 72 z^{150} - 29 z^{149} - 12 z^{147} + 31 z^{146} + 11 z^{145} - 25 z^{144} - 25 z^{143} - 40 z^{142} - 40 z^{141} - 40 z^{140} - 11 z^{139} + 33 z^{138} + 76 z^{137} + 105 z^{136} + 113 z^{135} + 147 z^{134} + 133 z^{133} + 97 z^{132} + 97 z^{131} + 68 z^{130} + 59 z^{129} + 16 z^{128} + 16 z^{127} + 52 z^{126} + 52 z^{125} + 81 z^{124} + 81 z^{123} + 81 z^{122} + 67 z^{121} + 47 z^{120} + 47 z^{119} + 17 z^{118} - 7 z^{117} - 50 z^{116} - 50 z^{115} - 34 z^{114} - 34 z^{113} - 14 z^{112} + 6 z^{111} + 6 z^{110} + 6 z^{109} - 14 z^{108} - 14 z^{107} - 43 z^{106} - 67 z^{105} - 110 z^{104} - 125 z^{103} - 109 z^{102} - 109 z^{101} - 80 z^{100} - 60 z^{99} - 60 z^{98} - 60 z^{97} - 80 z^{96} - 37 z^{95} - 37 z^{94} - 53 z^{93} - 53 z^{92} - 53 z^{91} - 29 z^{90} + 14 z^{89} + 43 z^{88} + 71 z^{87} + 114 z^{86} + 129 z^{85} + 117 z^{84} + 160 z^{83} + 146 z^{82} + 130 z^{81} + 130 z^{80} + 122 z^{79} + 122 z^{78} + 122 z^{77} + 137 z^{76} + 157 z^{75} + 157 z^{74} + 157 z^{73} + 157 z^{72} + 157 z^{71} + 143 z^{70} + 119 z^{69} + 91 z^{68} + 62 z^{67} + 54 z^{66} + 11 z^{65} + 11 z^{64} + 38 z^{63} - 5 z^{62} - 5 z^{61} - 13 z^{60} - 56 z^{59} - 85 z^{58} - 93 z^{57} - 136 z^{56} - 151 z^{55} - 159 z^{54} - 202 z^{53} - 187 z^{52} - 171 z^{51} - 171 z^{50} - 157 z^{49} - 157 z^{48} - 157 z^{47} - 148 z^{46} - 168 z^{45} - 168 z^{44} - 183 z^{43} - 183 z^{42} - 183 z^{41} - 169 z^{40} - 145 z^{39} - 102 z^{38} - 73 z^{37} - 65 z^{36} - 16 z^{35} - 16 z^{34} - 28 z^{33} + 15 z^{32} + 15 z^{31} + 8 z^{30} + 8 z^{29} + 8 z^{28} + 32 z^{27} + 75 z^{26} + 104 z^{25} + 112 z^{24} + 155 z^{23} + 170 z^{22} + 158 z^{21} + 201 z^{20} + 180 z^{19} + 164 z^{18} + 164 z^{17} + 164 z^{16} + 164 z^{15} + 164 z^{14} + 179 z^{13} + 199 z^{12} + 199 z^{11} + 199 z^{10} + 199 z^{9} + 199 z^{8} + 185 z^{7} + 161 z^{6} + 118 z^{5} + 89 z^{4} + 81 z^{3} + 31 z^{2} + 31 z + 43
+\end{math}
+
+    
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{130}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{xi}\PY{o}{.}\PY{n}{conjugate}\PY{p}{(}\PY{p}{)}\PY{o}{==}\PY{n}{xi}
+\end{Verbatim}
+\end{tcolorbox}
+
+            \begin{tcolorbox}[breakable, size=fbox, boxrule=.5pt, pad at break*=1mm, opacityfill=0]
+\prompt{Out}{outcolor}{130}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+True
+\end{Verbatim}
+\end{tcolorbox}
+        
+    Without looking to the the monomials we can also direclty look for
+coefficents not in \(\mathbb{Z}\)
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{139}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{p}{[}\PY{n}{i} \PY{k}{for} \PY{n}{i} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{n}{euler\PYZus{}phi}\PY{p}{(}\PY{n}{n}\PY{p}{)}\PY{p}{)} \PY{k}{if} \PY{o+ow}{not} \PY{p}{(}\PY{n}{xi}\PY{p}{[}\PY{n}{i}\PY{p}{]} \PY{o+ow}{in} \PY{n}{ZZ}\PY{p}{)} \PY{p}{]}
+\end{Verbatim}
+\end{tcolorbox}
+
+            \begin{tcolorbox}[breakable, size=fbox, boxrule=.5pt, pad at break*=1mm, opacityfill=0]
+\prompt{Out}{outcolor}{139}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+[]
+\end{Verbatim}
+\end{tcolorbox}
+        
+    Infact the list is empty
+
+
+    % Add a bibliography block to the postdoc
+    
+    
+    
+\end{document}
