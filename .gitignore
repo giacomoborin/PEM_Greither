@@ -291,3 +291,6 @@ TSWLatexianTemp*
 # Roba apple
 .DS_Store
 .DS_Store
+
+# Libraries 
+*.sty

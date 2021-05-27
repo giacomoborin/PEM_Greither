@@ -83,6 +83,7 @@
 
 % Commands 
 \newcommand{\sage}{\href{https://www.sagemath.org}{\includegraphics[height=\fontcharht\font`\B]{../images/sage.png} }}
+\newcommand{\jupyter}{\href{https://www.sagemath.org}{\includegraphics[height=\fontcharht\font`\B]{../images/jupyter.png} }}
 \newcommand{\noqed}{\let\qed\relax}
 \newcommand{\PS}{\mathcal{P}_S}
 \newcommand{\Z}{\mathbb{Z}}
@@ -425,21 +426,47 @@
 
 	\section{Implementazione dei calcoli}
 	
-\begin{frame}[fragile]{Prova di inserimento codice}
-Vediamo ora l'implementazione di alcuni calcoli in \sage
+\begin{frame}[fragile]{Comandi usati I}
+Vediamo ora l'implementazione di alcuni calcoli in \sage 
 
+I principali calcoli usati sono stati:\\ \pause
+
+\begin{itemize}
+\item Creazione del campo ciclotomico e della radice $\zeta$
 \begin{lstlisting}
-sage: K.<b> = 
-	NumberField(x^3 - 3, 'a').galois_closure()
-sage: G = K.galois_group()
-sage: P = K.primes_above(3)[0]
-sage: s = hom(K, K, 1/18*b^4 - 1/2*b)
-sage: G(s).ramification_degree(P)
-4
-\end{lstlisting}		
+sage: Qn.<z> = CyclotomicField(n)
+\end{lstlisting}
+
+\item Creazione del massimo sottocampo reale $ K $:
+\begin{lstlisting}
+sage: zz = z + z.conjugate()
+sage: K = NumberField(zz.minpoly(),'a')
+\end{lstlisting}
+
+
+\end{itemize}	
 \end{frame}
 
+\begin{frame}[fragile]{Comandi usati II}
 
+\begin{itemize}
+\item Creazione dell'ideale $ pO_K $ e sua fattorizzazione:
+\begin{lstlisting}
+sage: I = K.ideal(p(i))
+sage: I.factor()
+\end{lstlisting}
+
+\item Creazione dell'omomorfismo $ \zeta \mapsto \zeta^f $:
+\begin{lstlisting}
+sage: Qn.hom([z**f])
+\end{lstlisting}
+
+\pause 
+Comunque ora vedremo direttamente l'implementazione in \sage dei calcoli, presentata tramite \jupyter
+
+
+\end{itemize}	
+\end{frame}
 
 	\begin{frame}[allowframebreaks]{Tabella dei contenuti}
 		\tableofcontents
