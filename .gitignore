@@ -294,3 +294,6 @@ TSWLatexianTemp*
 
 # Libraries 
 *.sty
+
+# HTML output, not desired
+*.html
