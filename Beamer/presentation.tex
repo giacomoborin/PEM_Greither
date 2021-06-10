@@ -1,4 +1,4 @@
-\documentclass{beamer}
+\documentclass[handout]{beamer}
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage[italian]{babel}
@@ -197,7 +197,7 @@
 		Se considero il gruppo generato da $ \{ -1 ,  \zeta , \, 1 - \zeta ^a \text{ for } a = 1, ... , n-1 \} $ e lo interseco con $ E_K $ ottengo il gruppo delle \textbf{unità circolari}\pause
 		\begin{exampleblock}{}
 			Sinnot ha mostrato che esiste $ a \in \Z $ tale che:
-			\[ [E_K : C_K] = 2^a k_K\]
+			\[ [E_K : C_K] = 2^a h_K\]
 			\nocite{SIN}
 		\end{exampleblock}
 	\end{frame}
@@ -330,6 +330,17 @@
 	\end{frame}
 	
 	\begin{frame}
+		\begin{lem}[Lemma 5.26 in \cite{CF}] 
+			Sia $ X $ un gruppo abeliano finito e $ f $ una funzione su \textit{X} a valori in $ \C $
+			\begin{equation}\label{eq:det}
+				\det (f (\sigma \tau ^{-1}) - f (\sigma))_{\sigma , \tau \neq 1 } = \prod_{\substack{\chi \in \hat{X} \\ \chi \neq 1}}  \sum_{\sigma \in X} \chi(\sigma)f(\sigma)
+			\end{equation}
+			Dove $ \hat{X} $ è l'insieme dei caratteri da $ X $ in $ \C ^\ast $
+		\end{lem}
+		Nel $ X $  sarà $ G \simeq \Z_n / \pm 1 $.
+	\end{frame}
+	
+	\begin{frame}
 		Usando l'ultimo lemma possiamo vedere che per dimostrare il teorema basta mostrare che 
 		$$ R(\xi_a(\beta)) = \pm R_K h_K A $$
 		con $ (a,n)=1 \, , \,1 < a <n/2 $ e $ A$ è la parte destra dell'equazione \ref{eq:idx1}.\pause \\
@@ -365,13 +376,13 @@
 			\[ \xi_a := \zeta ^{d_a } \prod _{I \in \PS} \frac{ 1 - \zeta^{an_I}}{ 1 - \zeta^{n_I}}  \text{ con } d_a =\frac{1}{2}(1-a) \sum_{I \in \PS} n_I\]
 	\end{frame}
 	
-\subsection{Un nuovo sistema di unità}
+\section{Un nuovo sistema di unità}
 	
 	\begin{frame}{Definizione di $\beta$}
 		Costruiamo $\beta$ moltiplicativa, quindi definendo $ \beta (i) $ per ogni $ i \in \{ 1 , ... , s\} $ :
 
 		Definiamo $ G_i $ come il gruppo di Galois: $ \Gal ( \Q(\zeta_{n/p_i^{e_i}})^+ / \Q)) $ e consideriamo l'isomofismo di Frobenius:
-		\[ F_i : G_i \to G_i \text{ con }  \alpha \mapsto \alpha ^ {p_i}\] \pause
+		\[ F_i : \Q(\zeta_{n/p_i^{e_i}})^+ \to \Q(\zeta_{n/p_i^{e_i}})^+ \text{ con }  \alpha \mapsto \alpha ^ {p_i}\] \pause
 		 Definiamo il suo elemento traccia $ N_{F_i} $ come:
 		 \[ N_{F_i} := 1 + F_i + ... + {F_i}^{\ord (F_i) - 1} \in  \Z [G_i] \] 
 	\end{frame}
@@ -411,7 +422,7 @@
 		Queste costanti sono fortemente in relazione con altri oggetti visti finora, ad esempio si può provare:
 		\begin{itemize}
 		\item Se $ X $ è l'insieme dei carattari di $ K / \Q $ vale $ g_i = | \{ \chi \in X \,|\, \chi(p_i)=1 \} $
-		\item Il grado di inerzia $ f_i $ è uguale all'ordine del morphismo di Frobenius $ F_i $
+		\item Il grado di inerzia $ f_i $ è uguale all'ordine del morfismo di Frobenius $ F_i $
 		\end{itemize}
 	\end{frame}
 	
